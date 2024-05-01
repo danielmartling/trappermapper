@@ -10,20 +10,36 @@
 <body>
 <div id="map"></div>
 <script>
-	// Skapar kartan med Lillgårn som centrum
-	var lfmap = L.map('map').setView([60.25542, 18.69360], 15);	
+	// Kartans initialkoordinater (Lillgårn)
+	var initialCoordinates = [60.25542, 18.69360];
+	// Skapar kartan med restriktioner på zoom
+	var lfmap = L.map('map'), {
+		center: initialCoordinates,
+		zoom: 16,
+		minZoom: 12
+	});
+	// var lfmap = L.map('map').setView([60.25542, 18.69360], 15);	
 
-	// Lägger till OSM-karta
+	// Lägger till OSM-lager
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(lfmap);
 
+	// Definiera kartans gränser
+	var southWest = L.latLng(60.2472, 18.6769); // Lower-left corner of the restricted area
+    	var northEast = L.latLng(60.2924, 18.7412); // Upper-right corner of the restricted area
+   	var bounds = L.latLngBounds(southWest, northEast);
+	lfmap.setMaxBounds(bounds); // Sätt gränser på kartan
+    	lfmap.on('drag', function() {
+      		lfmap.panInsideBounds(bounds, { animate: false });
+    	});
+
 	// Lägg till kartpins
    	var marker = L.marker([60.25875, 18.69926]).addTo(lfmap);
-	marker.bindPopup("Trapperspårets start").openPopup();
+	marker.bindPopup("Trapperspårets start");
 
 	var marker = L.marker([60.26000, 18.69660]).addTo(lfmap);
-	marker.bindPopup("Här finns en lägerbålsplats start");
+	marker.bindPopup("Här finns en fin lägerbålsplats");
 	
 </script>
 </body>
