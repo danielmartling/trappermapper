@@ -4,17 +4,27 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.3/dist/leaflet.css"/>
                   <script src="https://unpkg.com/leaflet@0.7.3/dist/leaflet.js"></script>
   <style>
-    #map{ height: 100% }
+    #map{ height: 100% } /* Kartan fyller hela skärmens höjd */
   </style>  
 </head>
 <body>
 <div id="map"></div>
 <script>
-var lfmap = L.map('map').setView([60.25542, 18.69360], 15);	
+	// Skapar kartan med Lillgårn som centrum
+	var lfmap = L.map('map').setView([60.25542, 18.69360], 15);	
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(lfmap);	
+	// Lägger till OSM-karta
+	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(lfmap);
+
+	// Lägg till kartpins
+   	var marker = L.marker([60.25875, 18.69926]).addTo(lfmap);
+	marker.bindPopup("Trapperspårets start").openPopup();
+
+	var marker = L.marker([60.26000, 18.69660]).addTo(lfmap);
+	marker.bindPopup("Här finns en lägerbålsplats start");
+	
 </script>
 </body>
 </html>  
