@@ -5,10 +5,38 @@
                   <script src="https://unpkg.com/leaflet@0.7.3/dist/leaflet.js"></script>
   <style>
     #map{ height: 100%; } /* Kartan fyller hela skärmens höjd */
+
+	/* Style for the menu button */
+    .menu-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 5px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    /* Style for the menu (toggleable) */
+    .menu {
+      position: absolute;
+      top: 30px;
+      left: 10px;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      display: none; /* Hidden by default */
+      z-index: 1000;
+    }
   </style>  
 </head>
 <body>
 <div id="map"></div>
+<div class="menu-button" id="menuButton">Menu</div>
+  <div class="menu" id="menu">
+    <input type="checkbox" id="toggleMarker1" checked> Trapperspårets start<br>
+    <input type="checkbox" id="toggleMarker2" checked> Lägerbålsplats<br>
+  </div>
 <script>
 	// Kartans initialkoordinater (Lillgårn)
 	var initialCoordinates = [60.25542, 18.69360];
