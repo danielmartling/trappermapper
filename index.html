@@ -15,8 +15,8 @@
 	// Skapar kartan med restriktioner på zoom
 	var lfmap = L.map('map', {
 		center: initialCoordinates,
-		zoom: 16,
-		minZoom: 12
+		zoom: 15,
+		minZoom: 14
 	});
 	// var lfmap = L.map('map').setView([60.25542, 18.69360], 15);	
 
@@ -26,20 +26,34 @@
 	}).addTo(lfmap);
 
 	// Definiera kartans gränser
-	var southWest = L.latLng(60.2472, 18.6769); // Lower-left corner of the restricted area
-    	var northEast = L.latLng(60.2924, 18.7412); // Upper-right corner of the restricted area
+	var southWest = L.latLng(60.2409, 18.6612); // Lower-left corner of the restricted area
+    	var northEast = L.latLng(60.2995, 18.7568); // Upper-right corner of the restricted area
    	var bounds = L.latLngBounds(southWest, northEast);
 	lfmap.setMaxBounds(bounds); // Sätt gränser på kartan
     	lfmap.on('drag', function() {
       		lfmap.panInsideBounds(bounds, { animate: false });
     	});
+	// https://github.com/lennardv2/Leaflet.awesome-markers
+	// Skapa egna pins
+	var lbpIcon = L.icon({
+      		iconUrl: 'https://www.iconsdb.com/icons/download/red/fire-2-32.png', // URL of the custom marker image
+      		iconSize: [32, 32], // Size of the icon (width, height)
+     		iconAnchor: [16, 16], // Anchor point (typically the bottom center)
+      		popupAnchor: [0, -32] // Position of the pop-up relative to the icon
+    	});
+	var hikeIcon = L.icon({
+		iconUrl: 'https://pluspng.com/img-png/png-hiker-free-png-file-svg-586.png',
+		iconSize: [32, 32],
+		iconAnchor: [16, 16],
+		popupAnchor: [0, -32]
+	});
 
 	// Lägg till kartpins
-   	var marker1 = L.marker([60.25875, 18.69926]).addTo(lfmap);
-	marker.bindPopup("Trapperspårets start");
+   	var marker1 = L.marker([60.25875, 18.69926], { icon:hikeIcon }).addTo(lfmap);
+	marker1.bindPopup("Trapperspårets start");
 
-	var marker2 = L.marker([60.26000, 18.69660]).addTo(lfmap);
-	marker.bindPopup("Här finns en fin lägerbålsplats");
+	var marker2 = L.marker([60.26000, 18.69660], { icon:lbpIcon }).addTo(lfmap);
+	marker2.bindPopup("Här finns en fin lägerbålsplats").openPopup();;
 	
 </script>
 </body>
