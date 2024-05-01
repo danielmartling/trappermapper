@@ -84,7 +84,33 @@
 	var marker2 = L.marker([60.26000, 18.69660]).addTo(lfmap);
 	//var marker2 = L.marker([60.26000, 18.69660], { icon:lbpIcon }).addTo(lfmap);
 	marker2.bindPopup("Här finns en fin lägerbålsplats").openPopup();;
-	
+
+	// Show/Hide menu on button click
+    var menuButton = document.getElementById('menuButton');
+    var menu = document.getElementById('menu');
+    menuButton.onclick = function() {
+      if (menu.style.display === 'none') {
+        menu.style.display = 'block';
+      } else {
+        menu.style.display = 'none';
+      }
+    };
+
+    // Function to toggle marker visibility based on checkboxes
+    var toggleMarker = function(marker, checkboxId) {
+      var checkbox = document.getElementById(checkboxId);
+      checkbox.onchange = function() {
+        if (this.checked) {
+          marker.addTo(lfmap); // Show marker
+        } else {
+          marker.remove(); // Hide marker
+        }
+      };
+    };
+
+    // Set up the toggle functionality for the checkboxes
+    toggleMarker(marker1, 'toggleMarker1');
+    toggleMarker(marker2, 'toggleMarker2');
 </script>
 </body>
 </html>  
