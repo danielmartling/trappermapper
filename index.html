@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@0.7.3/dist/leaflet.css"/>
                   <script src="https://unpkg.com/leaflet@0.7.3/dist/leaflet.js"></script>
   <style>
-    #map{ height: 100% } /* Kartan fyller hela skärmens höjd */
+    #map{ height: 100%; } /* Kartan fyller hela skärmens höjd */
   </style>  
 </head>
 <body>
@@ -13,7 +13,7 @@
 	// Kartans initialkoordinater (Lillgårn)
 	var initialCoordinates = [60.25542, 18.69360];
 	// Skapar kartan med restriktioner på zoom
-	var lfmap = L.map('map'), {
+	var lfmap = L.map('map', {
 		center: initialCoordinates,
 		zoom: 16,
 		minZoom: 12
@@ -35,10 +35,10 @@
     	});
 
 	// Lägg till kartpins
-   	var marker = L.marker([60.25875, 18.69926]).addTo(lfmap);
+   	var marker1 = L.marker([60.25875, 18.69926]).addTo(lfmap);
 	marker.bindPopup("Trapperspårets start");
 
-	var marker = L.marker([60.26000, 18.69660]).addTo(lfmap);
+	var marker2 = L.marker([60.26000, 18.69660]).addTo(lfmap);
 	marker.bindPopup("Här finns en fin lägerbålsplats");
 	
 </script>
