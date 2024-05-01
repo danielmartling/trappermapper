@@ -49,10 +49,12 @@
 	});
 
 	// Lägg till kartpins
-   	var marker1 = L.marker([60.25875, 18.69926], { icon:hikeIcon }).addTo(lfmap);
+	var marker1 = L.marker([60.25875, 18.69926]).addTo(lfmap);
+   	//var marker1 = L.marker([60.25875, 18.69926], { icon:hikeIcon }).addTo(lfmap);
 	marker1.bindPopup("Trapperspårets start");
 
-	var marker2 = L.marker([60.26000, 18.69660], { icon:lbpIcon }).addTo(lfmap);
+	var marker2 = L.marker([60.26000, 18.69660]).addTo(lfmap);
+	//var marker2 = L.marker([60.26000, 18.69660], { icon:lbpIcon }).addTo(lfmap);
 	marker2.bindPopup("Här finns en fin lägerbålsplats").openPopup();;
 	
 </script>
