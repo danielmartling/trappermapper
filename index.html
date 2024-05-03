@@ -18,7 +18,7 @@
         }).addTo(lfmap);
         // This could be replaced with reading from a JSON file or API
         fetch('campfiresites.json')
-          .then(response => response.JSON())
+          .then(response => response.json())
           .then(locations => {
             console.log(locations);
             locations.forEach(function(location) {
