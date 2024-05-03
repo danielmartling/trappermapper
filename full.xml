@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.9.2 (2775166 spike-06.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <node id="2500859459" visible="true" version="3" changeset="147736387" timestamp="2024-02-21T14:51:52Z" user="permutation" uid="20611474" lat="60.2586977" lon="18.6991646">
+  <tag k="highway" v="trailhead"/>
+  <tag k="name" v="Trapperspåret"/>
+ </node>
+ <node id="3624738200" visible="true" version="2" changeset="144765917" timestamp="2023-12-04T18:37:37Z" user="ddbb07" uid="17746563" lat="60.2590119" lon="18.7032151"/>
+ <node id="3624738201" visible="true" version="2" changeset="144765917" timestamp="2023-12-04T18:37:37Z" user="ddbb07" uid="17746563" lat="60.2592013" lon="18.7039095"/>
+ <node id="3624738202" visible="true" version="2" changeset="144765917" timestamp="2023-12-04T18:37:37Z" user="ddbb07" uid="17746563" lat="60.2591228" lon="18.7033180"/>
+ <node id="3624738203" visible="true" version="2" changeset="144765917" timestamp="2023-12-04T18:37:37Z" user="ddbb07" uid="17746563" lat="60.2583524" lon="18.7016416"/>
+ <node id="3624738205" visible="true" version="1" changeset="32279843" timestamp="2015-06-29T09:09:11Z" user="fredrikr" uid="403876" lat="60.2583949" lon="18.7023068"/>
+ <node id="3624738206" visible="true" version="2" changeset="144765917" timestamp="2023-12-04T18:37:37Z" user="ddbb07" uid="17746563" lat="60.2584521" lon="18.7008745"/>
+ <node id="11394756255" visible="true" version="2" changeset="149570025" timestamp="2024-04-04T13:15:14Z" user="aleno150" uid="1754773" lat="60.2585550" lon="18.6998777"/>
+ <node id="11394756256" visible="true" version="2" changeset="149570025" timestamp="2024-04-04T13:15:14Z" user="aleno150" uid="1754773" lat="60.2585930" lon="18.6994894"/>
+ <node id="11394756257" visible="true" version="2" changeset="149570025" timestamp="2024-04-04T13:15:14Z" user="aleno150" uid="1754773" lat="60.2585093" lon="18.7001960"/>
+ <node id="11394756765" visible="true" version="1" changeset="144765917" timestamp="2023-12-04T18:37:37Z" user="ddbb07" uid="17746563" lat="60.2583745" lon="18.7021878"/>
+ <node id="11394756766" visible="true" version="1" changeset="144765917" timestamp="2023-12-04T18:37:37Z" user="ddbb07" uid="17746563" lat="60.2584118" lon="18.7018257"/>
+ <node id="11394756767" visible="true" version="1" changeset="144765917" timestamp="2023-12-04T18:37:37Z" user="ddbb07" uid="17746563" lat="60.2585701" lon="18.7025312"/>
+ <node id="11394756768" visible="true" version="1" changeset="144765917" timestamp="2023-12-04T18:37:37Z" user="ddbb07" uid="17746563" lat="60.2586619" lon="18.7028074"/>
+ <node id="11394756769" visible="true" version="1" changeset="144765917" timestamp="2023-12-04T18:37:37Z" user="ddbb07" uid="17746563" lat="60.2587125" lon="18.7030274"/>
+ <node id="11394756770" visible="true" version="1" changeset="144765917" timestamp="2023-12-04T18:37:37Z" user="ddbb07" uid="17746563" lat="60.2591609" lon="18.7034780"/>
+ <way id="357111553" visible="true" version="3" changeset="147092009" timestamp="2024-02-05T12:31:04Z" user="permutation" uid="20611474">
+  <nd ref="2500859459"/>
+  <nd ref="11394756256"/>
+  <nd ref="11394756255"/>
+  <nd ref="11394756257"/>
+  <nd ref="3624738206"/>
+  <nd ref="3624738203"/>
+  <nd ref="11394756766"/>
+  <nd ref="11394756765"/>
+  <nd ref="3624738205"/>
+  <nd ref="11394756767"/>
+  <nd ref="11394756768"/>
+  <nd ref="11394756769"/>
+  <nd ref="3624738200"/>
+  <nd ref="3624738202"/>
+  <nd ref="11394756770"/>
+  <nd ref="3624738201"/>
+  <tag k="highway" v="path"/>
+  <tag k="source" v="survey"/>
+ </way>
+</osm>

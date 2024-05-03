@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map with Leaflet.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div id="map" style="height: 100vh;"></div>
+    <script>
+        // Create a map centered at a specific latitude and longitude
+        var lfmap = L.map('map').setView([60.25227, 18.68454], 15); // Example coordinates: London
+
+        // Add a tile layer (OpenStreetMap in this case)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors',
+        }).addTo(lfmap);
+        // This could be replaced with reading from a JSON file or API
+        fetch('campfiresites.json')
+          .then(response => response.JSON())
+          .then(locations => {
+            console.log(locations);
+            locations.forEach(function(location) {
+                var marker = L.marker([60.25227, 18.68454]).addTo(lfmap);
+                //var marker = L.marker([location.lat, location.lng]).addTo(lfmap);
+            });
+        })
+    </script>
+</body>
+</html>

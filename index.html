@@ -5,7 +5,7 @@
                   <script src="https://unpkg.com/leaflet@0.7.3/dist/leaflet.js"></script>
   <style>
     #map{ height: 100vh; } /* Kartan fyller hela skärmens höjd */
-  </style>  
+  </style>
 </head>
 <body>
 <div id="map"></div>
@@ -15,10 +15,10 @@
 	// Skapar kartan med restriktioner på zoom
 	var lfmap = L.map('map', {
 		center: initialCoordinates,
-		zoom: 15,
-		minZoom: 14
+		zoom: 16,
+		minZoom: 15
 	});
-	// var lfmap = L.map('map').setView([60.25542, 18.69360], 15);	
+	// var lfmap = L.map('map').setView([60.25542, 18.69360], 15);
 
 	// Lägger till OSM-lager
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -26,7 +26,7 @@
 	}).addTo(lfmap);
 
 	// Definiera kartans gränser
-	var southWest = L.latLng(60.2409, 18.6612); // Lower-left corner of the restricted area
+	var southWest = L.latLng(60.2425, 18.6438); // Lower-left corner of the restricted area
     	var northEast = L.latLng(60.2995, 18.7568); // Upper-right corner of the restricted area
    	var bounds = L.latLngBounds(southWest, northEast);
 	lfmap.setMaxBounds(bounds); // Sätt gränser på kartan
@@ -55,8 +55,38 @@
 
 	var marker2 = L.marker([60.26000, 18.69660]).addTo(lfmap);
 	//var marker2 = L.marker([60.26000, 18.69660], { icon:lbpIcon }).addTo(lfmap);
-	marker2.bindPopup("Här finns en fin lägerbålsplats").openPopup();;
-	
+	marker2.bindPopup("Här finns en fin lägerbålsplats");
+
+  // create a red polyline from an array of LatLng points
+var latlngs = [
+    [60.2586977, 18.6991646],
+    [60.2585930, 18.6994894],
+    [60.2585550, 18.6998777],
+    [60.2585093, 18.7001960],
+    [60.2584521, 18.7008745] ,
+    [60.2583524, 18.7016416] ,
+    [60.2584118, 18.7018257] ,
+    [60.2583745, 18.7021878] ,
+    [60.2583949, 18.7023068] ,
+    [60.2585701, 18.7025312],
+    [60.2586619, 18.7028074] ,
+    [60.2587125, 18.7030274] ,
+    [60.2590119, 18.7032151] ,
+];
+
+var polyline = L.polyline(latlngs, {
+  color: 'pink',
+  weight: 10,
+  opacity: 0.8
+}).addTo(lfmap);
+polyline.bindPopup("This is a pink polyline with a popup.");
+polyline.on('click', function(e) {
+    this.openPopup(); // Open the popup when the polyline is clicked
+});
+// zoom the map to the polyline
+map.fitBounds(polyline.getBounds());
+
+
 </script>
 </body>
-</html>  
+</html>
