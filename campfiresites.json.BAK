@@ -1,0 +1,44 @@
+[
+  {
+    "lat": 60.25227,
+    "lng": 18.68454,
+    "name": "Exempel",
+    "description": "Testexempel",
+    "type": "Other"
+  },
+  {
+    "lat": 60.25213,
+    "lng": 18.70201,
+    "name": "Östra östra",
+    "description": "Stor stockring på en kulle i skogen. Eldstad och vedskjul. Stig från mitt på Östra ängarna.",
+    "type": "campfire"
+  },
+  {
+    "lat": 60.25301,
+    "lng": 18.69656,
+    "name": "Woodcraft",
+    "description": "Sliten stockring med eldstad på woodcraftspåret. Följ spår från konfdasset eller mitt på östra ängarna.",
+    "type": "campfire"
+  },
+  {
+    "lat": 60.25035,
+    "lng": 18.70281,
+    "name": "Överängens vindskydd",
+    "description": "Uppe på kullen mot vattnet.",
+    "type": "windshelter"
+  },
+  {
+    "lat": 60.24939,
+    "lng": 18.70228,
+    "name": "Naturnäran",
+    "description": "Stor stockring på naturnärans stig.",
+    "type": "campfire"
+  },
+  {
+    "lat": 60.24838,
+    "lng": 18.69683,
+    "name": "Södra stranden",
+    "description": "Testexempel",
+    "type": "campfire"
+  }
+]
