@@ -7,6 +7,7 @@
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>    
         
         <!--stulet från https://leafletjs.com/examples/mobile/example.html--> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <style> 
             html, body {
                 height: 100%;
@@ -90,7 +91,7 @@
 
                 var fireHouseIcon = new L.Icon({
                     iconUrl: 'icons/firehouse.png',
-                    iconSize:     [100,100],
+                    iconSize:     [40,10400],
                     iconAnchor:   [20, 40], 
                     popupAnchor:  [0,-40]
                 });
@@ -102,7 +103,7 @@
                 });
                 var campfireRingIcon = new L.Icon({
                     iconUrl: 'icons/firering.png',
-                    iconSize:     [100,100],
+                    iconSize:     [40,40],
                     iconAnchor:   [20, 20], 
                     popupAnchor:  [0,-40]
                 });
