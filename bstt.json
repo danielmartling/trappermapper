@@ -4,11 +4,13 @@
     },
     "start": {
         "lat": 60.25350,
-        "lng": 18.69337
+        "lng": 18.69337,
+        "description": "Följ stigen bakom cirkus!"
     },
     "end": {
         "lat": 60.25153,
-        "lng": 18.69573
+        "lng": 18.69573,
+        "description": "Aktiviteten är här."
     },
     "path": [
         [60.25350, 18.69337],
