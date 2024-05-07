@@ -173,5 +173,12 @@
     "name": "Eldorado",
     "description": "Stor klipphäll med plats för 2000pers. Eldstad och stockring. Vatten.",
     "type": "campfirerock"
+  },
+  {
+    "lat": 60.25548,
+    "lng": 18.69287,
+    "name": "Lillgårn",
+    "description": "Byledarringen bakom lillgårn. Stockring och eldstad.",
+    "type": "campfirering"
   }
 ]

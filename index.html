@@ -90,44 +90,44 @@
 
                 var fireHouseIcon = new L.Icon({
                     iconUrl: 'icons/firehouse.png',
-                    iconSize:     [40,40],
+                    iconSize:     [100,100],
                     iconAnchor:   [20, 40], 
                     popupAnchor:  [0,-40]
                 });
                 var windshelterIcon = new L.Icon({
                     iconUrl: 'icons/windshelter.png',
                     iconSize:     [40,40],
-                    iconAnchor:   [20, 40], 
+                    iconAnchor:   [20, 20], 
                     popupAnchor:  [0,-40]
                 });
                 var campfireRingIcon = new L.Icon({
                     iconUrl: 'icons/firering.png',
-                    iconSize:     [40,40],
-                    iconAnchor:   [20, 40], 
+                    iconSize:     [100,100],
+                    iconAnchor:   [20, 20], 
                     popupAnchor:  [0,-40]
                 });
                 var windshelterFireIcon = new L.Icon({
                     iconUrl: 'icons/firewindshelter.png',
                     iconSize:     [40,40],
-                    iconAnchor:   [20, 40], 
+                    iconAnchor:   [20, 20], 
                     popupAnchor:  [0,-40]
                 });
                 var defaultFireIcon = new L.Icon({
                     iconUrl: 'icons/fire1.png',
                     iconSize:     [40,40],
-                    iconAnchor:   [20, 40], 
+                    iconAnchor:   [20, 20], 
                     popupAnchor:  [0,-40]
                 });
                 var campfireRockIcon = new L.Icon({
                     iconUrl: 'icons/fire1.png',
                     iconSize:     [40,40],
-                    iconAnchor:   [20, 40], 
+                    iconAnchor:   [20, 20], 
                     popupAnchor:  [0,-40]
                 });
                 var otherIcon = new L.Icon({
                     iconUrl: 'icons/other.png',
                     iconSize:     [40,40],
-                    iconAnchor:   [20, 40], 
+                    iconAnchor:   [20, 20], 
                     popupAnchor:  [0,-40]
                 });
 
@@ -145,14 +145,9 @@
                         return windshelterIcon;
                     } else {
                         return otherIcon;
-                    }
-                    
+                    }  
                 }
 
-
-
-
-                        
                 // Hämta kartikoner för lägerbålsplatser -->
                 var campfiresiteMarkers = [];
                 fetch('campfiresites.json')
@@ -185,8 +180,7 @@
                     });
                 });
 
-            })
-            
+            })  
         </script>
     </body>
 </html>
