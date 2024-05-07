@@ -1,30 +1,198 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Map with Leaflet.js</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-</head>
-<body>
-    <div id="map" style="height: 100vh;"></div>
-    <script>
-        var lfmap = L.map('map').setView([60.25227, 18.68454], 15);
+<html lang="sv">
+    <head>
+        <title>Karta</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>    
+        
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.5/leaflet.awesome-markers.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.5/leaflet.awesome-markers.js"></script>
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors',
-        }).addTo(lfmap);
+        <!--stulet från https://leafletjs.com/examples/mobile/example.html--> 
+        <style> 
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+            .leaflet-container {
+                height: 400px;
+                width: 600px;
+                max-width: 100%;
+                max-height: 100%;
+            }
+            .menu-button {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: white;
+                border: 1px solid #ccc;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                z-index: 1000;
+            }
+            .menu-dropdown {
+                position: absolute;
+                top: 40px;
+                right: 10px;
+                background: white;
+                border: 1px solid #ccc;
+                padding: 10px;
+                border-radius: 5px;
+                display: none; /* initially hidden */
+                z-index: 1000;
+            }
+            #map {
+                height: 100%; 
+                width: 100vw; 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
 
-	    fetch('campfiresites.json')
-          .then(response => response.json())
-          .then(locations => {
-            console.log(locations);
-            locations.forEach(function(location) {
-                // var marker = L.marker([60.25227, 18.68454]).addTo(lfmap);
-                var marker = L.marker([location.lat, location.lng]).addTo(lfmap);
-		marker.bindPopup("<b>" + location.name + "</b><br>" + location.description);
-            });
-        })
-    </script>
-</body>
+        <!-- Menyknapp -->
+        <div class="menu-button" id="menuButton">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Dropdown Meny -->
+        <div class="menu-dropdown" id="menuDropdown">
+            <label>
+                <input type="checkbox" id="toggleMarkers" checked> Visa lägerbålsplatser
+            </label>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                // Kartans initialkoordinater (Lillgårn)
+                var initialCoordinates = [60.25542, 18.69360];
+
+                // Skapar kartan med restriktioner på zoom -->
+                var lfmap = L.map('map', {
+                    center: initialCoordinates,
+                    zoom: 14,
+                    minZoom: 13
+                });
+
+                // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
+                var southWest = L.latLng(60.2425, 18.6438);
+                var northEast = L.latLng(60.2995, 18.7568); 
+                var bounds = L.latLngBounds(southWest, northEast);
+                lfmap.setMaxBounds(bounds);
+                lfmap.on('drag', function() {
+                    lfmap.panInsideBounds(bounds, {animate: true});
+                })
+
+                // Lägg till OSM-lager -->
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                }).addTo(lfmap);
+
+                var fireHouseIcon = new L.Icon({
+                    iconUrl: 'icons/firehouse.png',
+                    iconSize:     [40,40],
+                    iconAnchor:   [20, 40], 
+                    popupAnchor:  [0,-40]
+                });
+                var windshelterIcon = new L.Icon({
+                    iconUrl: 'icons/windshelter.png',
+                    iconSize:     [40,40],
+                    iconAnchor:   [20, 40], 
+                    popupAnchor:  [0,-40]
+                });
+                var campfireRingIcon = new L.Icon({
+                    iconUrl: 'icons/firering.png',
+                    iconSize:     [40,40],
+                    iconAnchor:   [20, 40], 
+                    popupAnchor:  [0,-40]
+                });
+                var windshelterFireIcon = new L.Icon({
+                    iconUrl: 'icons/firewindshelter.png',
+                    iconSize:     [40,40],
+                    iconAnchor:   [20, 40], 
+                    popupAnchor:  [0,-40]
+                });
+                var defaultFireIcon = new L.Icon({
+                    iconUrl: 'icons/fire1.png',
+                    iconSize:     [40,40],
+                    iconAnchor:   [20, 40], 
+                    popupAnchor:  [0,-40]
+                });
+                var campfireRockIcon = new L.Icon({
+                    iconUrl: 'icons/fire1.png',
+                    iconSize:     [40,40],
+                    iconAnchor:   [20, 40], 
+                    popupAnchor:  [0,-40]
+                });
+                var otherIcon = new L.Icon({
+                    iconUrl: 'icons/other.png',
+                    iconSize:     [40,40],
+                    iconAnchor:   [20, 40], 
+                    popupAnchor:  [0,-40]
+                });
+
+
+                function getIcon(type) {
+                    if (type === "campfirering") {
+                        return campfireRingIcon;
+                    } else if (type === "windshelterfire") {
+                        return windshelterFireIcon;
+                    } else if (type === "campfirerock") {
+                        return campfireRockIcon;
+                    } else if (type === "firehouse") {
+                        return fireHouseIcon;
+                    } else if (type === "windshelter") {
+                        return windshelterIcon;
+                    } else {
+                        return otherIcon;
+                    }
+                    
+                }
+
+
+
+
+                        
+                // Hämta kartikoner för lägerbålsplatser -->
+                var campfiresiteMarkers = [];
+                fetch('campfiresites.json')
+                .then(response => response.json())
+                .then(locations => {
+                    locations.forEach(function(location) {
+                        var marker = L.marker([location.lat, location.lng], {icon: getIcon(location.type)})
+                        marker.bindPopup("<b>" + location.name + "</b><br>" + location.description);
+                        marker.addTo(lfmap);
+                        campfiresiteMarkers.push(marker);
+
+                    });
+                })
+
+                // Meny klick -->
+                document.getElementById("menuButton").addEventListener("click", function() {
+                    var dropdown = document.getElementById("menuDropdown");
+                    dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+                });
+
+                // Visa/göm ikoner -->
+                document.getElementById("toggleMarkers").addEventListener("change", function() {
+                    var isChecked = this.checked;
+                    campfiresiteMarkers.forEach(marker => {
+                        if (isChecked) {
+                            marker.addTo(lfmap);
+                        } else {
+                            lfmap.removeLayer(marker);
+                        }
+                    });
+                });
+
+            })
+            
+        </script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        
+    </body>
 </html>
