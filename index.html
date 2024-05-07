@@ -70,15 +70,47 @@
 
         <!-- Dropdown Meny -->
         <div class="menu-dropdown" id="menuDropdown">
-            Filter:<br>
+            Filter:
             <button id="checkAllButton">Markera alla</button>
             <button id="uncheckAllButton">Avmarkera alla</button><br>
+            <br>
+            <b>Platser</b><br>
             <label>
                 <input type="checkbox" id="toggleMarkers" checked> Lägerbålsplatser
             </label><br>
+            <i>Lokaler</i><br>
+            <i>Ängar</i><br>
+            <i>Laddskåp</i><br>
+            <i>Dass</i><br>
+            <br>
+            <b>Aktiviteter</b><br>
             <label>
                 <input type="checkbox" id="toggleBSTT" checked> BSTT
             </label><br>
+            <label>
+                <i>Samarbetsgläntan</i>
+            </label><br> 
+            <i>Hinderbanan</i><br>
+            <br>        
+            <b>Programspår</b><br>
+            <i>Trapperspåret</i><br>
+            <i>Naturnäran</i><br>
+            <i>Naturleken</i><br>
+            <i>Vildmarksspåret</i><br>
+            <i>Woodcraftspåret</i><br>
+            <i>Träck Track</i><br>
+            <i>Ovan Molnen</i><br>
+            <i>Knopspåret</i><br>
+            <i>Trädtränan</i><br>
+            <br>
+            <b>Hajkspår</b><br>
+            <label>
+                <i>Vässarö Runt</i><br>
+                <i>Bunkerspåret</i><br>
+            </label>
+
+            
+            
         </div>
 
         <!-- Hollyrosa -->
@@ -111,13 +143,14 @@
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(lfmap);
+
                 
                 // Lager med orienteringskarta
                 // var latLngBounds = L.latLngBounds([[60.24574, 18.67817],[60.2644,18.7130]]);
                 // var imageOverlay = L.imageOverlay("orkarta.png", latLngBounds, {
                 //     opacity: 1
                 // }).addTo(lfmap)
-
+                
                 // Hämta kartikoner för lägerbålsplatser -->
                 var campfiresiteMarkers = [];
                 fetch('campfiresites.json')
@@ -142,22 +175,58 @@
                     });
                 })
 
+                fetch('activitySites.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(function(data) {
+                        var startMarker = L.marker(data.trailStart);
+                        startMarker.bindPopup(data.startNote);
+                        startMarker.addTo(lfmap);
+
+                        var locationMarker = L.circle(data.location, {
+                            color: 'red',
+                            fillColor: '#f03',
+                            fillOpacity: 0.5,
+                            radius: data.circleradius
+                        });
+                        locationMarker.bindPopup("<b>"+data.name+"</b>");
+                        locationMarker.addTo(lfmap);
+
+                        var locationPath = L.polyline(data.path, {
+                            color: 'yellow',
+                            weight: 10,
+                            opacity: 0.8
+                        })
+                        locationPath.addTo(lfmap);
+                    })
+                })
+
+
                 // Skapa stig
-                var startMarker, endMarker, polyline;
+                var startMarker, endMarker, polylinem, endCircle
                 fetch('bstt.json')
                 .then(response => response.json())
                 .then(data => {
                     if (data.trailinfo && data.start && data.end && data.path) {
-                        var startMarker = L.marker([data.start.lat, data.start.lng], {icon: icons.startIcon});
+                        var startMarker = L.marker([data.start.lat, data.start.lng]);
                         startMarker.bindPopup("<b>" + data.trailinfo.name + "</b><br>" + data.start.description);
                         startMarker.addTo(lfmap);
 
                         var endMarker = L.marker([data.end.lat, data.end.lng], {icon: icons.finishIcon});
                         endMarker.bindPopup("<b>" + data.trailinfo.name + "</b><br>" + data.end.description);
-                        endMarker.addTo(lfmap);
+                        //endMarker.addTo(lfmap);
+
+                        var endCircle = L.circle([data.end.lat, data.end.lng], {
+                            color: 'red',
+                            fillColor: '#f03',
+                            fillOpacity: 0.5,
+                            radius: 75
+                        })
+                        endCircle.bindPopup("<b>" + data.trailinfo.name + "</b><br>" + data.end.description);
+                        endCircle.addTo(lfmap);
 
                         var polyline = L.polyline(data.path, {
-                            color: 'pink',
+                            color: 'yellow',
                             weight: 10,
                             opacity: 0.8
                         })
@@ -167,12 +236,14 @@
                             if (startMarker && endMarker && polyline) {
                                 if (this.checked) {
                                     startMarker.addTo(lfmap);
-                                    endMarker.addTo(lfmap);
+                                    //endMarker.addTo(lfmap);
                                     polyline.addTo(lfmap);
+                                    endCircle.addTo(lfmap);
                                 } else {
                                     lfmap.removeLayer(startMarker);
-                                    lfmap.removeLayer(endMarker);
+                                    //lfmap.removeLayer(endMarker);
                                     lfmap.removeLayer(polyline);
+                                    lfmap.removeLayer(endCircle);
                                 }
                              }
                         });
@@ -182,6 +253,7 @@
                             lfmap.removeLayer(startMarker);
                             lfmap.removeLayer(endMarker);
                             lfmap.removeLayer(polyline);
+                            lfmap.removeLayer(endCircle);
                             campfiresiteMarkers.forEach(marker => lfmap.removeLayer(marker));
                         });
                         document.getElementById("checkAllButton").addEventListener("click", function() {
@@ -190,13 +262,14 @@
                             lfmap.addLayer(startMarker);
                             lfmap.addLayer(endMarker);
                             lfmap.addLayer(polyline);
+                            endCircle.addTo(lfmap);
                             campfiresiteMarkers.forEach(marker => lfmap.addLayer(marker));
                         });
                     }
                 })
                 .catch(error => console.error("Error fetching path data:", error));
-
-
+                
+                
                 
                 // Meny klick -->
                 document.getElementById("menuButton").addEventListener("click", function() {
