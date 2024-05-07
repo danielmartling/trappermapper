@@ -43,6 +43,17 @@
                 display: block; 
                 z-index: 1000;
             }
+            .hollyrosa {
+                position: absolute;
+                bottom: 10px;
+                left: 10px;
+                background: white;
+                border: 1px solid #ccc;
+                padding: 5px;
+                border-radius: 5px;
+                display: block; 
+                z-index: 1000;
+            }
             #map {
                 height: 100%; 
                 width: 100vw; 
@@ -70,6 +81,11 @@
             </label><br>
         </div>
 
+        <!-- Hollyrosa -->
+        <div class="hollyrosa" id="hollyrosa">
+            <img src="hollyrosa.png" alt="Hollyrosa" style="height: 40px;" />
+        </div>
+
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 // Kartans initialkoordinater (Lillgårn)
@@ -93,8 +109,14 @@
 
                 // Lägg till OSM-lager -->
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(lfmap);
+                
+                // Lager med orienteringskarta
+                // var latLngBounds = L.latLngBounds([[60.24574, 18.67817],[60.2644,18.7130]]);
+                // var imageOverlay = L.imageOverlay("orkarta.png", latLngBounds, {
+                //     opacity: 1
+                // }).addTo(lfmap)
 
                 // Hämta kartikoner för lägerbålsplatser -->
                 var campfiresiteMarkers = [];
@@ -180,10 +202,8 @@
                 document.getElementById("menuButton").addEventListener("click", function() {
                     var dropdown = document.getElementById("menuDropdown");
                     dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
-                });
-
-                
-            })  
+                }); 
+            });
         </script>
     </body>
 </html>
