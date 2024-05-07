@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>    
+        <script src="https://unpkg.com/leaflet-ant-path" type="text/javascript"></script>
         
         <!--stulet från https://leafletjs.com/examples/mobile/example.html--> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -180,6 +181,43 @@
                         }
                     });
                 });
+
+
+                // Skapa stig
+                fetch('bstt.json')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.trailinfo && data.start && data.end && data.path) {
+                        var startMarker = L.marker([data.start.lat, data.start.lng]);
+                        startMarker.bindPopup("Utgå härifrån");
+                        startMarker.addTo(lfmap);
+
+                        var endMarker = L.marker([data.end.lat, data.end.lng]);
+                        endMarker.bindPopup(data.trailinfo.name);
+                        endMarker.addTo(lfmap);
+
+                        // var polyline = L.polyline(data.path, {
+                        //     color: 'pink',
+                        //     weight: 10,
+                        //     opacity: 0.8
+                        // }).addTo(lfmap);
+                        //     polyline.bindPopup("This is a pink polyline with a popup.");
+                        //     polyline.on('click', function(e) {
+                        //         this.openPopup(); // Open the popup when the polyline is clicked
+                        // });
+                        
+                        var myantpath = L.antPath(data.path, {
+                            color: 'blue',
+                            weight: 5,
+                            opacity: 0.6,
+                            reverse: false,  // Change to true if needed
+                            dashArray: [10, 20],  // Customize ant pattern
+                            pulseColor: '#FF5733',  // Pulse color
+                            hardwareAccelerated: true
+                        });
+                        myantpath.addTo(lfmap);
+                    }
+                })
 
             })  
         </script>
