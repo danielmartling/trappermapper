@@ -6,10 +6,6 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>    
         
-        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.5/leaflet.awesome-markers.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.5/leaflet.awesome-markers.js"></script>
-
         <!--stulet från https://leafletjs.com/examples/mobile/example.html--> 
         <style> 
             html, body {
@@ -35,13 +31,13 @@
             }
             .menu-dropdown {
                 position: absolute;
-                top: 40px;
-                right: 10px;
+                top: 10px;
+                right: 75px;
                 background: white;
                 border: 1px solid #ccc;
                 padding: 10px;
                 border-radius: 5px;
-                display: none; /* initially hidden */
+                display: none; 
                 z-index: 1000;
             }
             #map {
@@ -55,7 +51,8 @@
 
         <!-- Menyknapp -->
         <div class="menu-button" id="menuButton">
-            <i class="fas fa-bars"></i>
+            <img src="icons/menu.png" alt="Menu" style="width: 40px; height: 40px;" />
+            <i class="fa fa-bars"></i>
         </div>
 
         <!-- Dropdown Meny -->
@@ -191,8 +188,5 @@
             })
             
         </script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        
     </body>
 </html>
