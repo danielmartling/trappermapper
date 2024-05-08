@@ -40,7 +40,7 @@
                 border: 1px solid #ccc;
                 padding: 10px;
                 border-radius: 5px;
-                display: block; 
+                display: none; 
                 z-index: 1000;
             }
             .hollyrosa {
@@ -177,27 +177,23 @@
 
                 fetch('data/activitySites.json')
                 .then(response => response.json())
-                .then(data => {
-                    data.forEach(function(data) {
-                        var startMarker = L.marker(data.trailStart);
-                        startMarker.bindPopup(data.startNote);
-                        startMarker.addTo(lfmap);
+                .then(activityData => {
+                    activityData.forEach(function(activityData) {
+                        var startMarker = L.marker(activityData.trailStart).addTo(lfmap);;
+                        // startMarker.bindPopup(activityData.startNote)
+                        // var locationMarker = L.circle(activityData.location, {
+                        //     color: 'red',
+                        //     fillColor: '#f03',
+                        //     fillOpacity: 0.5,
+                        //     radius: 50
+                        // });
+                        // locationMarker.bindPopup("<b>"+activityData.name+"</b>");
+                        // locationMarker.addTo(lfmap);
 
-                        var locationMarker = L.circle(data.location, {
-                            color: 'red',
-                            fillColor: '#f03',
-                            fillOpacity: 0.5,
-                            radius: data.circleradius
-                        });
-                        locationMarker.bindPopup("<b>"+data.name+"</b>");
-                        locationMarker.addTo(lfmap);
-
-                        var locationPath = L.polyline(data.path, {
-                            color: 'yellow',
-                            weight: 10,
-                            opacity: 0.8
-                        })
-                        locationPath.addTo(lfmap);
+                        // var locationPath = L.polyline.antPath(activityData.path, {
+                        //     color: 'yellow',
+                        // })
+                        // locationPath.addTo(lfmap);
                     })
                 })
 
@@ -219,17 +215,20 @@
                         var endCircle = L.circle([data.end.lat, data.end.lng], {
                             color: 'red',
                             fillColor: '#f03',
-                            fillOpacity: 0.5,
-                            radius: 75
+                            fillOpacity: 0.2,
+                            radius: 50
                         })
                         endCircle.bindPopup("<b>" + data.trailinfo.name + "</b><br>" + data.end.description);
                         endCircle.addTo(lfmap);
-
-                        var polyline = L.polyline(data.path, {
-                            color: 'yellow',
-                            weight: 10,
-                            opacity: 0.8
-                        })
+                        
+                        var Polyline = L.polyline.antPath(data.path, {
+                            color: 'yellow'
+                        }).addTo(lfmap);
+                        // var polyline = L.polyline(data.path, {
+                        //     color: 'yellow',
+                        //     weight: 10,
+                        //     opacity: 0.8
+                        // })
                         polyline.addTo(lfmap);
 
                         document.getElementById("toggleBSTT").addEventListener("change", function() {

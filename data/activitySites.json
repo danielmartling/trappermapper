@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Samarbetsgläntan",
+        "trailStart": [60.2540866, 18.6991648],
+        "startNote": "Följ stigen förbi 10-dasset!",
+        "location": [60.25438, 18.70026],
+        "locationNote": "Aktiviteten är här.",
+        "path": [
+            [60.2540866,18.6991648],
+            [60.25438,18.70026]
+        ],
+        "circleradius": 50
+    },
+    {
+        "name": "Hinderbanan",
+        "trailStart": [60.2538010, 18.6904753],
+        "startNote": "Följ stigen från vägen efter TC!",
+        "location": [ 60.2543310, 18.6897274],
+        "locationNote": "Aktiviteten är här.",
+        "path": [
+            [60.2538010, 18.6904753],
+            [60.2539087, 18.6904733],
+            [60.2540231, 18.6903419],
+            [60.2540637, 18.6902252]
+        ],
+        "circleradius": 50
+    }
+]
