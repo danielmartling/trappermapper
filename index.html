@@ -115,7 +115,7 @@
 
         <!-- Hollyrosa -->
         <div class="hollyrosa" id="hollyrosa">
-            <img src="hollyrosa.png" alt="Hollyrosa" style="height: 40px;" />
+            <img src="img/hollyrosa.png" alt="Hollyrosa" style="width: 40px;" />
         </div>
 
         <script>
@@ -153,7 +153,7 @@
                 
                 // Hämta kartikoner för lägerbålsplatser -->
                 var campfiresiteMarkers = [];
-                fetch('campfiresites.json')
+                fetch('data/campfiresites.json')
                 .then(response => response.json())
                 .then(locations => {
                     locations.forEach(function(location) {
@@ -175,7 +175,7 @@
                     });
                 })
 
-                fetch('activitySites.json')
+                fetch('data/activitySites.json')
                 .then(response => response.json())
                 .then(data => {
                     data.forEach(function(data) {
@@ -204,7 +204,7 @@
 
                 // Skapa stig
                 var startMarker, endMarker, polylinem, endCircle
-                fetch('bstt.json')
+                fetch('data/bstt.json')
                 .then(response => response.json())
                 .then(data => {
                     if (data.trailinfo && data.start && data.end && data.path) {
