@@ -140,9 +140,13 @@
                 })
 
                 // Lägg till OSM-lager -->
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.<br>This site is open source. You can help <a href="https://github.com/danielmartling/leaflet-webmap">improve it</a>.',
+                // }).addTo(lfmap);
+                L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.<br>This site is open source. You can help <a href="https://github.com/danielmartling/leaflet-webmap">improve it</a>.',
                 }).addTo(lfmap);
+
 
                 
                 // Lager med orienteringskarta
@@ -180,20 +184,20 @@
                 .then(activityData => {
                     activityData.forEach(function(activityData) {
                         var startMarker = L.marker(activityData.trailStart).addTo(lfmap);;
-                        // startMarker.bindPopup(activityData.startNote)
-                        // var locationMarker = L.circle(activityData.location, {
-                        //     color: 'red',
-                        //     fillColor: '#f03',
-                        //     fillOpacity: 0.5,
-                        //     radius: 50
-                        // });
-                        // locationMarker.bindPopup("<b>"+activityData.name+"</b>");
-                        // locationMarker.addTo(lfmap);
+                        startMarker.bindPopup(activityData.startNote)
+                        var locationMarker = L.circle(activityData.location, {
+                            color: 'yellow',
+                            fillColor: '#ff0',
+                            fillOpacity: 0.2,
+                            radius: activityData.circleradius
+                        });
+                        locationMarker.bindPopup("<b>"+activityData.name+"</b>");
+                        locationMarker.addTo(lfmap);
 
-                        // var locationPath = L.polyline.antPath(activityData.path, {
-                        //     color: 'yellow',
-                        // })
-                        // locationPath.addTo(lfmap);
+                        var locationPath = L.polyline.antPath(activityData.path, {
+                            color: 'yellow',
+                        })
+                        locationPath.addTo(lfmap);
                     })
                 })
 
@@ -222,7 +226,7 @@
                         endCircle.addTo(lfmap);
                         
                         var Polyline = L.polyline.antPath(data.path, {
-                            color: 'yellow'
+                            color: 'red'
                         }).addTo(lfmap);
                         // var polyline = L.polyline(data.path, {
                         //     color: 'yellow',
