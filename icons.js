@@ -14,7 +14,7 @@ var icons = {
     }),
     campfireRingIcon: new L.Icon({
         iconUrl: 'icons/firering.png',
-        iconSize:     [40,40],
+        iconSize:     [50,50],
         iconAnchor:   [20, 20], 
         popupAnchor:  [0,-20]
     }),

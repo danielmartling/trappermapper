@@ -89,27 +89,32 @@
                     const data = await response.json();
 
                     data.forEach(place => {
-                        const marker = L.marker([place.lat, place.lng], {
-                            title: place.name
+                        var marker = L.marker([place.lat, place.lng], {
+                            title: place.name,
+                            icon: getIcon(place.type),
                         }).addTo(lfmap);
-                        marker.bindPopup("<b>" + place.name + "</b>");
+                        marker.bindPopup("<b>" + place.name + "</b><br>" + place.description);
                     });
+                    return data;
                 } catch (error) {
                     console.error("Error fetching data: ", error);
                 }
             }
 
-            var scoutData = await fetchData();
+            var scoutData;
+            fetchData().then(data => {
+                scoutData = data;
+            });
 
             var campfiresCheckbox = document.getElementById("campfires");
 
-            function updateMarkers() {
-                scoutData.places.forEach(place => {
-                    const { type, marker } = place;
-                    const showMarker = 
-                        (type === 'camp')
-                }
-            }
+            // function updateMarkers() {
+            //     scoutData.places.forEach(place => {
+            //         const { type, marker } = place;
+            //         const showMarker = 
+            //             (type === 'camp')
+            //     }
+            // }
 
 
         </script>
