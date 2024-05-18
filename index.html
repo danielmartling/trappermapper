@@ -67,16 +67,17 @@
             var sat = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.jpg', {
                 attribution: '&copy; CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             });
+            /*
             var ort = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.<br>This site is open source. You can help <a href="https://github.com/danielmartling/leaflet-webmap">improve it</a>.',
             });
-
+            */
             // Skapar kartan med restriktioner på zoom -->
             var lfmap = L.map('map', {
                 center: [60.25542, 18.69360],
                 zoom: 14,
                 minZoom: 13,
-                layers: [osmHot, sat, ort]
+                layers: [osmHot, sat]
             });
 
             // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
@@ -90,7 +91,6 @@
 
             // Definer hur varje layer ska visas.
             var baseMaps = {
-                "Orientering": ort,
                 "Satelit": sat,
                 "Utforska": osmHot
             };
