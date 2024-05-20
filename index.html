@@ -4,6 +4,7 @@
         <title>Vässarökarta</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+        <link rel="stylesheet" href="style.css" />
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
         <script src="icons.js"></script>
@@ -12,33 +13,6 @@
 
         <!--stulet från https://leafletjs.com/examples/mobile/example.html--> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <style> 
-            body {
-                height: 100%;
-                margin: 0;
-            }
-            #map {
-                height: 100vh; 
-            }
-            #top-bar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px;
-                background-color: #cc0;
-                color: white;
-                height: 40px;
-            }
-            #filter-menu {
-                display: none;
-                position: absolute;
-                top: 50px;
-                right: 10px;
-                background-color: white;
-                border: 1px solid #cc0;
-                padding: 10px;
-            }
-        </style>
     </head>
     <body>
         <div id="top-bar">
