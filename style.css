@@ -1,10 +1,10 @@
 body {
-    height: 100%;
+    height: 100vh;
     margin: 0;
 }
 #map {
     height: 100vh;
-    z-index: -1;
+    z-index: 0;
 }
 #top-bar {
     display: flex;
@@ -17,10 +17,10 @@ body {
 }
 .sidenav {
     height: 0;
-    width: 10%;
+    width: 50%;
     position: fixed;
     z-index: 2;
-    top: 0;
+    top: 40;
     right: 0;
     background-color: #cc0;
     color: #fff;

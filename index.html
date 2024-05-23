@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Vässarökarta</title>
+        <title>Programkarta</title>
+        <link rel="icon" type="image/x-icon" href="img/hollyrosa.png">
         <meta charset="utf-8" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <link rel="stylesheet" href="style.css" />
@@ -19,22 +20,28 @@
             <img src="img/vassarologo.png" alt="Vässarös logga" style="height: 40px;">
             <h1>Programkarta</h1>
             <!-- Knapp för att öppna menyn, "&#9776;" blir en meny symbol (3 korvar, typ som Ericssons logga)-->
-            <a><span class="menuopener" onclick="openNav()">Menu &#9776;</span></a>
-            <!--<button id="filter-button"><img src="icons/filter.png" style="height: 40px";></button>-->
+            <a><span class="menuopener" onclick="openNav()">&#9776;</span></a>
+            <!-- <button id="filter-button"><img src="icons/filter.png" style="height: 40px";></button> -->
         </div>
 
         <!-- Innehållet i menyn -->
-        <div id="mySidenav" class="sidenav">
-            <!-- Knapp för att stänga menyn, "&times;" blir ett kryss-->
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <input type="checkbox" id="campfires" checked> Lägerbålsplatser<br>
-            <input type="checkbox" id="programtrails" checked> Programspår<br>
-            <input type="checkbox" id="programsites" checked> Programaktiviteter<br>
-            <input type="checkbox" id="locations" checked> Platser<br>
-            <input type="checkbox" id="assemblies" checked> Mötesplatser<br>
-            <button id="toggle-all">Visa/dölj alla</button>
+        <div id="filterMenu" class="sidenav">
+            <div id="top-bar">
+                <img src="icons/filter.png" style="height: 30px;">
+                <h2>Välj filter</h2>
+                <!-- Knapp för att stänga menyn, "&times;" blir ett kryss-->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><h2>&times</h2></a>
+            </div>
+            <button id="toggleAllCheckboxex">Visa/dölj alla</button><br>
+            <br>
+            <input type="checkbox" id="campfiresCheckbox" checked> Lägerbålsplatser<br>
+            
+            <!--<input type="checkbox" id="trailsCheckbox" checked> Programspår<br>-->
+            <!--<input type="checkbox" id="sitesCheckbox" checked> Programaktiviteter<br>-->
+            <!--<input type="checkbox" id="locationsCheckbox" checked> Platser<br>-->
+            <!--<input type="checkbox" id="assembliesCheckbox" checked> Mötesplatser<br>-->
+            
         </div>
-        <div id="sidenav2"></div>
 
         <div id="map"></div>
 
@@ -42,23 +49,21 @@
 
             // Öppnar sidomeny
             function openNav() {
-                document.getElementById("mySidenav").style.height = "100%";
-                document.getElementById("sidenav2").style.height = "100%";
-                //document.getElementById("mySidenav").style.paddingTop = "60px";
+                document.getElementById("filterMenu").style.height = "100%";
+                document.getElementById("filterMenu").style.padding = "20px";
             };
             // Stänger sidomeny
             function closeNav() {
-                document.getElementById("mySidenav").style.height = "0";
-                document.getElementById("sidenav2").style.height = "0";
-                document.getElementById("mySidenav").style.paddingTop = "0";
+                document.getElementById("filterMenu").style.height = "0";
+                document.getElementById("filterMenu").style.padding = "0px";
             };
 
             // Layer dvs, bakgrunder.
             var osmHot = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.<br>This site is open source. You can help <a href="https://github.com/danielmartling/leaflet-webmap">improve it</a>.',
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</a>.',
             });
             var sat = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.jpg', {
-                attribution: '&copy; CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                attribution: '&copy; CNES, Distribution Airbus DS, &copy Airbus DS, &copy PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             });
             
             // Skapar kartan med restriktioner på zoom -->
@@ -75,13 +80,13 @@
             var bounds = L.latLngBounds(southWest, northEast);
             lfmap.setMaxBounds(bounds);
             lfmap.on('drag', function() {
-                lfmap.panInsideBounds(bounds, {animate: true});
+                lfmap.panInsideBounds(bounds, {animate: false});
             });
 
             // Definer hur varje layer ska visas.
             var baseMaps = {
-                "Satelit": sat,
-                "Utforska": osmHot
+                "Satellit": sat,
+                "OpenStreetMap": osmHot,
             };
 
             // Layercontrol samlar basemaps och lager för att få det att kopplas.
@@ -97,7 +102,7 @@
                     data.forEach(place => {
                         var marker = L.marker([place.lat, place.lng], {
                             title: place.name,
-                            icon: getIcon(place.type),
+                            //icon: getIcon(place.type),
                         }).addTo(lfmap);
                         marker.bindPopup("<b>" + place.name + "</b><br>" + place.description);
                     });
