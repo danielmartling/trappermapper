@@ -65,6 +65,10 @@
             var sat = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.jpg', {
                 attribution: '&copy; CNES, Distribution Airbus DS, &copy Airbus DS, &copy PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
             });
+
+            var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+            });
             
             // Skapar kartan med restriktioner på zoom -->
             var lfmap = L.map('map', {
@@ -85,7 +89,8 @@
 
             // Definer hur varje layer ska visas.
             var baseMaps = {
-                "Satellit": sat,
+                //"Satellit": sat,
+                "Satellit": Esri_WorldImagery,
                 "OpenStreetMap": osmHot,
             };
 
