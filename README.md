@@ -6,4 +6,4 @@ Graphical material comes from Vässarö scout centre and John Rehn.
 
 
 
-https://danielmartling.github.io/leaflet-webmap/
+https://danielmartling.github.io/trappermapper/
