@@ -96,7 +96,27 @@
 
             // Layercontrol samlar basemaps och lager för att få det att kopplas.
             var layerControl = L.control.layers(baseMaps).addTo(lfmap);
+            
+            // Hitta och markera var men är
+            lfmap.locate({setView: true, maxZoom: 16});
 
+            function onLocationFound(e) {
+                var radius = e.accuracy;
+
+                L.marker(e.latlng).addTo(lfmap)
+                    .bindPopup("You are within " + radius + " meters from this point").openPopup();
+
+                L.circle(e.latlng, radius).addTo(lfmap);
+            };
+
+            lfmap.on('locationfound', onLocationFound);
+
+            // Skickar fel meddelanden ifall plats inte hittas.
+            function onLocationError(e) {
+                alert(e.message);
+            };
+
+            map.on('locationerror', onLocationError);
 
             // Placerar 'campfiresites' på kartan.
             async function fetchData() {
@@ -114,8 +134,8 @@
                     return data;
                 } catch (error) {
                     console.error("Error fetching data: ", error);
-                }
-            }
+                };
+            };
 
             var scoutData;
             fetchData().then(data => {
