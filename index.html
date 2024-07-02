@@ -33,7 +33,7 @@
                 <img src="icons/filter.png" style="height: 30px;">
                 <h2>Välj filter</h2>
                 <!-- Knapp för att stänga menyn, "&times;" blir ett kryss-->
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><h2>&times</h2></a>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><h2>&times;</h2></a>
             </div>
             <button id="toggleAllCheckboxex">Visa/dölj alla</button><br>
             <br>
@@ -63,10 +63,10 @@
 
             // Layer dvs, bakgrunder.
             var osmHot = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</a>.',
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</a>.'
             });
             var sat = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.jpg', {
-                attribution: '&copy; CNES, Distribution Airbus DS, &copy Airbus DS, &copy PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                attribution: '&copy; CNES, Distribution Airbus DS, &copy Airbus DS, &copy PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             });
 
             var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -94,7 +94,7 @@
             var baseMaps = {
                 //"Satellit": sat,
                 "Satellit": Esri_WorldImagery,
-                "OpenStreetMap": osmHot,
+                "OpenStreetMap": osmHot
             };
 
             // Layercontrol samlar basemaps och lager för att få det att kopplas.
@@ -117,7 +117,7 @@
 
                     data.forEach(place => {
                         var marker = L.marker([place.lat, place.lng], {
-                            title: place.name,
+                            title: place.name
                             //icon: getIcon(place.type),
                         }).addTo(lfmap);
                         marker.bindPopup("<b>" + place.name + "</b><br>" + place.description);
