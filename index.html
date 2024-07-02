@@ -12,6 +12,9 @@
 
         <script src="https://unpkg.com/leaflet-ant-path/dist/leaflet-ant-path.js"></script>
 
+        <link rel="stylesheet" href="leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css" />
+        <script src="leaflet-locatecontrol-gh-pages\dist\L.Control.Locate.min.js" charset="utf-8"></script>
+
         <!--stulet från https://leafletjs.com/examples/mobile/example.html--> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     </head>
@@ -97,26 +100,17 @@
             // Layercontrol samlar basemaps och lager för att få det att kopplas.
             var layerControl = L.control.layers(baseMaps).addTo(lfmap);
             
-            // Hitta och markera var men är
-            lfmap.locate({setView: true, maxZoom: 16});
+            // Inställningar och aktivering av lokaliserings funktion
+            var lc = L.control
+            .locate({
+                position: "topleft",
+                strings: {
+                title: "Visar din nuvarande posistion!"
+                }
+            })
+            .addTo(lfmap);
 
-            function onLocationFound(e) {
-                var radius = e.accuracy;
-
-                L.marker(e.latlng).addTo(lfmap)
-                    .bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-                L.circle(e.latlng, radius).addTo(lfmap);
-            };
-
-            lfmap.on('locationfound', onLocationFound);
-
-            // Skickar fel meddelanden ifall plats inte hittas.
-            function onLocationError(e) {
-                alert(e.message);
-            };
-
-            lfmap.on('locationerror', onLocationError);
+            // https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
 
             // Placerar 'campfiresites' på kartan.
             async function fetchData() {
