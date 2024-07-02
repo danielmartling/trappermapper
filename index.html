@@ -23,7 +23,7 @@
             <img src="img/vassarologo.png" alt="Vässarös logga" style="height: 40px;">
             <h1>Programkarta</h1>
             <!-- Knapp för att öppna menyn, "&#9776;" blir en meny symbol (3 korvar, typ som Ericssons logga)-->
-            <a><span class="menuopener" onclick="openNav()">&#9776;</span></a>
+            <a><span id="menubtn" class="menuopener" onclick="openNav()">&#9776;</span></a>
             <!-- <button id="filter-button"><img src="icons/filter.png" style="height: 40px";></button> -->
         </div>
 
@@ -54,11 +54,13 @@
             function openNav() {
                 document.getElementById("filterMenu").style.height = "100%";
                 document.getElementById("filterMenu").style.padding = "20px";
+                document.getElementById("menubtn").onclick = closeNav;
             };
             // Stänger sidomeny
             function closeNav() {
                 document.getElementById("filterMenu").style.height = "0";
                 document.getElementById("filterMenu").style.padding = "0px";
+                document.getElementById("menubtn").onclick = openNav;
             };
 
             // Layer dvs, bakgrunder.
