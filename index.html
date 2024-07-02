@@ -100,17 +100,14 @@
             // Layercontrol samlar basemaps och lager för att få det att kopplas.
             var layerControl = L.control.layers(baseMaps).addTo(lfmap);
             
-            // Inställningar och aktivering av lokaliserings funktion
+            // Inställningar och aktivering av lokaliserings funktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
             var lc = L.control
             .locate({
                 position: "topleft",
                 strings: {
                 title: "Visar din nuvarande posistion!"
                 }
-            })
-            .addTo(lfmap);
-
-            // https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
+            }).addTo(lfmap);
 
             // Placerar 'campfiresites' på kartan.
             async function fetchData() {
