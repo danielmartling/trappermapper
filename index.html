@@ -80,7 +80,7 @@
                 center: [60.25542, 18.69360],
                 zoom: 14,
                 minZoom: 13,
-                layers: [osmHot, Esri_WorldImagery]
+                layers: [osmHot],
             });
 
             // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
@@ -94,7 +94,6 @@
 
             // Definer hur varje layer ska visas.
             var baseMaps = {
-                //"Satellit": sat,
                 "Satellit": Esri_WorldImagery,
                 "OpenStreetMap": osmHot
             };
