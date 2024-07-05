@@ -1,7 +1,7 @@
-# leaflet-webmap
+# trappermapper
 
 
 
 
 
-https://danielmartling.github.io/leaflet-webmap/
+https://danielmartling.github.io/trappermapper/
