@@ -6,15 +6,18 @@
         <meta charset="utf-8" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" hfref="src/leaflet.groupedlayercontrol.min.css">
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
         <script src="icons.js"></script>
+        <script src="sidemenu.js"></script>
+        <script src="maplayers.js"></script>
 
         <script src="https://unpkg.com/leaflet-ant-path/dist/leaflet-ant-path.js"></script>
 
         <link rel="stylesheet" href="leaflet-locatecontrol-gh-pages/dist/L.Control.Locate.min.css" />
         <script src="leaflet-locatecontrol-gh-pages\dist\L.Control.Locate.min.js" charset="utf-8"></script>
-
+        <script src="src/leaflet.groupedlayercontrol.min.js"></script>
         <!--stulet från https://leafletjs.com/examples/mobile/example.html--> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     </head>
@@ -28,53 +31,29 @@
         </div>
 
         <!-- Innehållet i menyn -->
-        <div id="filterMenu" class="sidenav">
+        <!-- <div id="filterMenu" class="sidenav">
             <div id="top-bar">
                 <img src="icons/filter.png" style="height: 30px;">
                 <h2>Välj filter</h2>
             </div>
             <button id="toggleAllCheckboxex">Visa/dölj alla</button><br>
             <br>
-            <input type="checkbox" id="campfiresCheckbox" checked> Lägerbålsplatser<br>
-            
+            <input type="checkbox" id="campfiresCheckbox" checked> Lägerbålsplatser<br
             <!--<input type="checkbox" id="trailsCheckbox" checked> Programspår<br>-->
             <!--<input type="checkbox" id="sitesCheckbox" checked> Programaktiviteter<br>-->
             <!--<input type="checkbox" id="locationsCheckbox" checked> Platser<br>-->
             <!--<input type="checkbox" id="assembliesCheckbox" checked> Mötesplatser<br>-->
-            
-        </div>
+        <!--</div> -->
 
         <div id="map"></div>
 
         <script>
-
-            // Öppnar sidomeny
-            function openNav() {
-                document.getElementById("filterMenu").style.height = "100%";
-                document.getElementById("filterMenu").style.padding = "20px";
-                document.getElementById("menubtn").onclick = closeNav;
-            };
-            // Stänger sidomeny
-            function closeNav() {
-                document.getElementById("filterMenu").style.height = "0";
-                document.getElementById("filterMenu").style.padding = "0px";
-                document.getElementById("menubtn").onclick = openNav;
-            };
-
-            // Layer dvs, bakgrunder.
-            var osmHot = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</a>.'
-            });
-            var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-            });
-            
             // Skapar kartan med restriktioner på zoom -->
             var lfmap = L.map('map', {
                 center: [60.25542, 18.69360],
                 zoom: 14,
                 minZoom: 13,
-                layers: [osmHot],
+                layers: [MapLayers.Basemaps.OpenStreetMap],
             });
 
             // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
@@ -85,15 +64,6 @@
             lfmap.on('drag', function() {
                 lfmap.panInsideBounds(bounds, {animate: false});
             });
-
-            // Definer hur varje layer ska visas.
-            var baseMaps = {
-                "Satellit": Esri_WorldImagery,
-                "OpenStreetMap": osmHot
-            };
-
-            // Layercontrol samlar basemaps och lager för att få det att kopplas.
-            var layerControl = L.control.layers(baseMaps).addTo(lfmap);
             
             // Inställningar och aktivering av lokaliserings funktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
             var lc = L.control
@@ -104,41 +74,24 @@
                 }
             }).addTo(lfmap);
 
-            // Placerar 'campfiresites' på kartan.
-            async function fetchData() {
-                try {
-                    const response = await fetch("data/campfiresites.json");
-                    const data = await response.json();
-
-                    data.forEach(place => {
-                        var marker = L.marker([place.lat, place.lng], {
-                            title: place.name
-                            //icon: getIcon(place.type),
-                        }).addTo(lfmap);
-                        marker.bindPopup("<b>" + place.name + "</b><br>" + place.description);
-                    });
-                    return data;
-                } catch (error) {
-                    console.error("Error fetching data: ", error);
-                };
+            var groupedOverlays = {
+                "Lägerbålsplatser": {
+                    "Stockringar": MapLayers.LayerGroups.campfirering,
+                    "Klipphällar": MapLayers.LayerGroups.campfirerock,
+                    "Plats med tak": MapLayers.LayerGroups.firehouse,
+                    "Andra": MapLayers.LayerGroups.campfireother,
+                },
+                "Vindskydd": {
+                    "Med eldstad": MapLayers.LayerGroups.windshelterfire,
+                    "Utan eldstad": MapLayers.LayerGroups.windshelter,
+                }
             };
 
-            var scoutData;
-            fetchData().then(data => {
-                scoutData = data;
-            });
+            var options = {
+                groupCheckboxes: true
+            };
 
-            var campfiresCheckbox = document.getElementById("campfires");
-
-            // function updateMarkers() {
-            //     scoutData.places.forEach(place => {
-            //         const { type, marker } = place;
-            //         const showMarker = 
-            //             (type === 'camp')
-            //     }
-            // }
-
-
+            L.control.groupedLayers(MapLayers.Basemaps, groupedOverlays, options).addTo(lfmap);
         </script>
     </body>
 </html>

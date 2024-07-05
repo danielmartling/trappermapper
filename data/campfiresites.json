@@ -4,7 +4,7 @@
     "lng": 18.68454,
     "name": "Rötis",
     "description": "Mytologisk plats.",
-    "type": "Other"
+    "type": "campfireother"
   },
   {
     "lat": 60.25213,
@@ -74,7 +74,7 @@
     "lng": 18.68400,
     "name": "Rötis/Betongbryggan",
     "description": "Sliten ring (ej komplett) med eldstad.",
-    "type": "övrigt"
+    "type": "campfireother"
   },
   {
     "lat": 60.25888,
@@ -137,7 +137,7 @@
     "lng": 18.69084,
     "name": "Norra Ängen",
     "description": "Stockring under uppbyggnad. Saknar stockar just nu.",
-    "type": "WIP"
+    "type": "campfireother"
   },
   {
     "lat": 60.26332,
