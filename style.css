@@ -1,6 +1,8 @@
 body {
-    height: 100vh;
+    height: 99vh;
     margin: 0;
+    padding: 0;
+    background-color: rgb(64, 54, 63);
 }
 #map {
     height: calc(100% - 40px - 10px - 10px);
@@ -17,8 +19,9 @@ body {
     border-style: solid; 
     border-color: black;
     border-width: 2.5px;
+    background-color: white;
 }
-.sidenav {
+.settingsNav {
     height: 0;
     width: 20%;
     position: fixed;
@@ -36,7 +39,7 @@ body {
     border-bottom-style: none;
     border-color: black;
 }
-.sidenav a {
+.settingsNav a {
     /*padding: 8px 8px 8px 30px;*/
     padding-left: 10px;
     text-decoration: none;
@@ -45,7 +48,7 @@ body {
     display: block;
     transition: 0.3s;
 }
-.sidenav a:hover {
+.settingsNav a:hover {
     color: #afa5a5;
 }
 .menuopener {
@@ -60,16 +63,4 @@ body {
 .menuopener:hover {
     color: rgba(255, 255, 255, 0.404);
     scale: 97%;
-}
-#sidenav2 {
-    height: 0;
-    width: 100%;
-    position: fixed;
-    z-index: 0;
-    top: 0;
-    left: 0;
-    background-color: #e62323;
-    opacity: 25%;
-    overflow-x: hidden;
-    transition: 0.5s;
 }
