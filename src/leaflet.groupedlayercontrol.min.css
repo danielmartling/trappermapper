@@ -7,8 +7,4 @@
 }.leaflet-control-layers-scrollbar{
     overflow-y:scroll;
     padding-right:10px
-}.leaflet-control-layers-toggle {
-	background-image: url(../icons/_OLD/filter.png);
-	width: 36px;
-	height: 36px;
-	}
+}
