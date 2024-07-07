@@ -58,8 +58,15 @@
   {
     "lat": 60.25828,
     "lng": 18.68827,
+    "name": "Båthusringen",
+    "description": "Stockring utomhus, Ivar-grillar, i anslutning till Båthuset",
+    "type": "campfirering"
+  },
+  {
+    "lat": 60.25833,
+    "lng": 18.68807,
     "name": "Båthuset",
-    "description": "Stockring utomhus, Ivar-grillar, samt kamin i huset.",
+    "description": "Mysig samlingslokal med bar, bord, bänkar, TV, högtalaranläggning, samt kamin i huset. Lägerbålsring och spisar precis utomhus.",
     "type": "firehouse"
   },
   {

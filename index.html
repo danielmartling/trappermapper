@@ -19,7 +19,7 @@
         <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
         <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
         <script src="src/leaflet.groupedlayercontrol.min.js"></script>
-        
+
         <!--stulet från https://leafletjs.com/examples/mobile/example.html--> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     </head>
@@ -80,12 +80,17 @@
                 "Lägerbålsplatser": {
                     "Stockringar": MapLayers.LayerGroups.campfirering,
                     "Klipphällar": MapLayers.LayerGroups.campfirerock,
-                    "Plats med tak": MapLayers.LayerGroups.firehouse,
+                    "Eldstad med tak": MapLayers.LayerGroups.firehouse,
                     "Andra": MapLayers.LayerGroups.campfireother,
                 },
                 "Vindskydd": {
                     "Med eldstad": MapLayers.LayerGroups.windshelterfire,
                     "Utan eldstad": MapLayers.LayerGroups.windshelter,
+                },
+                "Programaktiviteter": {
+                    "Samarbetsgläntan": MapLayers.LayerGroups.coopsite,
+                    "Hinderbanan": MapLayers.LayerGroups.obstaclecourse,
+                    "Blood, sweat, tears and teamwork": MapLayers.LayerGroups.bstt,
                 }
             };
 

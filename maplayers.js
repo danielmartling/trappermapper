@@ -14,31 +14,21 @@ var groups = {
     campfireother: new L.LayerGroup(),
     windshelterfire: new L.LayerGroup(),
     windshelter: new L.LayerGroup(),
+    coopsite: new L.LayerGroup(),
+    obstaclecourse: new L.LayerGroup(),
+    bstt: new L.LayerGroup()
 };
 
-function getGroup(type) {
-    if (type === "campfirering") {
-        return groups.campfirering;
-    } else if (type === "windshelterfire") {
-        return groups.windshelterfire;
-    } else if (type === "campfirerock") {
-        return groups.campfirerock;
-    } else if (type === "firehouse") { 
-        return groups.firehouse;
-    } else if (type === "windshelter") {
-        return groups.windshelter;
-    } else {
-        return groups.campfireother;
-    }  
-};
 
-var scoutData;
-            fetchData().then(data => {
-                scoutData = data;
-            });
+
+var campfireData;
+fetchCampfireSites().then(data => {
+    campfireData = data;
+    }
+);
 
 // Placerar 'campfiresites' på kartan.
-async function fetchData() {
+async function fetchCampfireSites() {
     try {
         const response = await fetch("data/campfiresites.json");
         const data = await response.json();
@@ -46,8 +36,8 @@ async function fetchData() {
         data.forEach(place => {
             var marker = L.marker([place.lat, place.lng], {
                 title: place.name,
-                icon: getIcon(place.type)
-            }).addTo(getGroup(place.type));
+                icon: eval("icons." + place.type + "Icon"),
+            }).addTo(eval("groups." + place.type));
             marker.bindPopup("<b>" + place.name + "</b><br>" + place.description);
         });
         return data;
@@ -56,7 +46,40 @@ async function fetchData() {
     };
 };
 
-  window.MapLayers = {
+var activityData;
+fetchActivitySites().then(data => {
+    activityData = data;
+    }
+);
+
+async function fetchActivitySites() {
+    try {
+        const response = await fetch("data/activitySites.json");
+        const data = await response.json();
+
+        data.forEach(place => {
+            var pathStartMarker = L.marker([place.pathStart.lat, place.pathStart.lng], {
+                title: place.activityName,
+                icon: icons.startIcon
+            }).addTo(eval("groups." + place.activityGroup));
+            pathStartMarker.bindPopup("<b>" + place.activityName + "</b><br>" + place.pathStart.pathStartDescription);
+            var pathEndMarker = L.marker([place.pathEnd.lat, place.pathEnd.lng], {
+                title: place.activityName,
+                icon: icons.tempIcon
+            }).addTo(eval("groups." + place.activityGroup));
+            pathEndMarker.bindPopup("<b>" + place.activityName + "</b><br>" + place.pathEnd.pathEndDescription);
+            var path = L.polyline.antPath(place.paths.path, {
+                color: 'red'
+            }).addTo(eval("groups." + place.activityGroup));
+        });
+        return data;
+    } catch (error) {
+        console.error("Error fetching data: ", error);
+    };
+};
+
+
+window.MapLayers = {
     LayerGroups: groups,
     Basemaps: basemaps,
 }
