@@ -64,3 +64,8 @@ body {
     color: rgba(255, 255, 255, 0.404);
     scale: 97%;
 }
+.leaflet-control-layers-toggle {
+	background-image: url(icons/_OLD/filter.png);
+	width: 36px;
+	height: 36px;
+	}
