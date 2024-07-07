@@ -27,25 +27,15 @@
         <div id="top-bar" class="topbar">
             <img src="img/vassarologo.png" alt="Vässarös logga" style="height: 40px;">
             <h1>Programkarta</h1>
-            <!-- Knapp för att öppna menyn, "&#9776;" blir en meny symbol (3 korvar, typ som Ericssons logga)-->
             <a><span id="menubtn" class="menuopener" onclick="openNav()">&#9776;</span></a>
-            <!-- <button id="filter-button"><img src="icons/filter.png" style="height: 40px";></button> -->
         </div>
 
         <!-- Innehållet i menyn -->
-        <!-- <div id="filterMenu" class="sidenav">
+        <div id="settings" class="settingsNav">
             <div id="top-bar">
-                <img src="icons/filter.png" style="height: 30px;">
-                <h2>Välj filter</h2>
+                <h2>De du</h2>
             </div>
-            <button id="toggleAllCheckboxex">Visa/dölj alla</button><br>
-            <br>
-            <input type="checkbox" id="campfiresCheckbox" checked> Lägerbålsplatser<br
-            <!--<input type="checkbox" id="trailsCheckbox" checked> Programspår<br>-->
-            <!--<input type="checkbox" id="sitesCheckbox" checked> Programaktiviteter<br>-->
-            <!--<input type="checkbox" id="locationsCheckbox" checked> Platser<br>-->
-            <!--<input type="checkbox" id="assembliesCheckbox" checked> Mötesplatser<br>-->
-        <!--</div> -->
+        </div>
 
         <div id="map"></div>
 
@@ -76,6 +66,7 @@
                 }
             }).addTo(lfmap);
 
+            // Lägger till markeringar i overlay menyn för on/off toggle.
             var groupedOverlays = {
                 "Lägerbålsplatser": {
                     "Stockringar": MapLayers.LayerGroups.campfirering,
