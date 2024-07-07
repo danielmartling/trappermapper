@@ -65,5 +65,7 @@ body {
     scale: 97%;
 }
 .leaflet-top.leaflet-right .leaflet-control-layers:nth-child(3) .leaflet-control-layers-toggle {
-    background-image: "icons/filter.svg"
+    background-image: url("icons/filter.svg");
+    width: 36px;
+    height: 36px;
 }
