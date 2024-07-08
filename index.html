@@ -90,6 +90,27 @@
             };
 
             L.control.groupedLayers(MapLayers.Basemaps, groupedOverlays, options).addTo(lfmap);
+
+            L.Control.Watermark = L.Control.extend({
+                onAdd: function(map) {
+                    var img = L.DomUtil.create('img');
+
+                    img.src = 'img/hollyrosa.png';
+                    img.style.height = '100px';
+
+                    return img;
+                },
+
+                onRemove: function(map) {
+                    // Nothing to do here
+                }
+            });
+
+            L.control.watermark = function(opts) {
+                return new L.Control.Watermark(opts);
+            }
+
+            L.control.watermark({ position: 'bottomleft' }).addTo(lfmap);
         </script>
     </body>
 </html>

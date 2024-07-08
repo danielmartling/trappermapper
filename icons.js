@@ -39,14 +39,20 @@ var icons = {
     startIcon: new L.Icon({
         iconUrl: 'icons/flagStart.svg',
         iconSize: [60, 60],
-        iconAnchor: [30, 60],
-        popupAnchor: [0, -20]
+        iconAnchor: [15, 50],
+        popupAnchor: [0, -30]
     }),
     finishIcon: new L.Icon({
         iconUrl: 'icons/flagFinish.svg',
         iconSize: [40, 40],
         iconAnchor: [20, -40],
         popupAnchor: [0, -20]
+    }),
+    activityIcon: new L.Icon({
+        iconUrl: 'icons/flagHollyrosa.svg',
+        iconSize: [60, 60],
+        iconAnchor: [15, 50],
+        popupAnchor: [0, -30]
     }),
     tempIcon: new L.icon({
         iconUrl: 'icons/flagTemp.svg',
