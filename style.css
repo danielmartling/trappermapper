@@ -68,3 +68,6 @@ body {
 .leaflet-control-layers-toggle {
 	background-image: url(icons/filter.svg);
 }
+.leaflet-retina .leaflet-control-layers-toggle {
+	background-image: url(icons/filter.svg);
+	}
