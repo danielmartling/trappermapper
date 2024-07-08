@@ -1,72 +1,57 @@
 // icons.js
 var icons = {
-    fireHouseIcon: new L.Icon({
-        iconUrl: 'icons/firehouse.png',
+    firehouseIcon: new L.Icon({
+        iconUrl: 'icons/firehouse.svg',
         iconSize:     [40,40],
         iconAnchor:   [20, 40], 
         popupAnchor:  [0,-20]
     }),
     windshelterIcon: new L.Icon({
-        iconUrl: 'icons/windshelter.png',
+        iconUrl: 'icons/windshelter.svg',
         iconSize:     [40,40],
         iconAnchor:   [20, 20], 
         popupAnchor:  [0,-20]
     }),
-    campfireRingIcon: new L.Icon({
-        iconUrl: 'icons/firering.png',
-        iconSize:     [40,40],
+    campfireringIcon: new L.Icon({
+        iconUrl: 'icons/campfirering.svg',
+        iconSize:     [50,50],
         iconAnchor:   [20, 20], 
         popupAnchor:  [0,-20]
     }),
-    windshelterFireIcon: new L.Icon({
-        iconUrl: 'icons/firewindshelter.png',
+    windshelterfireIcon: new L.Icon({
+        iconUrl: 'icons/windshelterfire.svg',
         iconSize: [40, 40],
         iconAnchor: [20, 20],
         popupAnchor: [0, -20]
     }),
-    defaultFireIcon: new L.Icon({
-        iconUrl: 'icons/fire1.png',
+    campfirerockIcon: new L.Icon({
+        iconUrl: 'icons/fire1.svg',
         iconSize: [40, 40],
         iconAnchor: [20, 20],
         popupAnchor: [0, -20]
     }),
-    campfireRockIcon: new L.Icon({
-        iconUrl: 'icons/fire1.png',
-        iconSize: [40, 40],
-        iconAnchor: [20, 20],
-        popupAnchor: [0, -20]
-    }),
-    otherIcon: new L.Icon({
-        iconUrl: 'icons/other.png',
+    campfireotherIcon: new L.Icon({
+        iconUrl: 'icons/otherPin.svg',
         iconSize: [40, 40],
         iconAnchor: [20, 20],
         popupAnchor: [0, -20]
     }),
     startIcon: new L.Icon({
-        iconUrl: 'icons/start.png',
-        iconSize: [40, 40],
-        iconAnchor: [20, 20],
+        iconUrl: 'icons/flagStart.svg',
+        iconSize: [60, 60],
+        iconAnchor: [30, 60],
         popupAnchor: [0, -20]
     }),
     finishIcon: new L.Icon({
-        iconUrl: 'icons/finish.png',
+        iconUrl: 'icons/flagFinish.svg',
         iconSize: [40, 40],
-        iconAnchor: [20, 20],
+        iconAnchor: [20, -40],
         popupAnchor: [0, -20]
     }),
+    tempIcon: new L.icon({
+        iconUrl: 'icons/flagTemp.svg',
+        iconSize: [60, 60],
+        iconAnchor: [0, 30],
+        popupAnchor: [0, -20]
+    })
 };
-function getIcon(type) {
-    if (type === "campfirering") {
-        return icons.campfireRingIcon;
-    } else if (type === "windshelterfire") {
-        return icons.windshelterFireIcon;
-    } else if (type === "campfirerock") {
-        return icons.campfireRockIcon;
-    } else if (type === "firehouse") {
-        return icons.fireHouseIcon;
-    } else if (type === "windshelter") {
-        return icons.windshelterIcon;
-    } else {
-        return icons.otherIcon;
-    }  
-}
