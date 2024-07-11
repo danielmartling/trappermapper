@@ -60,7 +60,7 @@ async function fetchActivitySites() {
         
 
         data.forEach(place => {
-            var grouplabel = lfmap;//"groups." + place.activityGroup;
+            var grouplabel = "groups." + place.activityGroup;
 
             if (place.pathStart) {
                 var pathStartMarker = L.marker([place.pathStart.lat, place.pathStart.lng], {

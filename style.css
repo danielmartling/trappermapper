@@ -85,8 +85,10 @@ html, body, #map {
 /* Changes the groupcontrollayer button icon */
 .leaflet-control-layers-toggle {
 	background-image: url(icons/filter.svg);
+    z-index: 10;
 }
 .leaflet-retina .leaflet-control-layers-toggle {
 	background-image: url(icons/filter.svg);
 	background-size: 60px 60px;
+    z-index: 10;
 	}
