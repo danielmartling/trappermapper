@@ -1,12 +1,30 @@
 body {
-    height: 100vh;
+    /* height: 100%; */
     margin: 0;
     padding: 0;
-    background-color: rgb(64, 54, 63);
+    /* background-color: rgb(64, 54, 63); */
 }
-#map {
-    height: calc(100% - 40px - 10px - 10px - 4px);
+html, body, #map {
+    /* height: calc(100% - 40px - 10px - 10px); */
+    height: 100%;
+    width: 100vw;
     z-index: 0;
+}
+.hollyrosa {
+    top: 10px;
+    left: calc(50vw - 100px);
+    margin-left: auto;
+    margin-right: auto;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid;
+    z-index: 1;
+    align-items: center;
+    width: 200px;
+    padding: 10px;
+    position: absolute;
+    /* margin: 0 auto; */
+    height: 30px;
 }
 .topbar {
     display: flex;
@@ -70,5 +88,5 @@ body {
 }
 .leaflet-retina .leaflet-control-layers-toggle {
 	background-image: url(icons/filter.svg);
-	background-size: 40px 40px;
+	background-size: 60px 60px;
 	}

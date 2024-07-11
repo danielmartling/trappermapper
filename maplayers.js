@@ -57,12 +57,16 @@ async function fetchActivitySites() {
         const response = await fetch("data/activitySites.json");
         const data = await response.json();
 
+        
+
         data.forEach(place => {
+            var grouplabel = lfmap;//"groups." + place.activityGroup;
+
             if (place.pathStart) {
                 var pathStartMarker = L.marker([place.pathStart.lat, place.pathStart.lng], {
                     title: place.activityName,
                     icon: icons.startIcon
-                }).addTo(eval("groups." + place.activityGroup));
+                }).addTo(eval(grouplabel));
                 pathStartMarker.bindPopup("<b>" + place.activityName + "</b><br>" + place.pathStart.pathStartDescription);
             }
 
@@ -70,7 +74,7 @@ async function fetchActivitySites() {
                 var pathEndMarker = L.marker([place.pathEnd.lat, place.pathEnd.lng], {
                     title: place.activityName,
                     icon: icons.activityIcon
-                }).addTo(eval("groups." + place.activityGroup));
+                }).addTo(eval(grouplabel));
                 pathEndMarker.bindPopup("<b>" + place.activityName + "</b><br>" + place.pathEnd.pathEndDescription);    
             }
 
@@ -87,13 +91,13 @@ async function fetchActivitySites() {
                     "paused": false,
                     "reverse": false,
                     "hardwareAccelerated": true
-                }).addTo(eval("groups." + place.activityGroup));
+                }).addTo(eval(grouplabel));
             }
             
             if (place.activityMarker.circleRadius) {
                 var circle = L.circle([place.activityMarker.lat, place.activityMarker.lng], {
                     radius: place.activityMarker.circleRadius
-                }).addTo(eval("groups." + place.activityGroup));
+                }).addTo(eval(grouplabel));
             }
         });
         return data;
