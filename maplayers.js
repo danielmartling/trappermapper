@@ -58,29 +58,43 @@ async function fetchActivitySites() {
         const data = await response.json();
 
         data.forEach(place => {
-            var pathStartMarker = L.marker([place.pathStart.lat, place.pathStart.lng], {
-                title: place.activityName,
-                icon: icons.startIcon
-            }).addTo(eval("groups." + place.activityGroup));
-            pathStartMarker.bindPopup("<b>" + place.activityName + "</b><br>" + place.pathStart.pathStartDescription);
-            var pathEndMarker = L.marker([place.pathEnd.lat, place.pathEnd.lng], {
-                title: place.activityName,
-                icon: icons.activityIcon
-            }).addTo(eval("groups." + place.activityGroup));
-            pathEndMarker.bindPopup("<b>" + place.activityName + "</b><br>" + place.pathEnd.pathEndDescription);
-            var path = L.polyline.antPath(place.paths.path, {
-                color: 'yellow',
-                "delay": 400,
-                "dashArray": [
-                    100,
-                    100
-                ],
-                "weight": 5,
-                "pulseColor": "#FFFFFF",
-                "paused": false,
-                "reverse": false,
-                "hardwareAccelerated": true
-            }).addTo(eval("groups." + place.activityGroup));
+            if (place.pathStart) {
+                var pathStartMarker = L.marker([place.pathStart.lat, place.pathStart.lng], {
+                    title: place.activityName,
+                    icon: icons.startIcon
+                }).addTo(eval("groups." + place.activityGroup));
+                pathStartMarker.bindPopup("<b>" + place.activityName + "</b><br>" + place.pathStart.pathStartDescription);
+            }
+
+            if (place.pathEnd) {
+                var pathEndMarker = L.marker([place.pathEnd.lat, place.pathEnd.lng], {
+                    title: place.activityName,
+                    icon: icons.activityIcon
+                }).addTo(eval("groups." + place.activityGroup));
+                pathEndMarker.bindPopup("<b>" + place.activityName + "</b><br>" + place.pathEnd.pathEndDescription);    
+            }
+
+            if (place.paths) {
+                var path = L.polyline.antPath(place.paths.path, {
+                    color: 'yellow',
+                    "delay": 400,
+                    "dashArray": [
+                        100,
+                        100
+                    ],
+                    "weight": 5,
+                    "pulseColor": "#FFFFFF",
+                    "paused": false,
+                    "reverse": false,
+                    "hardwareAccelerated": true
+                }).addTo(eval("groups." + place.activityGroup));
+            }
+            
+            if (place.activityMarker.circleRadius) {
+                var circle = L.circle([place.activityMarker.lat, place.activityMarker.lng], {
+                    radius: place.activityMarker.circleRadius
+                }).addTo(eval("groups." + place.activityGroup));
+            }
         });
         return data;
     } catch (error) {

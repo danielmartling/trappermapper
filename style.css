@@ -1,11 +1,11 @@
 body {
-    height: 99vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
     background-color: rgb(64, 54, 63);
 }
 #map {
-    height: calc(100% - 40px - 10px - 10px);
+    height: calc(100% - 40px - 10px - 10px - 4px);
     z-index: 0;
 }
 .topbar {
@@ -70,5 +70,5 @@ body {
 }
 .leaflet-retina .leaflet-control-layers-toggle {
 	background-image: url(icons/filter.svg);
-	background-size: 36px 36px;
+	background-size: 40px 40px;
 	}

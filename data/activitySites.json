@@ -14,7 +14,8 @@
         },
         "activityMarker": {
             "lat": 60.25153,
-            "lng": 18.69573
+            "lng": 18.69573,
+            "circleRadius": []
         },
         "paths": {
             "path": [
@@ -40,6 +41,62 @@
                 [60.25153, 18.69573]
             ],
             "pathStartDescription": "Följ stigen bakom cirkus!",
+            "pathEndDescription": "Aktiviteten är här."
+        }
+    },
+    {
+        "activityName": "Samarbetsgläntan",
+        "activityGroup": "coopsite",
+        "pathStart": {
+            "lat": 60.2540866,
+            "lng": 18.6991648,
+            "pathStartDescription": "Följ stigen förbi 10-dasset!"
+        },
+        "pathEnd": {
+            "lat": 60.25438,
+            "lng": 18.70026,
+            "pathEndDescription": "Aktiviteten är här."
+        },
+        "activityMarker": {
+            "lat": 60.25438,
+            "lng": 18.70026,
+            "circleRadius": 50
+        },
+        "paths": {
+            "path": [
+                [60.2540866,18.6991648],
+                [60.25438,18.70026]
+            ],
+            "pathStartDescription": "Följ stigen förbi 10-dasset!",
+            "pathEndDescription": "Aktiviteten är här."
+        }
+    },
+    {
+        "activityName": "Hinderbanan",
+        "activityGroup": "obstaclecourse",
+        "pathStart": {
+            "lat": 60.2538010,
+            "lng": 18.6904753,
+            "pathStartDescription": "Följ stigen från vägen efter TC!"
+        },
+        "pathEnd": {
+            "lat": 60.2543310,
+            "lng": 18.6897274,
+            "pathEndDescription": "Aktiviteten är här."
+        },
+        "activityMarker": {
+            "lat": 60.2543310,
+            "lng": 18.6897274,
+            "circleRadius": 50
+        },
+        "paths": {
+            "path": [
+                [60.2538010, 18.6904753],
+                [60.2539087, 18.6904733],
+                [60.2540231, 18.6903419],
+                [60.2540637, 18.6902252]
+            ],
+            "pathStartDescription": "Följ stigen från vägen efter TC!",
             "pathEndDescription": "Aktiviteten är här."
         }
     }
