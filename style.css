@@ -12,19 +12,22 @@ html, body, #map {
 }
 .hollyrosa {
     top: 10px;
-    left: calc(50vw - 100px);
+    left: 50px;
     margin-left: auto;
     margin-right: auto;
     background: white;
     border-radius: 5px;
     border: 1px solid;
     z-index: 1;
+    vertical-align: middle;
     align-items: center;
     width: 200px;
     padding: 10px;
     position: absolute;
     /* margin: 0 auto; */
     height: 30px;
+    text-align: center;
+    line-height: 30px; 
 }
 .topbar {
     display: flex;
@@ -85,10 +88,10 @@ html, body, #map {
 /* Changes the groupcontrollayer button icon */
 .leaflet-control-layers-toggle {
 	background-image: url(icons/filter.svg);
-    z-index: 10;
+    z-index: 1000;
 }
 .leaflet-retina .leaflet-control-layers-toggle {
 	background-image: url(icons/filter.svg);
 	background-size: 60px 60px;
-    z-index: 10;
+    z-index: 1000;
 	}
