@@ -19,15 +19,16 @@ html, body, #map {
     border-radius: 5px;
     border: 1px solid;
     z-index: 1;
-    vertical-align: middle;
-    align-items: center;
+    /* vertical-align: middle; */
+    /* align-items: center; */
     width: 200px;
     padding: 10px;
     position: absolute;
     /* margin: 0 auto; */
-    height: 30px;
+    height: 40px;
     text-align: center;
     line-height: 30px; 
+    text-align: center;
 }
 .topbar {
     display: flex;
@@ -92,6 +93,6 @@ html, body, #map {
 }
 .leaflet-retina .leaflet-control-layers-toggle {
 	background-image: url(icons/filter.svg);
-	background-size: 60px 60px;
+	background-size: 48px 48px;
     z-index: 1000;
 	}
