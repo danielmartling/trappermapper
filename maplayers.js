@@ -16,10 +16,10 @@ var groups = {
     windshelter: new L.LayerGroup(),
     coopsite: new L.LayerGroup(),
     obstaclecourse: new L.LayerGroup(),
-    bstt: new L.LayerGroup()
+    bstt: new L.LayerGroup(),
+    vassarorunt: new L.LayerGroup(),
+    trapper: new L.LayerGroup(),
 };
-
-
 
 var campfireData;
 fetchCampfireSites().then(data => {
@@ -105,6 +105,53 @@ async function fetchActivitySites() {
         console.error("Error fetching data: ", error);
     };
 };
+
+fetch("data/trapper.geojson")
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            onEachFeature: function (feature, layer) {
+                if (feature.properties && feature.properties.title) {
+                    layer.bindPopup("<b>" + feature.properties.title + "</b>");
+                }
+            },
+            pointToLayer: function (feature, latlng) {
+                return L.marker(latlng, {
+                    icon: eval("icons." + feature.properties.icon),
+                });
+            },
+            style: function (feature) {
+                return {
+                    color: feature.properties.color || "blue",
+                    weight: 7,
+                    opacity: 1,
+                };
+            }
+        }).addTo(groups.trapper);
+    })
+    .catch(error => {
+        console.error('Error loading GeoJSON:', error);
+    });
+
+    fetch("data/vassarorunt.geojson")
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            onEachFeature: function (feature, layer) {
+                layer.bindPopup("<b>Vässarö runt</b><br>Vandringsspår runt hela ön. Cirka 7.5km långt. Stigen är markerad med orangea markörer och pilar.");
+            },
+            style: function (feature) {
+                return {
+                    color: "orange",
+                    weight: 7,
+                    opacity: 1,
+                };
+            }
+        }).addTo(groups.vassarorunt);
+    })
+    .catch(error => {
+        console.error('Error loading GeoJSON:', error);
+    });
 
 
 window.MapLayers = {

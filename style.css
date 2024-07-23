@@ -11,24 +11,14 @@ html, body, #map {
     z-index: 0;
 }
 .hollyrosa {
-    top: 10px;
-    left: 50px;
-    margin-left: auto;
-    margin-right: auto;
+    bottom: 10px;
+    left: 10px;
     background: white;
     border-radius: 5px;
     border: 1px solid;
     z-index: 1;
-    /* vertical-align: middle; */
-    /* align-items: center; */
-    width: 200px;
     padding: 10px;
     position: absolute;
-    /* margin: 0 auto; */
-    height: 40px;
-    text-align: center;
-    line-height: 30px; 
-    text-align: center;
 }
 .topbar {
     display: flex;

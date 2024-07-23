@@ -59,9 +59,9 @@ var icons = {
     }),
     finishIcon: new L.Icon({
         iconUrl: 'icons/flagFinish.svg',
-        iconSize: [40, 40],
-        iconAnchor: [20, -40],
-        popupAnchor: [0, -20]
+        iconSize: [60, 60],
+        iconAnchor: [15, 50],
+        popupAnchor: [0, -30]
     }),
     activityIcon: new L.Icon({
         iconUrl: 'icons/flagHollyrosa.svg',

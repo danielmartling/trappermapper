@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>Programkarta</title>
-        <link rel="icon" type="image/x-icon" href="img/hollyrosa.svg">
+        <link rel="icon" type="image/x-icon" href="img/hollyrosa.png">
         <meta charset="utf-8" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
         <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.min.css">
@@ -24,21 +24,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     </head>
     <body>
-        <!-- <div id="top-bar" class="topbar">
-            <img src="img/vassarologo.png" alt="Vässarös logga" style="height: 40px;">
-            <h1>Programkarta</h1>
-            <a><span id="menubtn" class="menuopener" onclick="openNav()">&#9776;</span></a>
-        </div> -->
-
-        <!-- Innehållet i menyn -->
-        <!-- <div id="settings" class="settingsNav">
-            <div id="top-bar">
-                <h2>De du</h2>
-            </div>
-        </div> -->
-
         <div id="hollyrosaruta" class="hollyrosa">
-            <center><img src="img/hollyrosa.svg" height="45px"> <b>Programkarta</b></center> 
+             <center><img src="img/vassaro_logga.jpg" alt="Vässarös logga" height="100px"> <img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" height="90px"><br><b>Vässarö<br>Programkarta</b></center> 
         </div>
 
         <div id="map"></div>
@@ -60,7 +47,7 @@
             lfmap.on('drag', function() {
                 lfmap.panInsideBounds(bounds, {animate: false});
             });
-            
+
             // Inställningar och aktivering av lokaliserings funktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
             var lc = L.control
             .locate({
@@ -83,9 +70,13 @@
                     "Utan eldstad": MapLayers.LayerGroups.windshelter,
                 },
                 "Programaktiviteter": {
+                    "Trapperspåret": MapLayers.LayerGroups.trapper,
                     "Samarbetsgläntan": MapLayers.LayerGroups.coopsite,
                     "Hinderbanan": MapLayers.LayerGroups.obstaclecourse,
                     "Blood, sweat, tears and teamwork": MapLayers.LayerGroups.bstt,
+                },
+                "Vandringsstigar": {
+                    "Vässarö runt": MapLayers.LayerGroups.vassarorunt,
                 }
             };
 
@@ -94,8 +85,6 @@
             };
 
             L.control.groupedLayers(MapLayers.Basemaps, groupedOverlays, options).addTo(lfmap);
-
-            
 
         </script>
     </body>
