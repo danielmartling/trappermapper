@@ -25,7 +25,7 @@
     </head>
     <body>
         <div id="hollyrosaruta" class="hollyrosa">
-            <center><img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" height="90px"><br><b>Vässarö<br>Program</b></center> 
+            <center><img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="40px"><br><small><b>Vässarö<br>Program</small></b></small></center> 
         </div>
 
         <div id="map"></div>
@@ -48,7 +48,7 @@
                 lfmap.panInsideBounds(bounds, {animate: false});
             });
 
-            // Inställningar och aktivering av lokaliserings funktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
+            // Inställningar och aktivering av lokaliseringsfunktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
             var lc = L.control
             .locate({
                 position: "topleft",
@@ -71,12 +71,20 @@
                 },
                 "Programaktiviteter": {
                     "Trapperspåret": MapLayers.LayerGroups.trapper,
+                    "Vildmarksspåret": MapLayers.LayerGroups.wildernesstrail,
                     "Samarbetsgläntan": MapLayers.LayerGroups.coopsite,
                     "Hinderbanan": MapLayers.LayerGroups.obstaclecourse,
                     "Blood, sweat, tears and teamwork": MapLayers.LayerGroups.bstt,
                 },
                 "Vandringsstigar": {
                     "Vässarö runt": MapLayers.LayerGroups.vassarorunt,
+                    "Naturnäran": MapLayers.LayerGroups.naturetrail,
+                    "Bunkerspåret": MapLayers.LayerGroups.bunkertrail,
+                    "Rosa spåret": MapLayers.LayerGroups.pinktrail,
+                    "Gula spåret": MapLayers.LayerGroups.yellowtrail,
+                },
+                "Fladan": {
+                    "Naturhamnar": MapLayers.LayerGroups.moorings,
                 }
             };
 

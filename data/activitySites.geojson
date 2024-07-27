@@ -1,0 +1,308 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "Blood, Sweat, Tears and Teamwork",
+                "desc": "Aktiviteten är här.",
+                "icon": "activityIcon",
+                "group": "bstt"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    18.69573,
+                    60.25153
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "Blood, Sweat, Tears and Teamwork",
+                "desc": "Följ stigen bakom cirkus!",
+                "icon": "startIcon",
+                "group": "bstt"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    18.69337,
+                    60.25350
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "Stig till BSTT",
+                "desc": "",
+                "color": "yellow",
+                "group": "bstt"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        18.69337,
+                        60.25350
+                    ],
+                    [
+                        18.69352,
+                        60.25345
+                    ],
+                    [
+                        18.6936423,
+                        60.2534016
+                    ],
+                    [
+                        18.6937201,
+                        60.2532499
+                    ],
+                    [
+                        18.6938730,
+                        60.2530689
+                    ],
+                    [
+                        18.6940768,
+                        60.2529971
+                    ],
+                    [
+                        18.6943477,
+                        60.2529279
+                    ],
+                    [
+                        18.6945194,
+                        60.2528760
+                    ],
+                    [
+                        18.6945972,
+                        60.2527615
+                    ],
+                    [
+                        18.6946562,
+                        60.2526644
+                    ],
+                    [
+                        18.6946508,
+                        60.2525912
+                    ],
+                    [
+                        18.6945543,
+                        60.2524980
+                    ],
+                    [
+                        18.6946642,
+                        60.2523010
+                    ],
+                    [
+                        18.6949298,
+                        60.2522105
+                    ],
+                    [
+                        18.6951417,
+                        60.2520854
+                    ],
+                    [
+                        18.6952355,
+                        60.2519923
+                    ],
+                    [
+                        18.6954233,
+                        60.2519111
+                    ],
+                    [
+                        18.6955091,
+                        60.2517807
+                    ],
+                    [
+                        18.6955923,
+                        60.2515983
+                    ],
+                    [
+                        18.69573,
+                        60.25153
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "",
+                "desc": "",
+                "stroke": "#555555",
+                "stroke-width": 2,
+                "stroke-opacity": 1,
+                "fill": "#555555",
+                "fill-opacity": 0.25,
+                "group": "bstt"
+            },
+            "geometry": {
+                "coordinates": [
+                    [
+                        [
+                            18.69590520082474,
+                            60.251588863719405
+                        ],
+                        [
+                            18.69534888525311,
+                            60.251599531913655
+                        ],
+                        [
+                            18.69464206884936,
+                            60.251520853898285
+                        ],
+                        [
+                            18.694816757313475,
+                            60.25136749790161
+                        ],
+                        [
+                            18.695504761113227,
+                            60.25136349730076
+                        ],
+                        [
+                            18.69609601437915,
+                            60.2511821362165
+                        ],
+                        [
+                            18.696682940745063,
+                            60.251159466010364
+                        ],
+                        [
+                            18.697037692704782,
+                            60.2513528290296
+                        ],
+                        [
+                            18.69643568937903,
+                            60.251502184511054
+                        ],
+                        [
+                            18.69590520082474,
+                            60.251588863719405
+                        ]
+                    ]
+                ],
+                "type": "Polygon"
+            },
+            "id": 2
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "Samarbetsgläntan",
+                "desc": "Aktiviteten är här.",
+                "icon": "activityIcon",
+                "group": "coopsite"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    18.70026,
+                    60.25438
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "Samarbetsgläntan",
+                "desc": "Följ stigen förbi 10-dasset!",
+                "icon": "startIcon",
+                "group": "coopsite"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    18.6991648,
+                    60.2540866
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "Stig till Samarbetsgläntan",
+                "desc": "",
+                "color": "yellow",
+                "group": "coopsite"
+            },
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [
+                        18.6991648,
+                        60.2540866
+                    ],
+                    [
+                        18.70026,
+                        60.25438
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+             "properties": {
+                 "title": "Hinderbanan",
+                 "desc": "Följ stigen från vägen efter TC!",
+                 "icon": "startIcon",
+                 "group": "obstaclecourse"
+             },
+             "geometry": {
+                 "type": "Point",
+                 "coordinates": [
+                     18.6904753,
+                     60.2538010
+                 ]
+             }
+         },
+         {
+            "type": "Feature",
+             "properties": {
+                 "title": "Hinderbanan",
+                 "desc": "Aktiviteten startar här.",
+                 "icon": "activityIcon",
+                 "group": "obstaclecourse"
+             },
+             "geometry": {
+                 "type": "Point",
+                 "coordinates": [
+                     18.6902252,
+                     60.2540637
+                 ]
+             }
+         },
+         {
+             "type": "Feature",
+             "properties": {
+                 "title": "Hinderbanan",
+                 "desc": "",
+                 "color": "yellow",
+                 "group": "obstaclecourse"
+             },
+             "geometry": {
+                 "type": "LineString",
+                 "coordinates": [
+                     [
+                         18.6904753,
+                         60.2538010
+                     ],
+                     [
+                         18.6904733,
+                         60.2539087
+                     ],
+                     [
+                         18.6903419,
+                         60.2540231
+                     ],
+                     [
+                         18.6902252,
+                         60.2540637
+                     ]
+                 ]                
+             }
+         }
+    ]
+}

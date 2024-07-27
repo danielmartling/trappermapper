@@ -1,0 +1,35 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "title": "Landstigningsplats Ljusklubben",
+          "desc": "Här kommer kanoter lätt iland.",
+          "color": "blue",
+          "group": "moorings"
+        },
+        "geometry": {
+          "coordinates": [
+            [
+              18.69742267011833,
+              60.26618482783138
+            ],
+            [
+              18.697744408930845,
+              60.26626658436754
+            ],
+            [
+              18.697365074898613,
+              60.26644684203191
+            ],
+            [
+              18.697176400903516,
+              60.266468512285485
+            ]
+          ],
+          "type": "LineString"
+        }
+      }
+    ]
+  }
