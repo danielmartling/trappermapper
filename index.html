@@ -14,8 +14,6 @@
         <script src="sidemenu.js"></script>
         <script src="maplayers.js"></script>
 
-        <script src="https://unpkg.com/leaflet-ant-path/dist/leaflet-ant-path.js"></script>
-
         <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
         <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
         <script src="src/leaflet.groupedlayercontrol.min.js"></script>
@@ -24,8 +22,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     </head>
     <body>
+
         <div id="hollyrosaruta" class="hollyrosa">
-            <center><img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="40px"><br><small><b>Vässarö<br>Program</small></b></small></center> 
+            <center>
+                <img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="40px"><br>
+                <small><b>Vässarö<br>Program</b></small>
+            </center> 
         </div>
 
         <div id="map"></div>
@@ -88,10 +90,12 @@
                 }
             };
 
+            // groupCheckboxes = Man kan markera alla objekt i samma grupp
             var options = {
                 groupCheckboxes: true
             };
 
+            // Lägg till lager och kontroller till kartan.
             L.control.groupedLayers(MapLayers.Basemaps, groupedOverlays, options).addTo(lfmap);
 
         </script>

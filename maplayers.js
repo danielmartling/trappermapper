@@ -35,6 +35,7 @@ var sources = [
     "data/campfireSites.geojson"
 ];
 
+// Hämta geoJSON-objekt från varje fil
 sources.forEach(source => {
     fetch(source)
     .then(response => response.json())
