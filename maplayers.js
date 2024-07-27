@@ -42,7 +42,7 @@ sources.forEach(source => {
     .then(data => {
         L.geoJSON(data, {
             onEachFeature: function (feature, layer) {
-                if (feature.geometry.type !== "Polygon") {
+                if (feature.properties.title) {
                     layer.bindPopup("<b>" + feature.properties.title + "</b><br>" + feature.properties.desc);
                 }
                 if (feature.properties.skip !== true) { // || true) { // för att visa andra stigar
