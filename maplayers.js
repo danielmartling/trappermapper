@@ -25,14 +25,24 @@ var groups = {
     bunkertrail: new L.LayerGroup(),
     moorings: new L.LayerGroup(),
     wildernesstrail: new L.LayerGroup(),
+    treetrail: new L.LayerGroup(),
+    pooptrail: new L.LayerGroup(),
+    knottrail: new L.LayerGroup(),
+    startrail: new L.LayerGroup(),
+    woodcrafttrail: new L.LayerGroup(),
+    naturegame: new L.LayerGroup(),
+    chargebox: new L.LayerGroup(),
+    bookablerooms: new L.LayerGroup()
 };
 
 var sources = [
     "data/trapper.geojson",
     "data/trails.geojson",
+    "data/trails2.geojson",
     "data/activitySites.geojson",
     "data/moorings.geojson",
-    "data/campfireSites.geojson"
+    "data/campfireSites.geojson",
+    "data/chargeboxes.geojson"
 ];
 
 // Hämta geoJSON-objekt från varje fil

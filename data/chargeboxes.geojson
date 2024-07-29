@@ -1,0 +1,50 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "title": "Laddlåda",
+          "desc": "Lillgårns norra gavel",
+          "group": "chargebox"
+        },
+        "geometry": {
+          "coordinates": [
+            18.693657183696615,
+            60.255480384559945
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "title": "Laddlåda",
+          "desc": "10-dasset",
+          "group": "chargebox"
+        },
+        "geometry": {
+          "coordinates": [
+            18.6992949954693,
+            60.254048348913756
+          ],
+          "type": "Point"
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "title": "Laddlåda",
+          "desc": "Mellanängarna",
+          "group": "chargebox"
+        },
+        "geometry": {
+          "coordinates": [
+            18.696003533552783,
+            60.25861497843567
+          ],
+          "type": "Point"
+        }
+      }
+    ]
+  }
