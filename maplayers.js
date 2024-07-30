@@ -32,13 +32,54 @@ var groups = {
     woodcrafttrail: new L.LayerGroup(),
     naturegame: new L.LayerGroup(),
     chargebox: new L.LayerGroup(),
-    bookablerooms: new L.LayerGroup()
+    bookablerooms: new L.LayerGroup(),
+    beachtrail: new L.LayerGroup(),
+};
+
+var groupedOverlays = {
+    "Lägerbålsplatser": {
+        "Stockringar": groups.campfirering,
+        "Klipphällar": groups.campfirerock,
+        "Eldstad med tak": groups.firehouse,
+        "Andra": groups.campfireother,
+    },
+    "Vindskydd": {
+        "Med eldstad": groups.windshelterfire,
+        "Utan eldstad": groups.windshelter,
+    },
+    "Programaktiviteter": {
+        "Trapperspåret": groups.trapper,
+        "Vildmarksspåret": groups.wildernesstrail,
+        "Samarbetsgläntan": groups.coopsite,
+        "Hinderbanan": groups.obstaclecourse,
+        "Blood, sweat, tears and teamwork": groups.bstt,
+        "Naturleken": groups.naturegame,
+        "Trädtränan": groups.treetrail,
+        "Ovan molnen": groups.startrail,
+        "Knopspåret": groups.knottrail,
+        "Träck track": groups.pooptrail,
+        "Woodcraftspåret": groups.woodcrafttrail,
+    },
+    "Vandringsstigar": {
+        "Vässarö runt": groups.vassarorunt,
+        "Naturnäran": groups.naturetrail,
+        "Berättelsen": groups.beachtrail,
+        "Bunkerspåret": groups.bunkertrail,
+        "Rosa spåret": groups.pinktrail,
+        "Gula spåret": groups.yellowtrail,
+    },
+    "Fladan": {
+        "Naturhamnar": groups.moorings,
+    },
+    "Annat": {
+        "Laddlådor": groups.chargebox,
+        "Lokaler": groups.bookablerooms,
+    }
 };
 
 var sources = [
     "data/trapper.geojson",
     "data/trails.geojson",
-    "data/trails2.geojson",
     "data/activitySites.geojson",
     "data/moorings.geojson",
     "data/campfireSites.geojson",
@@ -84,7 +125,14 @@ sources.forEach(source => {
     });
 })
 
+// groupCheckboxes = Man kan markera alla objekt i samma grupp
+var options = {
+    groupCheckboxes: true
+};
+
 window.MapLayers = {
     LayerGroups: groups,
     Basemaps: basemaps,
+    Overlays: groupedOverlays,
+    Options: options,
 }

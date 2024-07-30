@@ -38,13 +38,13 @@
         var lfmap = L.map('map', {
             center: [60.25542, 18.69360],
             zoom: 14,
-            minZoom: 13,
+            minZoom: 12,
             layers: [MapLayers.Basemaps.OpenStreetMap],
         });
 
         // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
-        var southWest = L.latLng(60.2425, 18.6438);
-        var northEast = L.latLng(60.2995, 18.7568);
+        var southWest = L.latLng(60.0, 18.5);
+        var northEast = L.latLng(60.4, 19.0);
         var bounds = L.latLngBounds(southWest, northEast);
         lfmap.setMaxBounds(bounds);
         lfmap.on('drag', function () {
@@ -60,56 +60,8 @@
                 }
             }).addTo(lfmap);
 
-        // Lägger till markeringar i overlay menyn för on/off toggle.
-        var groupedOverlays = {
-            "Lägerbålsplatser": {
-                "Stockringar": MapLayers.LayerGroups.campfirering,
-                "Klipphällar": MapLayers.LayerGroups.campfirerock,
-                "Eldstad med tak": MapLayers.LayerGroups.firehouse,
-                "Andra": MapLayers.LayerGroups.campfireother,
-            },
-            "Vindskydd": {
-                "Med eldstad": MapLayers.LayerGroups.windshelterfire,
-                "Utan eldstad": MapLayers.LayerGroups.windshelter,
-            },
-            "Programaktiviteter": {
-                "Trapperspåret": MapLayers.LayerGroups.trapper,
-                "Vildmarksspåret": MapLayers.LayerGroups.wildernesstrail,
-                "Samarbetsgläntan": MapLayers.LayerGroups.coopsite,
-                "Hinderbanan": MapLayers.LayerGroups.obstaclecourse,
-                "Blood, sweat, tears and teamwork": MapLayers.LayerGroups.bstt,
-                "Naturleken": MapLayers.LayerGroups.naturegame,
-                "Trädtränan": MapLayers.LayerGroups.treetrail,
-                "Ovan molnen": MapLayers.LayerGroups.startrail,
-                "Knopspåret": MapLayers.LayerGroups.knottrail,
-                "Träck track": MapLayers.LayerGroups.pooptrail,
-                "Woodcraftspåret": MapLayers.LayerGroups.woodcrafttrail,
-            },
-            "Vandringsstigar": {
-                "Vässarö runt": MapLayers.LayerGroups.vassarorunt,
-                "Naturnäran": MapLayers.LayerGroups.naturetrail,
-                "Bunkerspåret": MapLayers.LayerGroups.bunkertrail,
-                "Rosa spåret": MapLayers.LayerGroups.pinktrail,
-                "Gula spåret": MapLayers.LayerGroups.yellowtrail,
-            },
-            "Fladan": {
-                "Naturhamnar": MapLayers.LayerGroups.moorings,
-            },
-            "Annat": {
-                "Laddlådor": MapLayers.LayerGroups.chargebox,
-                "Lokaler": MapLayers.LayerGroups.bookablerooms,
-            }
-        };
- 
-
-        // groupCheckboxes = Man kan markera alla objekt i samma grupp
-        var options = {
-            groupCheckboxes: true
-        };
-
         // Lägg till lager och kontroller till kartan.
-        L.control.groupedLayers(MapLayers.Basemaps, groupedOverlays, options).addTo(lfmap);
-
+        L.control.groupedLayers(MapLayers.Basemaps, MapLayers.Overlays, MapLayers.Options).addTo(lfmap);
     </script>
 </body>
 

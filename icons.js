@@ -37,18 +37,15 @@ var icons = {
         shadowAnchor: [40,70]
     }),
     campfirerockIcon: new L.Icon({
-        iconUrl: 'icons/fire1.svg',
-        iconSize: [40, 40],
-        iconAnchor: [20, 60],
-        popupAnchor: [0, -20],
-        shadowUrl: 'icons/pinWhite.png',
-        shadowSize:   [80, 80],
-        shadowAnchor: [40, 70]
+        iconUrl: 'icons/newcampfire.png',
+        iconSize: [60,60],
+        iconAnchor: [30,60],
+        popupAnchor: [0,-60]
     }),
     campfireotherIcon: new L.Icon({
         iconUrl: 'icons/otherPin.svg',
         iconSize: [80, 80],
-        iconAnchor: [20, 20],
+        iconAnchor: [40, 80],
         popupAnchor: [0, -40]
     }),
     startIcon: new L.Icon({
