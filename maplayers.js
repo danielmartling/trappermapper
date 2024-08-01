@@ -1,3 +1,4 @@
+//Definera länkar till basemaps (grundkartor) OpenStreetMap & satellit
 var basemaps = {
     OpenStreetMap: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</a>.'
@@ -7,6 +8,7 @@ var basemaps = {
     })
 };
 
+//Definerar grupper
 var groups = {
     campfirering: new L.LayerGroup(),
     campfirerock: new L.LayerGroup(),
@@ -36,6 +38,7 @@ var groups = {
     beachtrail: new L.LayerGroup(),
 };
 
+//Grupperar och kategoriserar Overlays
 var groupedOverlays = {
     "Lägerbålsplatser": {
         "Stockringar": groups.campfirering,
@@ -77,6 +80,7 @@ var groupedOverlays = {
     }
 };
 
+//Skapa en lista med källor för geojson-data
 var sources = [
     "data/trapper.geojson",
     "data/trails.geojson",
@@ -130,6 +134,7 @@ var options = {
     groupCheckboxes: true
 };
 
+//Definera olika lager i applikationen
 window.MapLayers = {
     LayerGroups: groups,
     Basemaps: basemaps,
