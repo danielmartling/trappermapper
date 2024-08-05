@@ -1,3 +1,4 @@
+//Definera länkar till basemaps (grundkartor) OpenStreetMap & satellit
 var basemaps = {
     OpenStreetMap: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors.</a>.'
@@ -7,6 +8,7 @@ var basemaps = {
     })
 };
 
+//Definerar grupper
 var groups = {
     campfirering: new L.LayerGroup(),
     campfirerock: new L.LayerGroup(),
@@ -16,70 +18,129 @@ var groups = {
     windshelter: new L.LayerGroup(),
     coopsite: new L.LayerGroup(),
     obstaclecourse: new L.LayerGroup(),
-    bstt: new L.LayerGroup()
+    bstt: new L.LayerGroup(),
+    vassarorunt: new L.LayerGroup(),
+    naturetrail: new L.LayerGroup(),
+    trapper: new L.LayerGroup(),
+    yellowtrail: new L.LayerGroup(),
+    pinktrail: new L.LayerGroup(),
+    bunkertrail: new L.LayerGroup(),
+    moorings: new L.LayerGroup(),
+    wildernesstrail: new L.LayerGroup(),
+    treetrail: new L.LayerGroup(),
+    pooptrail: new L.LayerGroup(),
+    knottrail: new L.LayerGroup(),
+    startrail: new L.LayerGroup(),
+    woodcrafttrail: new L.LayerGroup(),
+    naturegame: new L.LayerGroup(),
+    chargebox: new L.LayerGroup(),
+    // bookablerooms: new L.LayerGroup(),
+    beachtrail: new L.LayerGroup(),
+    // areas: new L.LayerGroup(),
 };
 
-
-
-var campfireData;
-fetchCampfireSites().then(data => {
-    campfireData = data;
+//Grupperar och kategoriserar Overlays
+var groupedOverlays = {
+    "Lägerbålsplatser": {
+        "Stockringar": groups.campfirering,
+        "Klipphällar": groups.campfirerock,
+        "Eldstad med tak": groups.firehouse,
+        "Andra": groups.campfireother,
+    },
+    "Vindskydd": {
+        "Med eldstad": groups.windshelterfire,
+        "Utan eldstad": groups.windshelter,
+    },
+    "Programaktiviteter": {
+        "Trapperspåret": groups.trapper,
+        "Vildmarksspåret": groups.wildernesstrail,
+        "Samarbetsgläntan": groups.coopsite,
+        "Hinderbanan": groups.obstaclecourse,
+        "Blood, sweat, tears and teamwork": groups.bstt,
+        "Naturleken": groups.naturegame,
+        "Trädtränan": groups.treetrail,
+        "Ovan molnen": groups.startrail,
+        "Knopspåret": groups.knottrail,
+        "Träck track": groups.pooptrail,
+        "Woodcraftspåret": groups.woodcrafttrail,
+    },
+    "Vandringsstigar": {
+        "Vässarö runt": groups.vassarorunt,
+        "Naturnäran": groups.naturetrail,
+        "Berättelsen": groups.beachtrail,
+        "Bunkerspåret": groups.bunkertrail,
+        "Rosa spåret": groups.pinktrail,
+        "Gula spåret": groups.yellowtrail,
+    },
+    "Fladan": {
+        "Naturhamnar": groups.moorings,
+    },
+    "Annat": {
+        "Laddlådor": groups.chargebox,
+        // "Lokaler": groups.bookablerooms,
+        // "Områden": groups.areas,
     }
-);
-
-// Placerar 'campfiresites' på kartan.
-async function fetchCampfireSites() {
-    try {
-        const response = await fetch("data/campfiresites.json");
-        const data = await response.json();
-
-        data.forEach(place => {
-            var marker = L.marker([place.lat, place.lng], {
-                title: place.name,
-                icon: eval("icons." + place.type + "Icon"),
-            }).addTo(eval("groups." + place.type));
-            marker.bindPopup("<b>" + place.name + "</b><br>" + place.description);
-        });
-        return data;
-    } catch (error) {
-        console.error("Error fetching data: ", error);
-    };
 };
 
-var activityData;
-fetchActivitySites().then(data => {
-    activityData = data;
-    }
-);
+//Skapa en lista med källor för geojson-data
+var sources = [
+    "data/trapper.geojson",
+    "data/trails.geojson",
+    "data/activitySites.geojson",
+    "data/moorings.geojson",
+    "data/campfireSites.geojson",
+    "data/chargeboxes.geojson",
+    // "data/areas.geojson"
+];
 
-async function fetchActivitySites() {
-    try {
-        const response = await fetch("data/activitySites.json");
-        const data = await response.json();
-
-        data.forEach(place => {
-            var pathStartMarker = L.marker([place.pathStart.lat, place.pathStart.lng], {
-                title: place.activityName,
-                icon: icons.startIcon
-            }).addTo(eval("groups." + place.activityGroup));
-            pathStartMarker.bindPopup("<b>" + place.activityName + "</b><br>" + place.pathStart.pathStartDescription);
-            var pathEndMarker = L.marker([place.pathEnd.lat, place.pathEnd.lng], {
-                title: place.activityName,
-                icon: icons.tempIcon
-            }).addTo(eval("groups." + place.activityGroup));
-            pathEndMarker.bindPopup("<b>" + place.activityName + "</b><br>" + place.pathEnd.pathEndDescription);
-            var path = L.polyline.antPath(place.paths.path, {
-                color: 'red'
-            }).addTo(eval("groups." + place.activityGroup));
+// Hämta geoJSON-objekt från varje fil
+sources.forEach(source => {
+    fetch(source)
+    .then(response => response.json())
+    .then(data => {
+        L.geoJSON(data, {
+            onEachFeature: function (feature, layer) {
+                if (feature.properties.title) {
+                    layer.bindPopup("<b>" + feature.properties.title + "</b><br>" + feature.properties.desc);
+                }
+                if (feature.properties.skip !== true) { // || true) { // för att visa andra stigar
+                    eval("groups." + feature.properties.group).addLayer(layer);
+                }
+            },
+            pointToLayer: function (feature, latlng) {
+                if (feature.properties.icon) {
+                    thisMarker = L.marker(latlng, {
+                        icon: eval("icons." + feature.properties.icon),
+                    });
+                } else {
+                    thisMarker = L.marker(latlng, {
+                    });
+                }
+                return thisMarker;
+            },
+            style: function (feature) {
+                return {
+                    color: feature.properties.color,
+                    weight: 7,
+                    opacity: 1,
+                };
+            }
         });
-        return data;
-    } catch (error) {
-        console.error("Error fetching data: ", error);
-    };
+    })
+    .catch(error => {
+        console.error('Error loading GeoJSON:', error);
+    });
+})
+
+// groupCheckboxes = Man kan markera alla objekt i samma grupp
+var options = {
+    groupCheckboxes: true
 };
 
-
+// Fönster ut ur filen
 window.MapLayers = {
     LayerGroups: groups,
     Basemaps: basemaps,
+    Overlays: groupedOverlays,
+    Options: options,
 }

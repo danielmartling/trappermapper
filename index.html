@@ -1,95 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Programkarta</title>
-        <link rel="icon" type="image/x-icon" href="img/hollyrosa.png">
-        <meta charset="utf-8" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-        <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.min.css">
-        <link rel="stylesheet" href="style.css" />
-        
-        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-        <script src="icons.js"></script>
-        <script src="sidemenu.js"></script>
-        <script src="maplayers.js"></script>
+<head>
+    <title>Trappermapper </title>
+    <link rel="icon" type="image/x-icon" href="img/hollyrosa.png">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.min.css">
+    <link rel="stylesheet" href="style.css" />
 
-        <script src="https://unpkg.com/leaflet-ant-path/dist/leaflet-ant-path.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-        <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
-        <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
-        <script src="src/leaflet.groupedlayercontrol.min.js"></script>
+    <script src="icons.js"></script>
+    <script src="maplayers.js"></script>
 
-        <!--stulet från https://leafletjs.com/examples/mobile/example.html--> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    </head>
-    <body>
-        <div id="top-bar" class="topbar">
-            <img src="img/vassarologo.png" alt="Vässarös logga" style="height: 40px;">
-            <h1>Programkarta</h1>
-            <a><span id="menubtn" class="menuopener" onclick="openNav()">&#9776;</span></a>
-        </div>
+    <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
+    <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
+    <script src="src/leaflet.groupedlayercontrol.min.js"></script>
 
-        <!-- Innehållet i menyn -->
-        <div id="settings" class="settingsNav">
-            <div id="top-bar">
-                <h2>De du</h2>
-            </div>
-        </div>
+    <!--stulet från https://leafletjs.com/examples/mobile/example.html-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
 
-        <div id="map"></div>
+<body>
 
-        <script>
-            // Skapar kartan med restriktioner på zoom -->
-            var lfmap = L.map('map', {
-                center: [60.25542, 18.69360],
-                zoom: 14,
-                minZoom: 13,
-                layers: [MapLayers.Basemaps.OpenStreetMap],
-            });
+    <div id="hollyrosaruta" class="hollyrosa">
+        <center>
+            <img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="40px"><br>
+            <small><b>Vässarö<br>Program</b></small>
+        </center>
+    </div>
 
-            // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
-            var southWest = L.latLng(60.2425, 18.6438);
-            var northEast = L.latLng(60.2995, 18.7568); 
-            var bounds = L.latLngBounds(southWest, northEast);
-            lfmap.setMaxBounds(bounds);
-            lfmap.on('drag', function() {
-                lfmap.panInsideBounds(bounds, {animate: false});
-            });
-            
-            // Inställningar och aktivering av lokaliserings funktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
-            var lc = L.control
+    <div id="map"></div>
+
+    <script>
+        // Skapar kartan med restriktioner på zoom -->
+        var lfmap = L.map('map', {
+            center: [60.25542, 18.69360],
+            zoom: 14,
+            minZoom: 12,
+            layers: [MapLayers.Basemaps.OpenStreetMap],
+        });
+
+        // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
+        var southWest = L.latLng(60.0, 18.5);
+        var northEast = L.latLng(60.4, 19.0);
+        var bounds = L.latLngBounds(southWest, northEast);
+        lfmap.setMaxBounds(bounds);
+        lfmap.on('drag', function () {
+            lfmap.panInsideBounds(bounds, { animate: false });
+        });
+
+        // Inställningar och aktivering av lokaliseringsfunktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
+        var lc = L.control
             .locate({
                 position: "topleft",
                 strings: {
-                title: "Visar din nuvarande position!"
+                    title: "Visar din nuvarande position!"
                 }
             }).addTo(lfmap);
 
-            // Lägger till markeringar i overlay menyn för on/off toggle.
-            var groupedOverlays = {
-                "Lägerbålsplatser": {
-                    "Stockringar": MapLayers.LayerGroups.campfirering,
-                    "Klipphällar": MapLayers.LayerGroups.campfirerock,
-                    "Eldstad med tak": MapLayers.LayerGroups.firehouse,
-                    "Andra": MapLayers.LayerGroups.campfireother,
-                },
-                "Vindskydd": {
-                    "Med eldstad": MapLayers.LayerGroups.windshelterfire,
-                    "Utan eldstad": MapLayers.LayerGroups.windshelter,
-                },
-                "Programaktiviteter": {
-                    "Samarbetsgläntan": MapLayers.LayerGroups.coopsite,
-                    "Hinderbanan": MapLayers.LayerGroups.obstaclecourse,
-                    "Blood, sweat, tears and teamwork": MapLayers.LayerGroups.bstt,
-                }
-            };
+        // Lägg till lager och kontroller till kartan.
+        L.control.groupedLayers(MapLayers.Basemaps, MapLayers.Overlays, MapLayers.Options).addTo(lfmap);
+    </script>
+</body>
 
-            var options = {
-                groupCheckboxes: true
-            };
-
-            L.control.groupedLayers(MapLayers.Basemaps, groupedOverlays, options).addTo(lfmap);
-        </script>
-    </body>
 </html>
