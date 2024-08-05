@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
     <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
     <script src="src/leaflet.groupedlayercontrol.min.js"></script>
-
+    <script src="src/L.Control.Layers.Tree.js"></script>
+    <link rel="stylesheet" href="src/L.Control.Layers.Tree.css" />
     <!--stulet från https://leafletjs.com/examples/mobile/example.html-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
@@ -61,7 +62,8 @@
             }).addTo(lfmap);
 
         // Lägg till lager och kontroller till kartan.
-        L.control.groupedLayers(MapLayers.Basemaps, MapLayers.Overlays, MapLayers.Options).addTo(lfmap);
+        //L.control.groupedLayers(MapLayers.Basemaps, MapLayers.Overlays, MapLayers.Options).addTo(lfmap);
+        L.control.layers.tree(MapLayers.BaseTree, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
     </script>
 </body>
 
