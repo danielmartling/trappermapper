@@ -8,7 +8,4 @@ Graphical material comes from John Rehn, Vässarö scout centre and Scouterna.
 
 
 ## How to use
-
-Either:
-- Clone repo and open index.html in a web browser,
-- or go to https://danielmartling.github.io/trappermapper/.
+- Go to https://danielmartling.github.io/trappermapper/.
