@@ -32,8 +32,9 @@ var groups = {
     woodcrafttrail: new L.LayerGroup(),
     naturegame: new L.LayerGroup(),
     chargebox: new L.LayerGroup(),
-    bookablerooms: new L.LayerGroup(),
+    // bookablerooms: new L.LayerGroup(),
     beachtrail: new L.LayerGroup(),
+    // areas: new L.LayerGroup(),
 };
 
 var groupedOverlays = {
@@ -73,7 +74,8 @@ var groupedOverlays = {
     },
     "Annat": {
         "Laddlådor": groups.chargebox,
-        "Lokaler": groups.bookablerooms,
+        // "Lokaler": groups.bookablerooms,
+        // "Områden": groups.areas,
     }
 };
 
@@ -83,7 +85,8 @@ var sources = [
     "data/activitySites.geojson",
     "data/moorings.geojson",
     "data/campfireSites.geojson",
-    "data/chargeboxes.geojson"
+    "data/chargeboxes.geojson",
+    // "data/areas.geojson"
 ];
 
 // Hämta geoJSON-objekt från varje fil

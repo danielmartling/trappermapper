@@ -23,7 +23,7 @@
                 "title": "Blood, Sweat, Tears and Teamwork",
                 "desc": "Följ stigen bakom cirkus!",
                 "icon": "startIcon",
-                "groups": "bstt"
+                "group": "bstt"
             },
             "geometry": {
                 "type": "Point",
