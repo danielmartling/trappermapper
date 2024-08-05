@@ -1962,7 +1962,7 @@
         "title": "Woodcraftspåret",
         "desc": "Här börjar Woodcraftspåret! Spåret går genom skogen.",
         "icon": "activityIcon",
-        "group": "treetrail"
+        "group": "woodcrafttrail"
       },
       "geometry": {
         "coordinates": [
