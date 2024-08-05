@@ -137,7 +137,7 @@ var options = {
     groupCheckboxes: true
 };
 
-//Definera olika lager i applikationen
+// Fönster ut ur filen
 window.MapLayers = {
     LayerGroups: groups,
     Basemaps: basemaps,
