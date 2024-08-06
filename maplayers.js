@@ -176,8 +176,8 @@ var options = {
     spaceSymbol: " ",
     selectorBack: false,
     namedToggle: false,
-    // collapseAll: "Kollapsa alla",
-    // expandAll: "Expandera alla",
+    collapseAll: "Kollapsa alla",
+    expandAll: "Expandera alla",
     labelIsSelector: "both"
 };
 
