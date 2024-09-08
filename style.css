@@ -20,11 +20,11 @@ html, body, #map {
 
 /* Changes the groupcontrollayer button icon */
 .leaflet-control-layers-toggle {
-	background-image: url(icons/filter.svg);
+	background-image: url(mapIcons/filter.svg);
     z-index: 1000;
 }
 .leaflet-retina .leaflet-control-layers-toggle {
-	background-image: url(icons/filter.svg);
+	background-image: url(mapIcons/filter.svg);
 	background-size: 48px 48px;
     z-index: 1000;
 	}
