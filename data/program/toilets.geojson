@@ -4,7 +4,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Ekodassen"
+        "title": "Ekodassen",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -18,7 +20,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Matsalsdassen"
+        "title": "Matsalsdassen",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -32,7 +36,10 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Konfdassen"
+        "title": "Konfdassen",
+        "group": "toilets",
+        "icon": "toiletIcon"
+
       },
       "geometry": {
         "coordinates": [
@@ -46,7 +53,10 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Duschbyggets dass"
+        "title": "Duschbyggets dass",
+        "group": "toilets",
+        "icon": "toiletIcon"
+
       },
       "geometry": {
         "coordinates": [
@@ -60,7 +70,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Pelikandassen"
+        "title": "Pelikandassen",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -74,7 +86,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Skrakviksdassen"
+        "title": "Skrakviksdassen",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -88,7 +102,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Båthusdassen"
+        "title": "Båthusdassen",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -102,7 +118,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Bergshyllan"
+        "title": "Bergshyllan",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -116,7 +134,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Alphyddornas dass"
+        "title": "Alphyddornas dass",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -130,7 +150,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Antismuts"
+        "title": "Antismuts",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -144,7 +166,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Östra tiodassen"
+        "title": "Östra tiodassen",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -158,7 +182,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Östra dasset"
+        "title": "Östra dasset",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -172,7 +198,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Överängsdasset"
+        "title": "Överängsdasset",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -186,7 +214,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Fladankorset"
+        "title": "Fladankorset",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -200,7 +230,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Fladanvägen-dasset"
+        "title": "Fladanvägen-dasset",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -214,7 +246,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Krutdurken"
+        "title": "Krutdurken",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -228,7 +262,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Norra dasset"
+        "title": "Norra dasset",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -242,7 +278,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Djuphamns tiodass"
+        "title": "Djuphamns tiodass",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -256,7 +294,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Djuphamnsdasset"
+        "title": "Djuphamnsdasset",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -270,7 +310,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Programdasset"
+        "title": "Programdasset",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -284,7 +326,9 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Tunetdassen"
+        "title": "Tunetdassen",
+        "group": "toilets",
+        "icon": "toiletIcon"
       },
       "geometry": {
         "coordinates": [
@@ -294,6 +338,24 @@
         "type": "Point"
       },
       "id": 20
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Strömsvikens dass",
+        "desc": "Här finns det också dass!",
+        "group": "toilets",
+        "icon": "toiletIcon"
+      },
+      "geometry": {
+        "coordinates": [
+          18.726191307638317,
+          60.216314754495556
+        ],
+        "type": "Point"
+      },
+      "id": 21
+
     }
   ]
 }
