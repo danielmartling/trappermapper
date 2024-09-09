@@ -37,6 +37,7 @@ var groups = {
     // bookablerooms: new L.LayerGroup(),
     beachtrail: new L.LayerGroup(),
     // areas: new L.LayerGroup(),
+    // toilets: new L.LayerGroup(),
 };
 
 //Grupperar kartbakgrunder

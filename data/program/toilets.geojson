@@ -1,0 +1,299 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Ekodassen"
+      },
+      "geometry": {
+        "coordinates": [
+          18.692881400328105,
+          60.25518424932858
+        ],
+        "type": "Point"
+      },
+      "id": 0
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Matsalsdassen"
+      },
+      "geometry": {
+        "coordinates": [
+          18.692713647922545,
+          60.253504491431954
+        ],
+        "type": "Point"
+      },
+      "id": 1
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Konfdassen"
+      },
+      "geometry": {
+        "coordinates": [
+          18.694263920211654,
+          60.25378843485544
+        ],
+        "type": "Point"
+      },
+      "id": 2
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Duschbyggets dass"
+      },
+      "geometry": {
+        "coordinates": [
+          18.695515031606533,
+          60.25477736327028
+        ],
+        "type": "Point"
+      },
+      "id": 3
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Pelikandassen"
+      },
+      "geometry": {
+        "coordinates": [
+          18.6908379474732,
+          60.254053003091
+        ],
+        "type": "Point"
+      },
+      "id": 4
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Skrakviksdassen"
+      },
+      "geometry": {
+        "coordinates": [
+          18.69030181159249,
+          60.25607437834853
+        ],
+        "type": "Point"
+      },
+      "id": 5
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Båthusdassen"
+      },
+      "geometry": {
+        "coordinates": [
+          18.688141288306582,
+          60.25815602607278
+        ],
+        "type": "Point"
+      },
+      "id": 6
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Bergshyllan"
+      },
+      "geometry": {
+        "coordinates": [
+          18.69133558240057,
+          60.256313467910246
+        ],
+        "type": "Point"
+      },
+      "id": 7
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Alphyddornas dass"
+      },
+      "geometry": {
+        "coordinates": [
+          18.691986734325127,
+          60.25572436860551
+        ],
+        "type": "Point"
+      },
+      "id": 8
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Antismuts"
+      },
+      "geometry": {
+        "coordinates": [
+          18.694611061249816,
+          60.25558648089972
+        ],
+        "type": "Point"
+      },
+      "id": 9
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Östra tiodassen"
+      },
+      "geometry": {
+        "coordinates": [
+          18.699399404113052,
+          60.25407174186071
+        ],
+        "type": "Point"
+      },
+      "id": 10
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Östra dasset"
+      },
+      "geometry": {
+        "coordinates": [
+          18.701429790947998,
+          60.25162805111748
+        ],
+        "type": "Point"
+      },
+      "id": 11
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Överängsdasset"
+      },
+      "geometry": {
+        "coordinates": [
+          18.70144775937092,
+          60.250657447739314
+        ],
+        "type": "Point"
+      },
+      "id": 12
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Fladankorset"
+      },
+      "geometry": {
+        "coordinates": [
+          18.695064240670263,
+          60.25797936880386
+        ],
+        "type": "Point"
+      },
+      "id": 13
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Fladanvägen-dasset"
+      },
+      "geometry": {
+        "coordinates": [
+          18.695993649053293,
+          60.2593714262386
+        ],
+        "type": "Point"
+      },
+      "id": 14
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Krutdurken"
+      },
+      "geometry": {
+        "coordinates": [
+          18.69721048504539,
+          60.26105942263683
+        ],
+        "type": "Point"
+      },
+      "id": 15
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Norra dasset"
+      },
+      "geometry": {
+        "coordinates": [
+          18.69227723984423,
+          60.26292761661202
+        ],
+        "type": "Point"
+      },
+      "id": 16
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Djuphamns tiodass"
+      },
+      "geometry": {
+        "coordinates": [
+          18.691803059551205,
+          60.25889663849998
+        ],
+        "type": "Point"
+      },
+      "id": 17
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Djuphamnsdasset"
+      },
+      "geometry": {
+        "coordinates": [
+          18.690956325908076,
+          60.25943539263656
+        ],
+        "type": "Point"
+      },
+      "id": 18
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Programdasset"
+      },
+      "geometry": {
+        "coordinates": [
+          18.697772937576502,
+          60.25834938257745
+        ],
+        "type": "Point"
+      },
+      "id": 19
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Tunetdassen"
+      },
+      "geometry": {
+        "coordinates": [
+          18.693831988604217,
+          60.25580003072142
+        ],
+        "type": "Point"
+      },
+      "id": 20
+    }
+  ]
+}
