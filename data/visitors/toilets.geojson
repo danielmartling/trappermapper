@@ -139,24 +139,7 @@
       },
       "id": 7
     },
-    {
-      "type": "Feature",
-      "properties": {
-        "title": "Dass",
-        "desc": "Alphyddornas dass",
-        "group": "toilets",
-        "icon": "toiletIcon"
-      },
-      "geometry": {
-        "coordinates": [
-          18.691986734325127,
-          60.25572436860551
-        ],
-        "type": "Point"
-      },
-      "id": 8
-    },
-    {
+   {
       "type": "Feature",
       "properties": {
         "title":"Dass",
