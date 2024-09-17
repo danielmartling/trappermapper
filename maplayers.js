@@ -34,6 +34,8 @@ var groups = {
     woodcrafttrail: new L.LayerGroup(),
     naturegame: new L.LayerGroup(),
     chargebox: new L.LayerGroup(),
+    toilets: new L.LayerGroup(),
+    trashrooms: new L.LayerGroup(),
     // bookablerooms: new L.LayerGroup(),
     beachtrail: new L.LayerGroup(),
     // areas: new L.LayerGroup(),
@@ -111,6 +113,8 @@ var overlaysTree = {
             children: [
                 { label: "Naturhamnar", layer: groups.moorings },
                 { label: "Laddlådor", layer: groups.chargebox },
+		{ label: "Dass", layer: groups.toilets },
+		{ label: "Soprum", layer: groups.trashrooms },
 
             ]
             // "Lokaler": groups.bookablerooms,
@@ -127,6 +131,8 @@ var sources = [
     "data/moorings.geojson",
     "data/campfireSites.geojson",
     "data/chargeboxes.geojson",
+    "data/toilets.geojson",
+    "data/trashrooms.geojson",
     // "data/areas.geojson"
 ];
 
