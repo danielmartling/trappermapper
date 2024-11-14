@@ -6,7 +6,6 @@
     <link rel="icon" type="image/x-icon" href="img/hollyrosa.png">
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.min.css">
     <link rel="stylesheet" href="style.css" />
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -16,23 +15,42 @@
 
     <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
     <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
-    <script src="src/leaflet.groupedlayercontrol.min.js"></script>
     <script src="src/L.Control.Layers.Tree.js"></script>
     <link rel="stylesheet" href="src/L.Control.Layers.Tree.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <!--stulet från https://leafletjs.com/examples/mobile/example.html-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 
 <body>
 
-    <div id="hollyrosaruta" class="hollyrosa">
-        <center>
-            <img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="40px"><br>
-            <small><b>Vässarö<br>Program</b></small>
-        </center>
-    </div>
+     <div id="hollyrosaruta" class="hollyrosa" onclick="loginPopup.showModal()">
+         <center>
+             <img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="40px"><br>
+             <small><b>Vässarö<br>Program</b></small>
+         </center>
+     </div>
 
-    <div id="map"></div>
+     <!-- Öppnar en dialogruta med inloggningssidan när man klickar på HollyRosa-->
+     <dialog id="loginPopup">
+         <div class="login">
+		        <h1>Login</h1>
+		        <form action="authenticate.php" method="post">
+			        <label for="username">
+			            <i class="fas fa-user"></i>
+			        </label>
+			        <input type="text" name="username" placeholder="Användarnamn" id="username" required>
+			        <label for="password">
+                     <i class="fas fa-lock"></i>
+			        </label>
+			        <input type="password" name="password" placeholder="Lösenord" id="password" required>
+			        <input type="submit" value="Logga in">
+		        </form>
+         </div>
+         <button onclick="loginPopup.close()">Stäng</button>
+     </dialog>
+
+     <div id="map"></div>
 
     <script>
         // Skapar kartan med restriktioner på zoom -->
