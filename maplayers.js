@@ -39,6 +39,10 @@ var groups = {
     // bookablerooms: new L.LayerGroup(),
     beachtrail: new L.LayerGroup(),
     // areas: new L.LayerGroup(),
+    allorientering: new L.LayerGroup(),
+    centralorientering: new L.LayerGroup(),
+    fotoorientering: new L.LayerGroup(),
+    miniorientering: new L.LayerGroup(),
 };
 
 //Grupperar kartbakgrunder
@@ -85,6 +89,8 @@ var overlaysTree = {
                 { label: "Samarbetsgläntan", layer: groups.coopsite },
                 { label: "Hinderbanan", layer: groups.obstaclecourse },
                 { label: "Blood, sweat, tears and teamwork", layer: groups.bstt },
+                { label: "Naturnäran", layer: groups.naturetrail },
+                { label: "Bunkerspåret", layer: groups.bunkertrail },
                 { label: "Naturleken", layer: groups.naturegame },
                 { label: "Trädtränan", layer: groups.treetrail },
                 { label: "Ovan molnen", layer: groups.startrail },
@@ -99,11 +105,20 @@ var overlaysTree = {
             collapsed: true,
             children: [
                 { label: "Vässarö runt", layer: groups.vassarorunt },
-                { label: "Naturnäran", layer: groups.naturetrail },
                 { label: "Berättelsen", layer: groups.beachtrail },
-                { label: "Bunkerspåret", layer: groups.bunkertrail },
                 { label: "Rosa spåret", layer: groups.pinktrail },
                 { label: "Gula spåret", layer: groups.yellowtrail },
+            ]
+        },
+        {
+            label: "Orientering",
+            selectAllCheckbox: true,
+            collapsed: true,
+            children: [
+                { label: "Miniorienteringen", layer: groups.miniorientering },
+                { label: "Fotoorienteringen", layer: groups.fotoorientering },
+                { label: "Centrala ön", layer: groups.centralorientering },
+                { label: "Hela ön", layer: groups.allorientering },
             ]
         },
         {
@@ -113,12 +128,13 @@ var overlaysTree = {
             children: [
                 { label: "Naturhamnar", layer: groups.moorings },
                 { label: "Laddlådor", layer: groups.chargebox },
-		{ label: "Dass", layer: groups.toilets },
-		{ label: "Soprum", layer: groups.trashrooms },
+                { label: "Dass", layer: groups.toilets },
+                { label: "Soprum", layer: groups.trashrooms },
+                // { label: "Områden", layer: groups.areas }
 
             ]
             // "Lokaler": groups.bookablerooms,
-            // "Områden": groups.areas,
+            
         }
     ]
 }
@@ -133,7 +149,8 @@ var sources = [
     "data/chargeboxes.geojson",
     "data/toilets.geojson",
     "data/trashrooms.geojson",
-    // "data/areas.geojson"
+    // "data/areas.geojson",
+    "data/orientering.geojson",
 ];
 
 // Hämta geoJSON-objekt från varje fil
@@ -146,7 +163,7 @@ sources.forEach(source => {
                     if (feature.properties.title) {
                         layer.bindPopup("<b>" + feature.properties.title + "</b><br>" + feature.properties.desc);
                     }
-                    if (feature.properties.skip !== true) { // || true) { // för att visa andra stigar
+                    if (!feature.properties.skip) { // för att dölja vissa stigar
                         eval("groups." + feature.properties.group).addLayer(layer);
                     }
                 },
