@@ -39,6 +39,7 @@ var groups = {
     // bookablerooms: new L.LayerGroup(),
     beachtrail: new L.LayerGroup(),
     // areas: new L.LayerGroup(),
+    orientering: new L.LayerGroup(),
 };
 
 //Grupperar kartbakgrunder
@@ -112,9 +113,10 @@ var overlaysTree = {
             collapsed: false,
             children: [
                 { label: "Naturhamnar", layer: groups.moorings },
+                { label: "Orienteringskartor", layer: groups.orientering },
                 { label: "Laddlådor", layer: groups.chargebox },
-		{ label: "Dass", layer: groups.toilets },
-		{ label: "Soprum", layer: groups.trashrooms },
+                { label: "Dass", layer: groups.toilets },
+                { label: "Soprum", layer: groups.trashrooms },
 
             ]
             // "Lokaler": groups.bookablerooms,
@@ -133,7 +135,8 @@ var sources = [
     "data/chargeboxes.geojson",
     "data/toilets.geojson",
     "data/trashrooms.geojson",
-    // "data/areas.geojson"
+    // "data/areas.geojson",
+    "data/orientering.geojson",
 ];
 
 // Hämta geoJSON-objekt från varje fil

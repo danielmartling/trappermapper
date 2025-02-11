@@ -20,9 +20,9 @@ html, body, #map {
 }
 
 .leaflet-touch .leaflet-bar a {
-	width: 44px;
-	height: 44px;
-	line-height: 44px;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
 }
 
 .leaflet-control-zoom-in,
