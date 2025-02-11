@@ -49,7 +49,7 @@ var icons = {
         popupAnchor: [0, -30]
     }),
     activityIcon: new L.Icon({
-        iconUrl: 'icons/flagHollyrosa.svg',
+        iconUrl: 'icons/flagHollyrosa.png',
         iconSize: [60, 60],
         iconAnchor: [15, 50],
         popupAnchor: [0, -30]
