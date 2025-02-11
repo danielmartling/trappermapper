@@ -3,11 +3,14 @@
 
 <head>
     <title>Trappermapper </title>
-    <link rel="icon" type="image/x-icon" href="img/hollyrosa.png">
+    <link rel="icon" type="image/x-icon" href="img/hollyrosa-square.png">
     <meta charset="utf-8" />
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.min.css">
     <link rel="stylesheet" href="style.css" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
@@ -19,20 +22,57 @@
     <script src="src/leaflet.groupedlayercontrol.min.js"></script>
     <script src="src/L.Control.Layers.Tree.js"></script>
     <link rel="stylesheet" href="src/L.Control.Layers.Tree.css" />
+
+    <link rel="stylesheet" href="src/leaflet-sidebar.css"/>  
+
     <!--stulet från https://leafletjs.com/examples/mobile/example.html-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 </head>
 
 <body>
+    <div id="sidebar" class="sidebar collapsed">
+        <!-- Definiera flikar -->
+        <div class="sidebar-tabs">
+            <ul role="tablist">
+                <li><a href="#menu" role="tab"><i class="fa fa-bars"></i></a></li>
+                <li><a href="#qr" role="tab"><i class="fa fa-solid fa-sharp fa-qrcode"></i></a></li>
+                <li><a href="https://github.com/danielmartling/trappermapper/" role="tab" target="_blank"><i class="fa fa-github"></i></a></li>
+            </ul>
 
-    <div id="hollyrosaruta" class="hollyrosa">
-        <center>
-            <img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="40px"><br>
-            <small><b>Vässarö<br>Program</b></small>
-        </center>
+            <ul role="tablist">
+                <img src="img/vassaro_logga.jpg" alt="Vässarös logga" width="40px"><br><br>
+                <img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="40px">
+            </ul>
+        </div>
+
+        <!-- Flikpaneler och innehåll -->
+        <div class="sidebar-content">
+            <div class="sidebar-pane" id="menu">
+                <h1 class="sidebar-header">
+                    Trappermapper
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+
+                <p>Det här är en karta framtagen av programfunktionärerna på Vässarö.</p>
+
+                <p>Använd den inte som ett navigationsverktyg på vattnet.</p>
+
+                <p>Du kan hjälpa till med dess utveckling genom att prata med oss, mejla oss på program(at)vassaro.se eller bidra på <a href="https://github.com/danielmartling/trappermapper/">Github</a><a href="https://github.com/danielmartling/trappermapper/" role="tab" target="_blank"><i class="fa fa-github"></i></a>.</p>
+            </div>
+
+            <div class="sidebar-pane" id="qr">
+                <h1 class="sidebar-header">
+                    QR-kod
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+                <p>Du hittar enklast hit genom att spara länken eller skanna QR-koden med din mobilkamera:<img src="img/qr/qr-hollyrosa2.png" alt="QR-kod som leder till den här kartan!" width="100%"><br></p>
+            </div>
+        </div>
     </div>
 
     <div id="map"></div>
+
+    <script src="src/leaflet-sidebar.js" charset="utf-8"></script>
 
     <script>
         // Skapar kartan med restriktioner på zoom -->
@@ -40,9 +80,10 @@
             center: [60.25542, 18.69360],
             zoom: 14,
             minZoom: 12,
+            zoomControl: false,
             layers: [MapLayers.Basemaps.OpenStreetMap],
         });
-
+       
         // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
         var southWest = L.latLng(60.0, 18.5);
         var northEast = L.latLng(60.4, 19.0);
@@ -52,19 +93,35 @@
             lfmap.panInsideBounds(bounds, { animate: false });
         });
 
+        // Lägg till lager och kontroller till kartan.
+        L.control.layers.tree(MapLayers.BaseTree, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
+        
+        // Lägg till sidomeny till kartan.
+        var sidebar = L.control.sidebar('sidebar').addTo(lfmap);
+
         // Inställningar och aktivering av lokaliseringsfunktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
         var lc = L.control
             .locate({
-                position: "topleft",
+                // position: "topleft",
+                position: "topright",
                 strings: {
                     title: "Visar din nuvarande position!"
                 }
             }).addTo(lfmap);
 
-        // Lägg till lager och kontroller till kartan.
-        //L.control.groupedLayers(MapLayers.Basemaps, MapLayers.Overlays, MapLayers.Options).addTo(lfmap);
-        L.control.layers.tree(MapLayers.BaseTree, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
+        // Lägg till zoom-kontroll
+        L.control.zoom(
+            {
+                position: "topright",
+            }
+        ).addTo(lfmap)
+
+        L.control.scale({
+            position: "bottomright",
+            metric: true,
+        }).addTo(lfmap)
     </script>
+    
 </body>
 
 </html>

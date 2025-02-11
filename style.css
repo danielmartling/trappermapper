@@ -7,16 +7,6 @@ html, body, #map {
     width: 100vw;
     z-index: 0;
 }
-.hollyrosa {
-    bottom: 10px;
-    left: 10px;
-    background: white;
-    border-radius: 5px;
-    border: 1px solid;
-    z-index: 1;
-    padding: 10px;
-    position: absolute;
-}
 
 /* Changes the groupcontrollayer button icon */
 .leaflet-control-layers-toggle {
@@ -27,4 +17,19 @@ html, body, #map {
 	background-image: url(icons/filter.svg);
 	background-size: 48px 48px;
     z-index: 1000;
-	}
+}
+
+.leaflet-touch .leaflet-bar a {
+	width: 44px;
+	height: 44px;
+	line-height: 44px;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+	font: bold 35px 'Lucida Console', Monaco, monospace;
+	text-indent: 1px;
+}
+.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out  {
+	font-size: 35px;
+}
