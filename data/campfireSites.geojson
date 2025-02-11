@@ -11,7 +11,8 @@
           "title": "Rötis",
           "desc": "Mytologisk plats.",
           "group": "campfireother",
-          "icon": "campfireotherIcon"
+          "icon": "campfireotherIcon",
+          "skip": true
         }
       },
       {
@@ -100,7 +101,7 @@
         },
         "properties": {
           "title": "Trappervindskyddet",
-          "desc": "Vindskydd på trapperspåret. Eldförbud! (förutom stormkök)",
+          "desc": "Vindskydd på trapperspåret. Eldförbud! (förutom stormkök, etc.)",
           "group": "windshelter",
           "icon": "windshelterIcon"
         }
@@ -154,7 +155,8 @@
           "title": "Rötis/Betongbryggan",
           "desc": "Sliten ring (ej komplett). Glänta med eldstad.",
           "group": "campfireother",
-          "icon": "campfireotherIcon"
+          "icon": "campfireotherIcon",
+          "skip": true
         }
       },
       {
@@ -178,7 +180,7 @@
         },
         "properties": {
           "title": "Bastuklipporna",
-          "desc": "Klipphäll med eldstad. Perfekt för 50pers. Följ stigen bortom bastun.",
+          "desc": "Klipphäll med eldstad. Perfekt för 50pers. Följ stigen förbi bastun.",
           "group": "campfirerock",
           "icon": "campfirerockIcon"
         }
@@ -230,7 +232,7 @@
         },
         "properties": {
           "title": "Fladanklipporna",
-          "desc": "Klipphäll med eldstad och vedskjul. Passa ungefär 100pers.",
+          "desc": "Klipphäll med eldstad och vedskjul. Passar ungefär 100 pers.",
           "group": "campfirerock",
           "icon": "campfirerockIcon"
         }
@@ -271,7 +273,8 @@
           "title": "Norra Ängen",
           "desc": "Stockring under uppbyggnad. Saknar stockar just nu.",
           "group": "campfireother",
-          "icon": "campfireotherIcon"
+          "icon": "campfireotherIcon",
+          "skip": true
         }
       },
       {
@@ -350,6 +353,20 @@
           "desc": "Byledarringen bakom lillgårn. Stockring och eldstad.",
           "group": "campfirering",
           "icon": "campfireringIcon"
+        }
+      },
+      {
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [18.72199796540062, 60.26980508887958]
+        },
+        "properties": {
+          "title": "Garpens lägerbålsplats",
+          "desc": "",
+          "group": "campfirering",
+          "icon": "campfireringIcon",
+          "skip": true
         }
       }
     ]

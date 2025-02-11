@@ -4,7 +4,7 @@
     {
       "type": "Feature",
       "properties": {
-        "title":"Dass",
+        "title": "Dass",
         "desc": "Ekodassen",
         "group": "toilets",
         "icon": "toiletIcon"
@@ -42,7 +42,6 @@
         "desc": "Konfdassen",
         "group": "toilets",
         "icon": "toiletIcon"
-
       },
       "geometry": {
         "coordinates": [
@@ -60,7 +59,6 @@
         "desc": "Duschbygget",
         "group": "toilets",
         "icon": "toiletIcon"
-
       },
       "geometry": {
         "coordinates": [
@@ -139,10 +137,10 @@
       },
       "id": 7
     },
-   {
+    {
       "type": "Feature",
       "properties": {
-        "title":"Dass",
+        "title": "Dass",
         "desc": "Antismuts",
         "group": "toilets",
         "icon": "toiletIcon"
@@ -159,7 +157,7 @@
     {
       "type": "Feature",
       "properties": {
-        "title":"Tiodass",
+        "title": "Tiodass",
         "desc": "Tiodassen vid början av Östra Ängarna",
         "group": "toilets",
         "icon": "toiletIcon"
@@ -244,7 +242,7 @@
     {
       "type": "Feature",
       "properties": {
-        "title":"Dass",
+        "title": "Dass",
         "desc": "Krutdurken - dasset i Fladan",
         "group": "toilets",
         "icon": "toiletIcon"
@@ -359,7 +357,22 @@
         "type": "Point"
       },
       "id": 21
-
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Offentlig toalett",
+        "desc": "",
+        "group": "toilets",
+        "icon": "toiletIcon"
+      },
+      "geometry": {
+        "coordinates": [
+          18.44154352405411,
+          60.34043942603398
+        ],
+        "type": "Point"
+      }
     }
   ]
 }

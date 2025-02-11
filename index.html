@@ -38,10 +38,12 @@
                 <li><a href="#qr" role="tab"><i class="fa fa-solid fa-sharp fa-qrcode"></i></a></li>
                 <li><a href="https://github.com/danielmartling/trappermapper/" role="tab" target="_blank"><i class="fa fa-github"></i></a></li>
             </ul>
-
             <ul role="tablist">
-                <img src="img/vassaro_logga.jpg" alt="Vässarös logga" width="40px"><br><br>
-                <img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="40px">
+                <center>
+                    <img src="img/Scoutsymbolen_rgb.png" alt="Scouternas logga" width="35px"><br>
+                    <img src="img/vassaro_logga.jpg" alt="Vässarös logga" width="35px"><br>
+                    <img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="35px"
+                </center>
             </ul>
         </div>
 
@@ -52,12 +54,9 @@
                     Trappermapper
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
-
                 <p>Det här är en karta framtagen av programfunktionärerna på Vässarö.</p>
-
                 <p>Använd den inte som ett navigationsverktyg på vattnet.</p>
-
-                <p>Du kan hjälpa till med dess utveckling genom att prata med oss, mejla oss på program(at)vassaro.se eller bidra på <a href="https://github.com/danielmartling/trappermapper/">Github</a><a href="https://github.com/danielmartling/trappermapper/" role="tab" target="_blank"><i class="fa fa-github"></i></a>.</p>
+                <p>Du kan hjälpa till med kartans utveckling genom att prata med oss, mejla oss på program(at)vassaro.se eller bidra på <a href="https://github.com/danielmartling/trappermapper/">Github</a><a href="https://github.com/danielmartling/trappermapper/" role="tab" target="_blank"><i class="fa fa-github"></i></a>.</p>
             </div>
 
             <div class="sidebar-pane" id="qr">
@@ -65,7 +64,7 @@
                     QR-kod
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
-                <p>Du hittar enklast hit genom att spara länken eller skanna QR-koden med din mobilkamera:<img src="img/qr/qr-hollyrosa2.png" alt="QR-kod som leder till den här kartan!" width="100%"><br></p>
+                <p>Du hittar enklast tillbaka till den här kartan genom att spara länken eller skanna QR-koden med din mobilkamera:<img src="img/qr/qr-hollyrosa2.png" alt="QR-kod som leder till den här kartan!" width="100%"><br></p>
             </div>
         </div>
     </div>
@@ -85,7 +84,7 @@
         });
        
         // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
-        var southWest = L.latLng(60.0, 18.5);
+        var southWest = L.latLng(60.0, 18.0);
         var northEast = L.latLng(60.4, 19.0);
         var bounds = L.latLngBounds(southWest, northEast);
         lfmap.setMaxBounds(bounds);
