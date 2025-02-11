@@ -36,6 +36,12 @@ var icons = {
         iconAnchor: [40, 80],
         popupAnchor: [0, -40]
     }),
+    activityIcon: new L.Icon({
+        iconUrl: 'icons/flagHollyrosa.png',
+        iconSize: [60, 60],
+        iconAnchor: [15, 50],
+        popupAnchor: [0, -30]
+    }),
     startIcon: new L.Icon({
         iconUrl: 'icons/flagStart.svg',
         iconSize: [60, 60],
@@ -44,12 +50,6 @@ var icons = {
     }),
     finishIcon: new L.Icon({
         iconUrl: 'icons/flagFinish.svg',
-        iconSize: [60, 60],
-        iconAnchor: [15, 50],
-        popupAnchor: [0, -30]
-    }),
-    activityIcon: new L.Icon({
-        iconUrl: 'icons/flagHollyrosa.png',
         iconSize: [60, 60],
         iconAnchor: [15, 50],
         popupAnchor: [0, -30]

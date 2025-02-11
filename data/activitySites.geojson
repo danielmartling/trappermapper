@@ -643,7 +643,7 @@
                     "properties": {
                         "title": "Naturleken",
                         "desc": "Naturleken börjar här! Följ stigen in i skogen",
-                        "icon": "startIcon",
+                        "icon": "activityIcon",
                         "group": "naturegame"
                     },
                     "geometry": {

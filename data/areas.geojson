@@ -5,7 +5,8 @@
       "type": "Feature",
       "properties": {
         "title": "Intendenturen, matsalen, köket",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -84,7 +85,8 @@
       "type": "Feature",
       "properties": {
         "title": "Fyrbyn",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -139,7 +141,8 @@
       "type": "Feature",
       "properties": {
         "title": "Vädersträcksbyn",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -198,7 +201,8 @@
       "type": "Feature",
       "properties": {
         "title": "Vindbyn",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -249,7 +253,8 @@
       "type": "Feature",
       "properties": {
         "title": "Gårdsbyn",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -316,7 +321,8 @@
       "type": "Feature",
       "properties": {
         "title": "Mellanängarna",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -531,7 +537,8 @@
       "type": "Feature",
       "properties": {
         "title": "Tunet",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -642,7 +649,8 @@
       "type": "Feature",
       "properties": {
         "title": "Överängen",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -701,7 +709,8 @@
       "type": "Feature",
       "properties": {
         "title": "Östra ängarna",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -808,7 +817,8 @@
       "type": "Feature",
       "properties": {
         "title": "Skrakviksängen",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -903,7 +913,8 @@
       "type": "Feature",
       "properties": {
         "title": "Kyrkängen",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -982,7 +993,8 @@
       "type": "Feature",
       "properties": {
         "title": "Norra ängen",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -1033,7 +1045,8 @@
       "type": "Feature",
       "properties": {
         "title": "Tyskängen",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -1100,7 +1113,8 @@
       "type": "Feature",
       "properties": {
         "title": "Fladan",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -1171,7 +1185,8 @@
       "type": "Feature",
       "properties": {
         "title": "Djuphamn",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -1258,7 +1273,8 @@
       "type": "Feature",
       "properties": {
         "title": "Traktorcentralen",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
@@ -1337,7 +1353,8 @@
       "type": "Feature",
       "properties": {
         "title": "Pelikanängen",
-        "popup": "true",
+        "desc": "",
+        "popup": true,
         "group": "areas"
       },
       "geometry": {
