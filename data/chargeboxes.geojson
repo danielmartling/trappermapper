@@ -60,6 +60,21 @@
         ],
         "type": "Point"
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Laddlåda",
+        "desc": "TC-dasset",
+        "group": "chargebox"
+      },
+      "geometry": {
+        "coordinates": [
+          18.6909012650722,
+          60.25403353529907
+        ],
+        "type": "Point"
+      }
     }
   ]
 }

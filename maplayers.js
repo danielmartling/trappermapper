@@ -108,7 +108,7 @@ var overlaysTree = {
         },
         {
             label: "Annat",
-            selectAllCheckbox: false,
+            selectAllCheckbox: true,
             collapsed: false,
             children: [
                 { label: "Naturhamnar", layer: groups.moorings },
