@@ -8,7 +8,7 @@ var basemaps = {
     })
 };
 
-//Definerar gruppeA
+//Definerar grupper
 var groups = {
     campfirering: new L.LayerGroup(),
     campfirerock: new L.LayerGroup(),
