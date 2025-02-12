@@ -43,6 +43,7 @@ var groups = {
     centralorientering: new L.LayerGroup(),
     fotoorientering: new L.LayerGroup(),
     miniorientering: new L.LayerGroup(),
+    ls: new L.LayerGroup(),
 };
 
 //Grupperar kartbakgrunder
@@ -130,7 +131,8 @@ var overlaysTree = {
                 { label: "Laddlådor", layer: groups.chargebox },
                 { label: "Dass", layer: groups.toilets },
                 { label: "Soprum", layer: groups.trashrooms },
-                // { label: "Områden", layer: groups.areas }
+                // { label: "Områden", layer: groups.areas },
+                // { label: 'Lägerskola', layer: groups.ls }
 
             ]
             // "Lokaler": groups.bookablerooms,
@@ -164,7 +166,13 @@ sources.forEach(source => {
                         layer.bindPopup("<b>" + feature.properties.title + "</b><br>" + feature.properties.desc);
                     }
                     if (!feature.properties.skip) { // för att dölja vissa stigar
-                        eval("groups." + feature.properties.group).addLayer(layer);
+                        if (typeof (feature.properties.group) === 'string') {
+                            eval("groups." + feature.properties.group).addLayer(layer);
+                        } else {
+                            feature.properties.group.forEach(element => {
+                                eval("groups." + element).addLayer(layer);
+                            })
+                        }
                     }
                 },
                 pointToLayer: function (feature, latlng) {

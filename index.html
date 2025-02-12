@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="src/leaflet.groupedlayercontrol.min.css">
     <link rel="stylesheet" href="style.css" />
 
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
@@ -34,11 +34,12 @@
         <!-- Definiera flikar -->
         <div class="sidebar-tabs">
             <ul role="tablist">
-                <li><a href="#menu" role="tab"><i class="fa fa-bars"></i></a></li>
+                <li><a href="#menu" role="tab"><i class="fa fa-solid fa-bars"></i></a></li>
                 <li><a href="#qr" role="tab"><i class="fa fa-solid fa-sharp fa-qrcode"></i></a></li>
-                <!-- <li><a href="https://github.com/danielmartling/trappermapper/" role="tab" target="_blank"><i
-                            class="fa fa-github"></i></a></li> -->
-                <div id="button-box"></div>
+                <!-- <li><a href="https://github.com/danielmartling/trappermapper/" role="tab" target="_blank"><i -->
+                <!-- class="fa fa-github"></i></a></li> -->
+                <li><a id="lagerskola"><img src="img/logotyp-ls.png" alt="Äventyret Vässarös logga" width="40px"></a></li>
+                <div id="button-box" style="padding-top: 10px; "></div>
             </ul>
             <ul role="tablist">
                 <center>
@@ -57,12 +58,16 @@
                 <p>Det här är en karta framtagen av programfunktionärerna på Vässarö.</p>
                 <p>Under filtret till höger kan du välja vad du vill se på kartan.</p>
                 <p>Använd inte kartan inte som ett navigationsverktyg på vattnet.</p>
-                <p>Du kan hjälpa till med kartans utveckling genom att prata med oss på Lillgårn, mejla oss på program(at)vassaro.se
-                    eller bidra på <a href="https://github.com/danielmartling/trappermapper/"><i class="fa fa-github"></i> Github</a>.</p><br>
+                <p>Du kan hjälpa till med kartans utveckling genom att prata med oss på Lillgårn, mejla oss på
+                    program(at)vassaro.se
+                    eller bidra på <a href="https://github.com/danielmartling/trappermapper/"><i
+                            class="fa fa-github"></i> Github</a>.</p><br>
                 <center>
                     <p><img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="60px"></p><br>
-                    <p><a href="https://vassaro.se/"><img src="img/vassaro_logga.jpg" alt="Vässarös logga" width="75px"></a></p><br>
-                    <p><a href="https://scouterna.se/"><img src="img/Scoutsymbolen_rgb.png" alt="Scouternas logga" width="75px"></a><br></p>
+                    <p><a href="https://vassaro.se/"><img src="img/vassaro_logga.jpg" alt="Vässarös logga"
+                                width="75px"></a></p><br>
+                    <p><a href="https://scouterna.se/"><img src="img/Scoutsymbolen_rgb.png" alt="Scouternas logga"
+                                width="75px"></a><br></p>
                 </center>
             </div>
 
@@ -73,8 +78,8 @@
                 </h1>
                 <p>Du hittar enklast tillbaka till den här kartan genom att spara länken eller skanna QR-koden med din
                     mobilkamera:<br><br>
-                    <img src="img/qr/qr-hollyrosa2.png" alt="QR-kod som leder till den här kartan!"
-                        width="100%"><br></p>
+                    <img src="img/qr/qr-hollyrosa2.png" alt="QR-kod som leder till den här kartan!" width="100%"><br>
+                </p>
             </div>
         </div>
     </div>
@@ -111,27 +116,21 @@
         // Inställningar och aktivering av lokaliseringsfunktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
         var lc = L.control
             .locate({
-                // position: "topleft",
-                position: "topright",
                 strings: {
                     title: "Visar din nuvarande position!"
                 }
             }).addTo(lfmap);
 
         // Lägg till zoom-kontroll
-        var zoom = L.control.zoom(
-            {
-                position: "topright",
-            }
-        ).addTo(lfmap)
+        var zoom = L.control.zoom().addTo(lfmap)
 
         var scale = L.control.scale({
             position: "bottomright",
             metric: true,
         }).addTo(lfmap)
 
+        // Flytta knappar till sidomenyn.
         var objects = [lc, zoom]
-
         var buttonbox = document.getElementById('button-box')
         function setParent(child, newParent) {
             newParent.appendChild(child);
@@ -140,9 +139,21 @@
             setParent(element.getContainer(), buttonbox);
         });
 
+        document.getElementById("lagerskola").addEventListener('click', e => {
+            if (lfmap.hasLayer(groups.ls)) {
+                lfmap.removeLayer(groups.ls)
+            } else { // Remove every layer and add lägerskole layer
+                lfmap.eachLayer(function (layer) {
+                    if (!!layer.toGeoJSON) {
+                        lfmap.removeLayer(layer);
+                    }
+                });
+                lfmap.addLayer(groups.ls);
+            }
+        });
+
     </script>
 
 </body>
 
 </html>
-<div id="example"></div>

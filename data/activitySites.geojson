@@ -11,7 +11,7 @@
                         "title": "Blood, Sweat, Tears and Teamwork",
                         "desc": "Aktiviteten är här.",
                         "icon": "activityIcon",
-                        "group": "bstt"
+                        "group": ["bstt","ls"]
                     },
                     "geometry": {
                         "type": "Point",
@@ -27,7 +27,7 @@
                         "title": "Blood, Sweat, Tears and Teamwork",
                         "desc": "Följ stigen bakom cirkus!",
                         "icon": "startIcon",
-                        "group": "bstt"
+                        "group": ["bstt","ls"]
                     },
                     "geometry": {
                         "type": "Point",
@@ -43,7 +43,7 @@
                         "title": "Stig till BSTT",
                         "desc": "",
                         "color": "yellow",
-                        "group": "bstt"
+                        "group": ["bstt","ls"]
                     },
                     "geometry": {
                         "type": "LineString",
@@ -141,7 +141,7 @@
                         "stroke-opacity": 1,
                         "fill": "#555555",
                         "fill-opacity": 0.25,
-                        "group": "bstt"
+                        "group": ["bstt","ls"]
                     },
                     "geometry": {
                         "coordinates": [
@@ -203,7 +203,7 @@
                         "title": "Samarbetsgläntan",
                         "desc": "Aktiviteten är här, följ stigen förbi 10-dasset.",
                         "icon": "activityIcon",
-                        "group": "coopsite"
+                        "group": ["coopsite","ls"]
                     },
                     "geometry": {
                         "coordinates": [
@@ -223,7 +223,7 @@
                         "stroke-opacity": 1,
                         "fill": "#555555",
                         "fill-opacity": 0.25,
-                        "group": "coopsite"
+                        "group": ["coopsite","ls"]
                     },
                     "geometry": {
                         "coordinates": [
@@ -270,7 +270,7 @@
                             "stroke-opacity": 1,
                             "fill": "#555555",
                             "fill-opacity": 0.25,
-                            "group": "obstaclecourse"
+                            "group": ["obstaclecourse","ls"]
                         },
                         "type": "Polygon"
                     }
@@ -287,7 +287,7 @@
                         "title": "Hinderbanan",
                         "desc": "Följ stigen från vägen efter TC!",
                         "icon": "activityIcon",
-                        "group": "obstaclecourse"
+                        "group": ["obstaclecourse","ls"]
                     },
                     "geometry": {
                         "type": "Point",
@@ -308,7 +308,7 @@
                         "stroke-opacity": 1,
                         "fill": "#555555",
                         "fill-opacity": 0.25,
-                        "group": "obstaclecourse"
+                        "group": ["obstaclecourse","ls"]
                     },
                     "geometry": {
                         "coordinates": [
@@ -430,7 +430,7 @@
                 "title": "Träck track",
                 "desc": "Här börjar Träck track! Spåret går genom skogen.",
                 "icon": "activityIcon",
-                "group": "pooptrail"
+                "group": ["pooptrail","ls"]
             },
             "geometry": {
                 "coordinates": [

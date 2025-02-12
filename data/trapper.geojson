@@ -70,7 +70,7 @@
           "title": "Trapperspårets start",
           "desc": "",
           "icon": "startIcon",
-          "group": "trapper"
+          "group": ["trapper", "ls"]
         },
         "geometry": {
           "coordinates": [
@@ -86,7 +86,7 @@
           "title": "Trapperspårets stig",
           "desc": "",
           "color": "black",
-          "group": "trapper"
+          "group": ["trapper", "ls"]
         },
         "geometry": {
           "coordinates": [
@@ -364,7 +364,7 @@
           "title": "Rosa hemvägen",
           "desc": "",
           "color": "pink",
-          "group": "trapper"
+          "group": ["trapper", "ls"]
         },
         "geometry": {
           "coordinates": [
@@ -438,7 +438,7 @@
           "title": "Trapperspårets slut",
           "desc": "",
           "icon": "finishIcon",
-          "group": "trapper"
+          "group": ["trapper", "ls"]
         },
         "geometry": {
           "coordinates": [

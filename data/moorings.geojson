@@ -67,7 +67,7 @@
         "title": "Landstigningsplats Ljusklubben",
         "desc": "Här kommer kanoter lätt iland.",
         "color": "blue",
-        "group": "moorings"
+        "group": ["moorings","ls"]
       },
       "geometry": {
         "coordinates": [
