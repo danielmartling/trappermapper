@@ -79,7 +79,7 @@
           "title": "Fotoorienteringen",
           "desc": "",
           "color": "yellow",
-          "group": "fotoorientering"
+          "group": ["fotoorientering"]
         },
         "geometry": {
           "coordinates": [

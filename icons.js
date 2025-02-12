@@ -72,4 +72,10 @@ var icons = {
         iconAnchor: [30, 60],
         popupAnchor: [0, -60]
     }),
+    chargeboxIcon: new L.divIcon({
+        html: '<i class="fa fa-solid fa-plug"></i>',
+        iconSize: [60, 60],
+        iconAnchor: [0, 0],
+        className: 'chargeboxIcon', 
+    })
 };

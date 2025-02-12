@@ -115,7 +115,7 @@
         "properties": {
           "title": "Båthusringen",
           "desc": "Stockring utomhus, Ivar-grillar, i anslutning till Båthuset",
-          "group": "campfirering",
+          "group": ["campfirering","ls"],
           "icon": "campfireringIcon"
         }
       },
@@ -128,7 +128,7 @@
         "properties": {
           "title": "Båthuset",
           "desc": "Mysig samlingslokal med bar, bord, bänkar, TV, högtalaranläggning, samt kamin i huset. Lägerbålsring och spisar precis utomhus.",
-          "group": "firehouse",
+          "group": ["firehouse","ls"],
           "icon": "firehouseIcon"
         }
       },
@@ -141,7 +141,7 @@
         "properties": {
           "title": "Grillkåtan",
           "desc": "'Lusthus' med stockring och stor eldstad med galler.",
-          "group": "firehouse",
+          "group": ["firehouse","ls"],
           "icon": "firehouseIcon"
         }
       },
@@ -299,7 +299,7 @@
         "properties": {
           "title": "Ljusklubben",
           "desc": "Klipphäll vid vattnet mot norr.",
-          "group": "campfirerock",
+          "group": ["campfirerock","ls"],
           "icon": "campfirerockIcon"
         }
       },
@@ -351,7 +351,7 @@
         "properties": {
           "title": "Lillgårn",
           "desc": "Byledarringen bakom lillgårn. Stockring och eldstad.",
-          "group": "campfirering",
+          "group": ["campfirering","ls"],
           "icon": "campfireringIcon"
         }
       },
