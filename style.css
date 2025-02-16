@@ -1,22 +1,14 @@
 body {
-    margin: 0;
-    padding: 0;
-}
-html, body, #map {
-    height: 100%;
-    width: 100vw;
-    z-index: 0;
+	margin: 0;
+	padding: 0;
 }
 
-/* Changes the groupcontrollayer button icon */
-.leaflet-control-layers-toggle {
-	background-image: url(icons/filter.svg);
-    z-index: 1000;
-}
-.leaflet-retina .leaflet-control-layers-toggle {
-	background-image: url(icons/filter.svg);
-	background-size: 48px 48px;
-    z-index: 1000;
+html,
+body,
+#map {
+	height: 100%;
+	width: 100vw;
+	z-index: 0;
 }
 
 .leaflet-touch .leaflet-bar a {
@@ -28,8 +20,43 @@ html, body, #map {
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
 	font: bold 35px 'Lucida Console', Monaco, monospace;
-	text-indent: 1px;
+	text-indent: 0px;
+	border: none
 }
-.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out  {
-	font-size: 35px;
+
+.leaflet-touch .leaflet-control-zoom-in,
+.leaflet-touch .leaflet-control-zoom-out {
+	font-size: 40px;
+	margin: 0px;
+	margin-inline: 2.5px;
+	padding-bottom: 5px;
+	border: none
+}
+
+.leaflet-layerstree-header-name {
+    font-size: 12pt;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.leaflet-layerstree-header {
+	width: auto;
+	display: block;
+}
+
+.leaflet-layerstree-children {
+	padding-left: 30px;
+}
+
+.leaflet-touch .leaflet-bar {
+	border: none;
+}
+
+.leaflet-control-locate a .leaflet-control-locate-location-arrow {
+	/* display: inline-block; */
+	padding: 0px;
+	width: 20px;
+	height: 20px;
+	margin: 10px;
+	text-indent: 0px;
 }
