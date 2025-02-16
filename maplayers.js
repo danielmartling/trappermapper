@@ -46,15 +46,6 @@ var groups = {
     ls: new L.LayerGroup(),
 };
 
-//Grupperar kartbakgrunder
-// var baseTree = {
-//     label: 'Kartbakgrunder',
-//     children: [
-//         { label: 'OpenStreetMap', layer: basemaps.OpenStreetMap },
-//         { label: 'Satellit', layer: basemaps.Satellit },
-//     ]
-// };
-
 //Grupperar kartlager
 var overlaysTree = {
     label: "Visa / dölj alla",
@@ -202,9 +193,8 @@ sources.forEach(source => {
 
 // Inställningar till lagerkontrollen
 var options = {
-    closedSymbol: "&#10010;",
-    openedSymbol: "<b>&minus;</b>",
-    spaceSymbol: " ",
+    closedSymbol: '<i class="fa fa-solid fa-chevron-right"></i>',
+    openedSymbol: '<i class="fa fa-solid fa-chevron-down"></i>',
     selectorBack: false,
     namedToggle: false,
     // collapseAll: "Kollapsa alla",
@@ -215,7 +205,6 @@ var options = {
 
 // Fönster ut ur filen
 window.MapLayers = {
-    // BaseTree: baseTree,
     OverlaysTree: overlaysTree,
     Basemaps: basemaps,
     Options: options

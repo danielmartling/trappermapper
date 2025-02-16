@@ -7,15 +7,12 @@
 
 .leaflet-layerstree-node {}
 
-.leaflet-layerstree-header input {}
+.leaflet-layerstree-header input {
+    margin-left: 0px;/
+}
 
 
 .leaflet-layerstree-header {}
-
-.leaflet-div-icon {
-    background: #fff;
-    border: 1px solid #666;
-}
 
 .leaflet-layerstree-header-pointer {
     cursor: pointer;
@@ -29,18 +26,17 @@
 .leaflet-layerstree-header-label {}
 
 .leaflet-layerstree-header-name {
-    font-size: 12pt;
-    font-weight: normal;
-    margin-left: 5px;
 }
 
 .leaflet-layerstree-header-space {}
 
 .leaflet-layerstree-children {
-    padding-left: 20px;
+    padding-left: 10px;
 }
 
-.leaflet-layerstree-children-nopad {}
+.leaflet-layerstree-children-nopad {
+    padding-left: 0px;
+}
 
 .leaflet-layerstree-closed {}
 
@@ -56,5 +52,4 @@
 
 .leaflet-layerstree-expand-collapse {
     cursor: pointer;
-    font-style: italic;
 }

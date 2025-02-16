@@ -21,6 +21,7 @@ body,
 .leaflet-control-zoom-out {
 	font: bold 35px 'Lucida Console', Monaco, monospace;
 	text-indent: 0px;
+	border: none
 }
 
 .leaflet-touch .leaflet-control-zoom-in,
@@ -29,6 +30,13 @@ body,
 	margin: 0px;
 	margin-inline: 2.5px;
 	padding-bottom: 5px;
+	border: none
+}
+
+.leaflet-layerstree-header-name {
+    font-size: 12pt;
+    font-weight: normal;
+    margin-left: 5px;
 }
 
 .leaflet-layerstree-header {
@@ -51,5 +59,4 @@ body,
 	height: 20px;
 	margin: 10px;
 	text-indent: 0px;
-	background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="black" d="M445 4 29 195c-48 23-32 93 19 93h176v176c0 51 70 67 93 19L508 67c16-38-25-79-63-63z"/></svg>')
 }

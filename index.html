@@ -62,11 +62,11 @@
                 <center>
                     <p><img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="60px"></p>
                     <p><a href="https://vassaro.se/"><img src="img/vassaro_logga.jpg" alt="Vässarös logga"
-                                width="75px"></a>&emsp;&emsp;&emsp;&emsp;<a href="https://aventyretvassaro.se/"><img src="img/logotyp-ls.png" alt="Äventyrets Vässarös logga"
-                                    width="75px"></a></p>
+                                width="75px"></a>&emsp;&emsp;&emsp;&emsp;<a href="https://aventyretvassaro.se/"><img
+                                src="img/logotyp-ls.png" alt="Äventyrets Vässarös logga" width="75px"></a></p>
                     <p><a href="https://scouterna.se/"><img src="img/Scoutsymbolen_rgb.png" alt="Scouternas logga"
                                 width="75px"></a></p>
-                    </center>
+                </center>
             </div>
 
             <div class="sidebar-pane" id="qr">
@@ -124,7 +124,6 @@
         });
 
         // Lägg till lager och kontroller till kartan.
-        // var layerControl = L.control.layers.tree(MapLayers.BaseTree, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
         var layerControl = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
 
         // Lägg till sidomeny till kartan.
@@ -158,6 +157,7 @@
         });
         setParent(layerControl, filterbox)
 
+        // Switch lägerskole view
         document.getElementById("lagerskola").addEventListener('click', e => {
             if (lfmap.hasLayer(groups.ls)) {
                 lfmap.removeLayer(groups.ls)
@@ -171,6 +171,7 @@
             }
         });
 
+        // Switch basemap
         if (document.querySelector('input[name="selectBackground"]')) {
             document.querySelectorAll('input[name="selectBackground"]').forEach((elem) => {
                 elem.addEventListener("change", function (event) {
@@ -178,12 +179,6 @@
                     for (let key in MapLayers.Basemaps) {
                         eval("MapLayers.Basemaps." + key).remove();
                     };
-                    // MapLayers.Basemaps.forEach(childmap => {
-                    //     childmap.remove();
-                    // })
-                    // MapLayers.BaseTree.children.forEach(childmap => {
-                    //     childmap.layer.remove()
-                    // });
                     eval("MapLayers.Basemaps." + item).addTo(lfmap);
                 });
             });
