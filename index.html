@@ -38,14 +38,15 @@
                 <li><a href="#qr" role="tab"><i class="fa fa-solid fa-sharp fa-qrcode"></i></a></li>
                 <!-- <li><a href="https://github.com/danielmartling/trappermapper/" role="tab" target="_blank"><i -->
                 <!-- class="fa fa-github"></i></a></li> -->
+                <li><a href="#filter" id="filter" role="tab"><img src="icons/filter.svg" width="40px"></a></li>
                 <li><a id="lagerskola"><img src="img/logotyp-ls.png" alt="Äventyret Vässarös logga" width="40px"></a></li>
                 <div id="button-box" style="padding-top: 5px; "></div>
             </ul>
-            <ul role="tablist">
+            <!-- <ul role="tablist">
                 <center>
                     <img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="35px">
                 </center>
-            </ul>
+            </ul> -->
         </div>
 
         <!-- Flikpaneler och innehåll -->
@@ -80,6 +81,23 @@
                     mobilkamera:<br><br>
                     <img src="img/qr/qr-hollyrosa2.png" alt="QR-kod som leder till den här kartan!" width="100%"><br>
                 </p>
+            </div>
+
+            <div class="sidebar-pane" id="filter">
+                <h1 class="sidebar-header">
+                    Kartfilter
+                    <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
+                </h1>
+                <div>
+                    <h2>Kartbakgrunder</h2>
+                    <input type="radio" id="osm" name="selectBackground" value="osm">
+                    <label for="osm">OpenStreetMap</label><br>
+                    <input type="radio" id="sat" name="selectBackground" value="sat">
+                    <label for="sat">Satellit</label>
+                </div>
+                <div>
+                    <h2>Kartfilter</h2>
+                </div>
             </div>
         </div>
     </div>
@@ -151,6 +169,37 @@
                 lfmap.addLayer(groups.ls);
             }
         });
+
+        // document.getElementById("osm").addEventListener('click', e => {
+        //     // lfmap.addBaseLayer(MapLayers.Basemaps.Satellit)
+        //     // layers.addBaseLayer(MapLayers.Basemaps.OpenStreetMap, "test")
+        //     lfmap.removeLayer(currentTileLayer);
+        //     if (lfmap.hasLayer(groups.ls)) {
+        //         lfmap.removeLayer(groups.ls)
+        //     } else { // Remove every layer and add lägerskole layer
+        //         lfmap.eachLayer(function (layer) {
+        //             if (!!layer.toGeoJSON) {
+        //                 lfmap.removeLayer(layer);
+        //             }
+        //         });
+        //         lfmap.addLayer(groups.ls);
+        //     }
+
+$('input[type=radio][name=selectBackground]').on('change', function() {
+  switch ($(this).val()) {
+    case 'osm':
+    MapLayers.Basemaps["OpenStreetMap"].addTo(lfmap);
+      break;
+    case 'sat':
+    MapLayers.Basemaps["Satellit"].addTo(lfmap);
+      break;
+    
+    default:
+    MapLayers.Basemaps["OpenStreetMap"].addTo(lfmap);
+      break;
+  }
+});
+        
 
     </script>
 
