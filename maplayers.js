@@ -13,7 +13,7 @@ var groups = {
     campfirering: new L.LayerGroup(),
     campfirerock: new L.LayerGroup(),
     firehouse: new L.LayerGroup(),
-    campfireother: new L.LayerGroup(),
+    // campfireother: new L.LayerGroup(),
     windshelterfire: new L.LayerGroup(),
     windshelter: new L.LayerGroup(),
     coopsite: new L.LayerGroup(),
@@ -68,7 +68,7 @@ var overlaysTree = {
                 { label: 'Stockringar', layer: groups.campfirering },
                 { label: "Klipphällar", layer: groups.campfirerock },
                 { label: "Eldstad med tak", layer: groups.firehouse },
-                { label: "Andra", layer: groups.campfireother },
+                // { label: "Andra", layer: groups.campfireother },
             ]
         },
         {

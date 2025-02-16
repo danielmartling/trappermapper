@@ -541,7 +541,7 @@
           "desc": "",
           "color": "#00008b",
           "group": "trapper",
-          "skip": false
+          "skip": true
         },
         "geometry": {
           "coordinates": [

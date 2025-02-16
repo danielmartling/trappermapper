@@ -1370,7 +1370,7 @@
           "type": "Feature",
           "properties": {
             "title": "Bunkerspårets start",
-            "desc": "Efter diket med bron delar sig stigen. Följ den gula stigen ner till bunkrarna.",
+            "desc": "Efter bron över diket delar sig stigen. Följ den gula stigen ner till bunkrarna. Efter ett tag kommer ni tillbaka till Vässarö runt (det orangea spåret) men efter det kommer en till gul stig med fler bunkrar.",
             "group": "bunkertrail",
             "icon": "activityIcon"
           },
@@ -1386,7 +1386,7 @@
         {
           "type": "Feature",
           "properties": {
-            "title": "Bunkerspåret 1",
+            "title": "Bunkerspåret del 1",
             "desc": "",
             "group": "bunkertrail",
             "color": "yellow"
@@ -1449,7 +1449,7 @@
         {
           "type": "Feature",
           "properties": {
-            "title": "Bunkerspåret 2",
+            "title": "Bunkerspåret del 2",
             "desc": "",
             "group": "bunkertrail",
             "color": "yellow"
@@ -1496,7 +1496,7 @@
           "type": "Feature",
           "properties": {
             "title": "Vässarö runt",
-            "desc": "Efter en bit av Vässarö runt (det orangea spåret börjar bunkerspåret igen.",
+            "desc": "",
             "group": "bunkertrail",
             "color": "orange"
           },
