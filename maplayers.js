@@ -47,28 +47,28 @@ var groups = {
 };
 
 //Grupperar kartbakgrunder
-var baseTree = {
-    label: 'Kartbakgrunder',
-    children: [
-        { label: 'OpenStreetMap', layer: basemaps.OpenStreetMap },
-        { label: 'Satellit', layer: basemaps.Satellit },
-    ]
-};
+// var baseTree = {
+//     label: 'Kartbakgrunder',
+//     children: [
+//         { label: 'OpenStreetMap', layer: basemaps.OpenStreetMap },
+//         { label: 'Satellit', layer: basemaps.Satellit },
+//     ]
+// };
 
 //Grupperar kartlager
 var overlaysTree = {
-    label: "Kartfilter",
-    selectAllCheckbox: 'Un/select all',
+    label: "Visa / dölj alla",
+    selectAllCheckbox: 'Visa/dölj alla',
     children: [
         {
             label: 'Lägerbålsplatser',
             selectAllCheckbox: true,
             collapsed: true,
             children: [
-                { label: 'Stockringar', layer: groups.campfirering },
+                { label: "Stockringar", layer: groups.campfirering },
                 { label: "Klipphällar", layer: groups.campfirerock },
-                { label: "Eldstad med tak", layer: groups.firehouse },
-                { label: "Andra", layer: groups.campfireother },
+                { label: "Eldstad med tak", layer: groups.firehouse }
+                // { label: "Andra", layer: groups.campfireother },
             ]
         },
         {
@@ -207,14 +207,15 @@ var options = {
     spaceSymbol: " ",
     selectorBack: false,
     namedToggle: false,
-    collapseAll: "Kollapsa alla",
-    expandAll: "Expandera alla",
-    labelIsSelector: "both"
+    // collapseAll: "Kollapsa alla",
+    // expandAll: "Expandera alla",
+    labelIsSelector: "both",
+    collapsed: false,
 };
 
 // Fönster ut ur filen
 window.MapLayers = {
-    BaseTree: baseTree,
+    // BaseTree: baseTree,
     OverlaysTree: overlaysTree,
     Basemaps: basemaps,
     Options: options
