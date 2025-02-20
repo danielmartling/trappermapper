@@ -17,6 +17,15 @@
     <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
     <script src="src/L.Control.Layers.Tree.js"></script>
     <link rel="stylesheet" href="src/L.Control.Layers.Tree.css" />
+    <!--<?php--><!--
+    session_start();
+    // TODO: Check how to add something?
+    // If the user is not logged in redirect to the login page...
+    if (isset($_SESSION['loggedin'])) {
+        //echo '<script src="Path/to/whatever/file/with/locked/items.whatever"></script>';
+        exit;
+    }
+    ?>-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <!--stulet från https://leafletjs.com/examples/mobile/example.html-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />

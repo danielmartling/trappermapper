@@ -53,6 +53,7 @@ if ($stmt = $con->prepare('SELECT id, password FROM accounts WHERE username = ?'
 }
 
 // TODO: Adjust code to get a smooth login experience with feedback (Have authenticate.php work only in the background and show result in the dialog window)
+// TODO: Add the function to check for cookies so the login feature actually can be used for something
 // TODO: Add logout functionality
 // TODO: Add some way to add users as well. Should be in a different file, instructions here: https://codeshack.io/secure-registration-system-php-mysql/
 ?>
