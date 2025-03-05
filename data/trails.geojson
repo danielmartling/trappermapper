@@ -937,7 +937,7 @@
             "title": "Naturnärans start",
             "desc": "Vandringsstig runt Vässarös sydöstra hörn. Startar vid dasset på Överängen. Material finns på Programexpeditionen. Stigen är markerad med gula markörer.",
             "group": "naturetrail",
-            "icon": "startIcon"
+            "icon": "startFlag"
           },
           "geometry": {
             "coordinates": [
@@ -953,7 +953,7 @@
             "title": "Naturnärans slut",
             "desc": "Vandringsstig runt Vässarös sydöstra hörn. Startar vid dasset på Överängen. Material finns på Programexpeditionen. Stigen är markerad med gula markörer.",
             "group": "naturetrail",
-            "icon": "finishIcon"
+            "icon": "finishFlag"
           },
           "geometry": {
             "coordinates": [
@@ -1340,7 +1340,7 @@
             "title": "Bunkerspårets slut",
             "desc": "Följ orangea spåret till Överängen eller traktorvägen norrut till Tunet.",
             "group": "bunkertrail",
-            "icon": "finishIcon"
+            "icon": "finishFlag"
           },
           "geometry": {
             "coordinates": [
@@ -1356,7 +1356,7 @@
             "title": "Följ stigen till starten",
             "desc": "Följ den orangea stigen från Betongbryggan.",
             "group": "bunkertrail",
-            "icon": "startIcon"
+            "icon": "startFlag"
           },
           "geometry": {
             "coordinates": [
@@ -1372,7 +1372,7 @@
             "title": "Bunkerspårets start",
             "desc": "Efter bron över diket delar sig stigen. Följ den gula stigen ner till bunkrarna. Efter ett tag kommer ni tillbaka till Vässarö runt (det orangea spåret) men efter det kommer en till gul stig med fler bunkrar.",
             "group": "bunkertrail",
-            "icon": "activityIcon"
+            "icon": "hollyrosaFlag"
           },
           "geometry": {
             "coordinates": [
@@ -1975,7 +1975,7 @@
             "title": "Vildmarksspåret START 1",
             "desc": "Hela gruppen går hit. Patrullerna fortsätter sen till sina respektive startkontroller.",
             "group": "wildernesstrail",
-            "icon": "activityIcon"
+            "icon": "hollyrosaFlag"
           },
           "geometry": {
             "coordinates": [
@@ -1992,7 +1992,7 @@
             "title": "Vildmarksspåret START 2",
             "desc": "Patrullerna 1, 2 och 5 går hit och fortsätter sen till sina respektive startkontroller.",
             "group": "wildernesstrail",
-            "icon": "activityIcon"
+            "icon": "hollyrosaFlag"
           },
           "geometry": {
             "coordinates": [
@@ -2008,7 +2008,7 @@
             "title": "Vildmarksspåret",
             "desc": "Följ vägen från Fladanvägen genom fårhagen till Norra ängen.",
             "group": "wildernesstrail",
-            "icon": "startIcon"
+            "icon": "startFlag"
           },
           "geometry": {
             "coordinates": [
@@ -2025,7 +2025,7 @@
             "title": "Vildmarksspåret",
             "desc": "Patrull 3 korsar ängen och går till sin startkontroll.",
             "group": "wildernesstrail",
-            "icon": "activityIcon"
+            "icon": "hollyrosaFlag"
           },
           "geometry": {
             "coordinates": [

@@ -69,7 +69,7 @@
         "properties": {
           "title": "Trapperspårets start",
           "desc": "",
-          "icon": "startIcon",
+          "icon": "startFlag",
           "group": ["trapper", "ls"]
         },
         "geometry": {
@@ -437,7 +437,7 @@
         "properties": {
           "title": "Trapperspårets slut",
           "desc": "",
-          "icon": "finishIcon",
+          "icon": "finishFlag",
           "group": ["trapper", "ls"]
         },
         "geometry": {

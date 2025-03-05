@@ -7,7 +7,7 @@
         "title": "Laddlåda",
         "desc": "Lillgårns norra gavel",
         "group": "chargebox",
-        "icon": "chargeboxIcon"
+        "icon": "chargeboxPin"
       },
       "geometry": {
         "coordinates": [
@@ -23,7 +23,7 @@
         "title": "Laddlåda",
         "desc": "10-dasset",
         "group": "chargebox",
-        "icon": "chargeboxIcon"
+        "icon": "chargeboxPin"
       },
       "geometry": {
         "coordinates": [
@@ -39,7 +39,7 @@
         "title": "Laddlåda",
         "desc": "Mitt på mellanängarna",
         "group": "chargebox",
-        "icon": "chargeboxIcon"
+        "icon": "chargeboxPin"
       },
       "geometry": {
         "coordinates": [
@@ -55,7 +55,7 @@
         "title": "Laddlåda",
         "desc": "Mellanängarnas 10-dass",
         "group": "chargebox",
-        "icon": "chargeboxIcon"
+        "icon": "chargeboxPin"
       },
       "geometry": {
         "coordinates": [
@@ -71,7 +71,7 @@
         "title": "Laddlåda",
         "desc": "TC-dasset",
         "group": "chargebox",
-        "icon": "chargeboxIcon"
+        "icon": "chargeboxPin"
       },
       "geometry": {
         "coordinates": [

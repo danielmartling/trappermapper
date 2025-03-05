@@ -7,7 +7,7 @@
         "title": "Dass",
         "desc": "Ekodassen",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -24,7 +24,7 @@
         "title": "Dass",
         "desc": "Matsalsdassen",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -41,7 +41,7 @@
         "title": "Dass",
         "desc": "Konfdassen",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -58,7 +58,7 @@
         "title": "Dass",
         "desc": "Duschbygget",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -75,7 +75,7 @@
         "title": "Dass",
         "desc": "Pelikandassen",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -92,7 +92,7 @@
         "title": "Dass",
         "desc": "Skrakviksängens dass",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -109,7 +109,7 @@
         "title": "Dass",
         "desc": "Båthusdasset",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -126,7 +126,7 @@
         "title": "Dass",
         "desc": "Bergshyllan",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -143,7 +143,7 @@
         "title": "Dass",
         "desc": "Antismuts",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -160,7 +160,7 @@
         "title": "Tiodass",
         "desc": "Tiodassen vid början av Östra Ängarna",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -177,7 +177,7 @@
         "title": "Dass",
         "desc": "Östra dasset",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -194,7 +194,7 @@
         "title": "Dass",
         "desc": "Överängsdasset",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -211,7 +211,7 @@
         "title": "Dass",
         "desc": "Dasset vid Fladankorset",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -228,7 +228,7 @@
         "title": "Dass",
         "desc": "Dasset längs fladanvägen",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -245,7 +245,7 @@
         "title": "Dass",
         "desc": "Krutdurken - dasset i Fladan",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -262,7 +262,7 @@
         "title": "Dass",
         "desc": "Norra dasset",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -279,7 +279,7 @@
         "title": "Tiodass",
         "desc": "Tiodassen på väg mot Djuphamn",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -296,7 +296,7 @@
         "title": "Dass",
         "desc": "Djuphamnsdasset",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -313,7 +313,7 @@
         "title": "Dass",
         "desc": "Dasset nära trapperstarten, även kallat Programdasset",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -330,7 +330,7 @@
         "title": "Dass",
         "desc": "Tunetdassen - finns på båda sidor av vägen",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -347,7 +347,7 @@
         "title": "Strömsvikens dass",
         "desc": "Här finns det också dass!",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
@@ -364,7 +364,7 @@
         "title": "Offentlig toalett",
         "desc": "",
         "group": "toilets",
-        "icon": "toiletIcon"
+        "icon": "toiletPin"
       },
       "geometry": {
         "coordinates": [
