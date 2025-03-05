@@ -90,10 +90,10 @@ body,
 
 input[type='checkbox'],
 input[type='radio']{
-	accent-color: #003660;
+	accent-color: var(--accent-color);
 }
 
 a:link,
 a:visited {
-	color: #003660;
+	color: var(--accent-color);
 }
