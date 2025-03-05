@@ -15,6 +15,7 @@ body,
   border: none !important;
   background: none !important;
 }
+
 .leaflet-touch .leaflet-bar a {
 	width: 36px;
 	height: 36px;
