@@ -10,7 +10,7 @@
                     "properties": {
                         "title": "Blood, Sweat, Tears and Teamwork",
                         "desc": "Aktiviteten är här.",
-                        "icon": "activityIcon",
+                        "icon": "hollyrosaFlag",
                         "group": ["bstt","ls"]
                     },
                     "geometry": {
@@ -26,7 +26,7 @@
                     "properties": {
                         "title": "Blood, Sweat, Tears and Teamwork",
                         "desc": "Följ stigen bakom cirkus!",
-                        "icon": "startIcon",
+                        "icon": "startFlag",
                         "group": ["bstt","ls"]
                     },
                     "geometry": {
@@ -202,7 +202,7 @@
                     "properties": {
                         "title": "Samarbetsgläntan",
                         "desc": "Aktiviteten är här, följ stigen förbi 10-dasset.",
-                        "icon": "activityIcon",
+                        "icon": "hollyrosaFlag",
                         "group": ["coopsite","ls"]
                     },
                     "geometry": {
@@ -286,7 +286,7 @@
                     "properties": {
                         "title": "Hinderbanan",
                         "desc": "Följ stigen från vägen efter TC!",
-                        "icon": "activityIcon",
+                        "icon": "hollyrosaFlag",
                         "group": ["obstaclecourse","ls"]
                     },
                     "geometry": {
@@ -381,7 +381,7 @@
             "properties": {
                 "title": "Trädtränan",
                 "desc": "Här börjar Trädtränan! Spåret går längs med vägen mot bastun, sen in i skogen.",
-                "icon": "activityIcon",
+                "icon": "hollyrosaFlag",
                 "group": "treetrail"
             },
             "geometry": {
@@ -397,7 +397,7 @@
             "properties": {
                 "title": "Ovan molnen",
                 "desc": "Här börjar Ovan molnen! Spåret går genom skogen.",
-                "icon": "activityIcon",
+                "icon": "hollyrosaFlag",
                 "group": "startrail"
             },
             "geometry": {
@@ -413,7 +413,7 @@
             "properties": {
                 "title": "Knopspåret",
                 "desc": "Här börjar Knopspåret! Spåret går genom skogen.",
-                "icon": "activityIcon",
+                "icon": "hollyrosaFlag",
                 "group": "knottrail"
             },
             "geometry": {
@@ -429,7 +429,7 @@
             "properties": {
                 "title": "Träck track",
                 "desc": "Här börjar Träck track! Spåret går genom skogen.",
-                "icon": "activityIcon",
+                "icon": "hollyrosaFlag",
                 "group": ["pooptrail","ls"]
             },
             "geometry": {
@@ -449,7 +449,7 @@
                     "properties": {
                         "title": "Woodcraftspåret",
                         "desc": "Här börjar Woodcraftspåret! Spåret går genom skogen.",
-                        "icon": "activityIcon",
+                        "icon": "hollyrosaFlag",
                         "group": "woodcrafttrail"
                     },
                     "geometry": {
@@ -466,7 +466,7 @@
                     "properties": {
                         "title": "Stig till Woodcraftspåret",
                         "desc": "Spåret börjar en bit in i skogen.",
-                        "icon": "startIcon",
+                        "icon": "startFlag",
                         "group": "woodcrafttrail"
                     },
                     "geometry": {
@@ -483,7 +483,7 @@
                     "properties": {
                         "title": "Stig till Woodcraftspåret",
                         "desc": "Följ stigen från dasset.",
-                        "icon": "startIcon",
+                        "icon": "startFlag",
                         "group": "woodcrafttrail"
                     },
                     "geometry": {
@@ -643,7 +643,7 @@
                     "properties": {
                         "title": "Naturleken",
                         "desc": "Naturleken börjar här! Följ stigen in i skogen",
-                        "icon": "activityIcon",
+                        "icon": "startFlag",
                         "group": "naturegame"
                     },
                     "geometry": {
@@ -856,7 +856,7 @@
                     "properties": {
                         "title": "Naturleken",
                         "desc": "Naturleken slutar här!",
-                        "icon": "finishIcon",
+                        "icon": "finishFlag",
                         "group": "naturegame"
                     },
                     "geometry": {

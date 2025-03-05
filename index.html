@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-    <title>Trappermapper </title>
+    <title>Trappermapper</title>
     <link rel="icon" type="image/x-icon" href="img/hollyrosa-square.png">
     <meta charset="utf-8" />
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://font.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
     <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
@@ -33,11 +33,8 @@
             <ul role="tablist">
                 <li><a href="#menu" role="tab"><i class="fa fa-solid fa-bars"></i></a></li>
                 <li><a href="#qr" role="tab"><i class="fa fa-solid fa-sharp fa-qrcode"></i></a></li>
-                <!-- <li><a href="https://github.com/danielmartling/trappermapper/" role="tab" target="_blank"><i -->
-                <!-- class="fa fa-github"></i></a></li> -->
                 <li><a href="#filter" id="filter" role="tab"><img src="icons/filter.svg" width="40px"></a></li>
-                <li><a id="lagerskola"><img src="img/logotyp-ls.png" alt="Äventyret Vässarös logga" width="40px"></a>
-                </li>
+                <li><a id="lagerskola"><img src="img/logotyp-ls.png" alt="Äventyret Vässarös logga" width="40px"></a></li>
             </ul>
             <ul role="tablist">
                 <div id="button-box"></div>
@@ -48,16 +45,16 @@
         <div class="sidebar-content">
             <div class="sidebar-pane" id="menu">
                 <h1 class="sidebar-header">
-                    Trappermapper
+                    TRAPPERMAPPER
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
-                <p>Det här är en karta framtagen av programfunktionärerna på Vässarö.</p>
+                <p>Det här är en karta framtagen av programfunktionärerna på Vässarö. Använd den inte som ett navigationsverktyg på vattnet.</p>
                 <p>Under filtret till vänster kan du välja vad du vill se på kartan. Du kan också klicka på Äventyret
                     Vässarö-loggan till vänster för att endast se lägerskolans aktiviteter.</p>
-                <p>Använd inte kartan inte som ett navigationsverktyg på vattnet.</p>
+                <p>Mer info om aktiviteterna, och om de som inte finns på kartan, finns i vår 
+                    <a href="https://vassaro.se/wp-content/uploads/Programlunta-Ver-23.1.0.pdf">Programlunta</a>.</a></p>
                 <p>Du kan hjälpa till med kartans utveckling genom att prata med oss på Lillgårn, mejla oss på
-                    program(at)vassaro.se
-                    eller bidra på <a href="https://github.com/danielmartling/trappermapper/"><i
+                    program(at)vassaro.se eller bidra på <a href="https://github.com/danielmartling/trappermapper/"><i
                             class="fa fa-github"></i> Github</a>.</p><br>
                 <center>
                     <p><img src="img/hollyrosa.svg" alt="Programpatrullens maskot Hollyrosa" width="60px"></p>
@@ -71,7 +68,7 @@
 
             <div class="sidebar-pane" id="qr">
                 <h1 class="sidebar-header">
-                    QR-kod
+                    QR-KOD
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
                 <p>Du hittar enklast tillbaka till den här kartan genom att spara länken eller skanna QR-koden med din
@@ -82,110 +79,24 @@
 
             <div class="sidebar-pane" id="filter">
                 <h1 class="sidebar-header">
-                    Kartfilter
+                    KARTFILTER
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
                 <div>
-                    <h2>Kartbakgrunder</h2>
-                    <input type="radio" id="osmradio" name="selectBackground" value="OpenStreetMap" checked>
-                    <label for="osmradio">OpenStreetMap</label><br>
-                    <input type="radio" id="satradio" name="selectBackground" value="Satellit">
-                    <label for="satradio">Satellit</label>
-                </div>
-                <div>
-                    <h2>Kartfilter</h2>
+                    <h4>KARTBAKGRUNDER</h4>
+                    <input type="radio" id="osmRadio" name="selectBackground" value="OpenStreetMap" checked>
+                    <label for="osmRadio">OpenStreetMap</label><br>
+                    <input type="radio" id="satRadio" name="selectBackground" value="Satellit">
+                    <label for="satRadio">Satellit</label>
+
+                    <h4>KARTFILTER</h4>
                     <div id="filter-box" style="padding-top: 0px;"></div>
                 </div>
             </div>
         </div>
     </div>
-
     <div id="map"></div>
-
     <script src="src/leaflet-sidebar.js" charset="utf-8"></script>
-
-    <script>
-        // Skapar kartan med restriktioner på zoom -->
-        var lfmap = L.map('map', {
-            center: [60.25542, 18.69360],
-            zoom: 14,
-            minZoom: 12,
-            zoomControl: false,
-            layers: [MapLayers.Basemaps.OpenStreetMap],
-        });
-
-        // Definera kartans gränser (en bit utanför VÖ, Garpen, Bodskären)-->
-        var southWest = L.latLng(60.0, 18.0);
-        var northEast = L.latLng(60.4, 19.0);
-        var bounds = L.latLngBounds(southWest, northEast);
-        lfmap.setMaxBounds(bounds);
-        lfmap.on('drag', function () {
-            lfmap.panInsideBounds(bounds, { animate: lfmap.clearLayers() });
-        });
-
-        // Lägg till lager och kontroller till kartan.
-        var layerControl = L.control.layers.tree(null, MapLayers.OverlaysTree, MapLayers.Options).addTo(lfmap);
-
-        // Lägg till sidomeny till kartan.
-        var sidebar = L.control.sidebar('sidebar').addTo(lfmap);
-
-        // Inställningar och aktivering av lokaliseringsfunktion - https://github.com/domoritz/leaflet-locatecontrol - För inställningar och instruktioner för locate.
-        var lc = L.control
-            .locate({
-                strings: {
-                    title: "Visar din nuvarande position!"
-                }
-            }).addTo(lfmap);
-
-        // Lägg till zoom-kontroll
-        var zoom = L.control.zoom().addTo(lfmap)
-
-        var scale = L.control.scale({
-            position: "bottomright",
-            metric: true,
-        }).addTo(lfmap)
-
-        // Flytta knappar till sidomenyn eller filtermenyn.
-        var objects = [lc, zoom]
-        var buttonbox = document.getElementById('button-box')
-        var filterbox = document.getElementById('filter-box')
-        function setParent(child, newParent) {
-            newParent.appendChild(child.getContainer());
-        };
-        objects.forEach(element => {
-            setParent(element, buttonbox);
-        });
-        setParent(layerControl, filterbox)
-
-        // Switch lägerskole view
-        document.getElementById("lagerskola").addEventListener('click', e => {
-            if (lfmap.hasLayer(groups.ls)) {
-                lfmap.removeLayer(groups.ls)
-            } else { // Remove every layer and add lägerskole layer
-                lfmap.eachLayer(function (layer) {
-                    if (!!layer.toGeoJSON) {
-                        lfmap.removeLayer(layer);
-                    }
-                });
-                lfmap.addLayer(groups.ls);
-            }
-        });
-
-        // Switch basemap
-        if (document.querySelector('input[name="selectBackground"]')) {
-            document.querySelectorAll('input[name="selectBackground"]').forEach((elem) => {
-                elem.addEventListener("change", function (event) {
-                    var item = event.target.value;
-                    for (let key in MapLayers.Basemaps) {
-                        eval("MapLayers.Basemaps." + key).remove();
-                    };
-                    eval("MapLayers.Basemaps." + item).addTo(lfmap);
-                });
-            });
-        }
-
-    </script>
-
+    <script src="leaflet.js"></script>
 </body>
-
 </html>

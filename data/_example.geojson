@@ -6,7 +6,7 @@
             "properties": {
                 "title": "Header when clicking marker, eg. Example marker",
                 "desc": "Optional description (may be left empty)",
-                "icon": "An icon defined in icons.js, eg. activityIcon",
+                "icon": "An icon defined in icons.js, eg. hollyrosaFlag",
                 "group": "A group defined in maplayers.js, eg. trapper"
             },
             "geometry": {

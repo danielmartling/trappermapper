@@ -7,7 +7,7 @@
 		  "title": "Sopis",
 		  "desc": "Soprummet vid matsalen",
 		  "group": "trashrooms",
-		  "icon": "trashroomIcon"
+		  "icon": "trashroomPin"
 		},
 		"geometry": {
 		  "coordinates": [
@@ -24,7 +24,7 @@
 		  "title": "Skrakviks soprum",
 		  "desc": "Soprummet vid skrakviksängen, ett litet rött hus med en dörr",
 		  "group": "trashrooms",
-		  "icon": "trashroomIcon"
+		  "icon": "trashroomPin"
 		},
 		"geometry": {
 		  "coordinates": [
@@ -40,7 +40,7 @@
 		  "title": "Tunets soprum",
 		  "desc": "Vänstra dörren",
 		  "group": "trashrooms",
-		  "icon": "trashroomIcon"
+		  "icon": "trashroomPin"
 		},
 		"geometry": {
 		  "coordinates": [
@@ -56,7 +56,7 @@
 		  "title": "Konfbyns soprum",
 		  "desc": "Ligger i samma byggnad som dassen, på norra sidan",
 		  "group": "trashrooms",
-		  "icon": "trashroomIcon"
+		  "icon": "trashroomPin"
 		},
 		"geometry": {
 		  "coordinates": [
@@ -73,7 +73,7 @@
 		  "title": "Östra soprummet",
 		  "desc": "Ligger på kortändan av östra tiodassen",
 		  "group": "trashrooms",
-		  "icon": "trashroomIcon"
+		  "icon": "trashroomPin"
 		},
 		"geometry": {
 		  "coordinates": [
@@ -90,7 +90,7 @@
 		  "title": "Programsoprummet",
 		  "desc": "Ligger på östra kortändan av programdassen",
 		  "group": "trashrooms",
-		  "icon": "trashroomIcon"
+		  "icon": "trashroomPin"
 		},
 		"geometry": {
 		  "coordinates": [
@@ -107,7 +107,7 @@
 		  "title": "Mellanängarnas soprum",
 		  "desc": "Ligger på kortändan av djuphamns tiodass",
 		  "group": "trashrooms",
-		  "icon": "trashroomIcon"
+		  "icon": "trashroomPin"
 		},
 		"geometry": {
 		  "coordinates": [
@@ -124,7 +124,7 @@
 		  "title": "Häverödals återvinningscentral",
 		  "desc": "",
 		  "group": "trashrooms",
-		  "icon": "trashroomIcon"
+		  "icon": "trashroomPin"
 		},
 		"geometry": {
 		  "coordinates": [

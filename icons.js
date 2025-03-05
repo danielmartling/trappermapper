@@ -1,30 +1,30 @@
 // icons.js
 var icons = {
-    firehouseIcon: new L.Icon({
+    firehousePin: new L.Icon({
         iconUrl: 'icons/firehouse.png',
         iconSize: [60, 60],
         iconAnchor: [30, 60],
         popupAnchor: [0, -60]
     }),
-    windshelterIcon: new L.Icon({
+    windshelterPin: new L.Icon({
         iconUrl: 'icons/windshelter.png',
         iconSize: [60, 60],
         iconAnchor: [30, 60],
         popupAnchor: [0, -60]
     }),
-    campfireringIcon: new L.Icon({
+    campfireringPin: new L.Icon({
         iconUrl: 'icons/campfirering.png',
         iconSize: [60, 60],
         iconAnchor: [30, 60],
         popupAnchor: [0, -60]
     }),
-    windshelterfireIcon: new L.Icon({
+    windshelterfirePin: new L.Icon({
         iconUrl: 'icons/windshelterfire.png',
         iconSize: [60, 60],
         iconAnchor: [30, 60],
         popupAnchor: [0, -60]
     }),
-    campfirerockIcon: new L.Icon({
+    campfirerockPin: new L.Icon({
         iconUrl: 'icons/campfire.png',
         iconSize: [60, 60],
         iconAnchor: [30, 60],
@@ -36,22 +36,22 @@ var icons = {
         iconAnchor: [40, 80],
         popupAnchor: [0, -40]
     }),
-    activityIcon: new L.Icon({
+    hollyrosaFlag: new L.Icon({
         iconUrl: 'icons/flagHollyrosa.png',
         iconSize: [60, 60],
-        iconAnchor: [15, 50],
+        iconAnchor: [15, 40],
         popupAnchor: [0, -30]
     }),
-    startIcon: new L.Icon({
+    startFlag: new L.Icon({
         iconUrl: 'icons/flagStart.svg',
         iconSize: [60, 60],
-        iconAnchor: [15, 50],
+        iconAnchor: [15, 40],
         popupAnchor: [0, -30]
     }),
-    finishIcon: new L.Icon({
+    finishFlag: new L.Icon({
         iconUrl: 'icons/flagFinish.svg',
         iconSize: [60, 60],
-        iconAnchor: [15, 50],
+        iconAnchor: [15, 40],
         popupAnchor: [0, -30]
     }),
     tempIcon: new L.icon({
@@ -60,22 +60,22 @@ var icons = {
         iconAnchor: [0, 30],
         popupAnchor: [0, -30]
     }),
-    toiletIcon: new L.icon({
+    toiletPin: new L.icon({
         iconUrl: 'icons/toilet.png',
         iconSize: [60, 60],
         iconAnchor: [30, 60],
         popupAnchor: [0, -60]
     }),
-    trashroomIcon: new L.icon({
+    trashroomPin: new L.icon({
         iconUrl: 'icons/trashroom.png',
         iconSize: [60, 60],
         iconAnchor: [30, 60],
         popupAnchor: [0, -60]
     }),
-    chargeboxIcon: new L.divIcon({
-        html: '<i class="fa fa-solid fa-plug"></i>',
+    chargeboxPin: new L.icon({
+        iconUrl: 'icons/chargeboxPin.png',
         iconSize: [60, 60],
-        iconAnchor: [0, 0],
-        className: 'chargeboxIcon', 
+        iconAnchor: [30, 60],
+        popupAnchor: [0, -60]
     })
 };
