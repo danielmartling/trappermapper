@@ -1,6 +1,6 @@
 :root {
-  --accent-color: #000080;
-  --text-color: #666666;
+  --accent-color: #003660;
+  --text-color: #000000;
   --manifold-color: #e1e1e1;
   --std-font: "Open Sans";
 }
@@ -88,8 +88,8 @@ body,
 }
 
 input[type='radio'] {
-	accent-color: #000080;
+	accent-color: #003660;
 }
 input[type='checkbox'] {
-	accent-color: #000080;
+	accent-color: #003660;
 }
