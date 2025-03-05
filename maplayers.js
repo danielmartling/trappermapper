@@ -193,8 +193,8 @@ sources.forEach(source => {
 
 // Inställningar till lagerkontrollen
 var options = {
-    closedSymbol: '<i style="width:15px; text-align:center" class="fa fa-solid fa-chevron-right"></i>',
-    openedSymbol: '<i style="width:15px; text-align:center" class="fa fa-solid fa-chevron-down"></i>',
+    closedSymbol: '<i style="width:16px; text-align:center" class="fa fa-solid fa-chevron-right"></i>',
+    openedSymbol: '<i style="width:16px; text-align:center" class="fa fa-solid fa-chevron-down"></i>',
     selectorBack: false,
     namedToggle: false,
     // collapseAll: "Kollapsa alla",

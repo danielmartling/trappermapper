@@ -62,7 +62,8 @@ body,
 .leaflet-layerstree-header-name {
     font-size: 12pt;
     font-weight: normal;
-    margin-left: 5px;
+    margin-left: 0px;
+	margin-right: 0px;
 }
 
 .leaflet-layerstree-header {
@@ -87,9 +88,12 @@ body,
 	text-indent: 0px;
 }
 
-input[type='radio'] {
+input[type='checkbox'],
+input[type='radio']{
 	accent-color: #003660;
 }
-input[type='checkbox'] {
-	accent-color: #003660;
+
+a:link,
+a:visited {
+	color: #003660;
 }
