@@ -1,5 +1,5 @@
 :root {
-  --accent-color: #5f8789;
+  --accent-color: #000080;
   --text-color: #666666;
   --manifold-color: #e1e1e1;
   --std-font: "Open Sans";
@@ -85,4 +85,11 @@ body,
 	height: 20px;
 	margin: 10px;
 	text-indent: 0px;
+}
+
+input[type='radio'] {
+	accent-color: #000080;
+}
+input[type='checkbox'] {
+	accent-color: #000080;
 }
