@@ -23,6 +23,20 @@ body,
 	z-index: 0;
 }
 
+#button-box-fullscreen {
+  margin: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  visibility: hidden;
+  z-index: 2000;
+}
+
+#button-box-fullscreen:hover {
+  background-color: #f4f4f4;
+}
+
 .sidebar-tabs > li.active, .sidebar-tabs > ul > li.active {
   color: #fff;
   background-color: var(--accent-color); 
@@ -38,9 +52,9 @@ body,
 }
 
 .leaflet-touch .leaflet-bar a {
-	width: 36px;
-	height: 36px;
-	line-height: 36px;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
 }
 
 .leaflet-control-zoom-in,
@@ -54,9 +68,8 @@ body,
 .leaflet-touch .leaflet-control-zoom-out {
 	font-size: 40px;
 	margin: 0px;
-	margin-inline: 2.5px;
-	padding-bottom: 5px;
-	border: none
+	border: none;
+  color: #000000;
 }
 
 .leaflet-layerstree-header-name {

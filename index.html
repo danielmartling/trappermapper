@@ -13,10 +13,12 @@
     <link href="https://font.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
-    <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
-    <script src="src/L.Control.Layers.Tree.js"></script>
     <link rel="stylesheet" href="src/L.Control.Layers.Tree.css" />
     <link rel="stylesheet" href="src/leaflet-sidebar.css" />
+    <link rel="stylesheet" href="src/leaflet.fullscreen.css">
+    <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
+    <script src="src/L.Control.Layers.Tree.js"></script>
+    <script src="src/Leaflet.fullscreen.min.js"></script>
 
     <link rel="stylesheet" href="style.css" />
     <script src="icons.js"></script>
@@ -95,7 +97,10 @@
             </div>
         </div>
     </div>
-    <div id="map"></div>
+    <div id="map">
+      <!--Allt som står inom #map kommer vara kvar när kartan byter till fullskärm-->
+      <div id="button-box-fullscreen" class="leaflet-touch"></div>
+    </div>
     <script src="src/leaflet-sidebar.js" charset="utf-8"></script>
     <script src="leaflet.js"></script>
 </body>

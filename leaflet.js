@@ -13,7 +13,7 @@ var northEast = L.latLng(60.4, 19.0);
 var bounds = L.latLngBounds(southWest, northEast);
 lfmap.setMaxBounds(bounds);
 lfmap.on('drag', function () {
-    lfmap.panInsideBounds(bounds, { animate: lfmap.clearLayers() });
+    lfmap.panInsideBounds(bounds);
 });
 
 // Lägg till lager och kontroller till kartan.
@@ -30,6 +30,8 @@ var lc = L.control
         }
     }).addTo(lfmap);
 
+var fullscreen = L.control.fullscreen().addTo(lfmap);
+
 // Lägg till zoom-kontroll
 var zoom = L.control.zoom().addTo(lfmap)
 
@@ -39,7 +41,7 @@ var scale = L.control.scale({
 }).addTo(lfmap)
 
 // Flytta knappar till sidomenyn eller filtermenyn.
-var objects = [lc, zoom]
+var objects = [fullscreen, lc, zoom]
 var buttonbox = document.getElementById('button-box')
 var filterbox = document.getElementById('filter-box')
 function setParent(child, newParent) {
@@ -48,7 +50,23 @@ function setParent(child, newParent) {
 objects.forEach(element => {
     setParent(element, buttonbox);
 });
-setParent(layerControl, filterbox)
+setParent(layerControl, filterbox);
+
+var fullscreenButtonbox = document.getElementById("button-box-fullscreen");
+
+lfmap.on("fullscreenchange", function () {
+  if (lfmap.isFullscreen()) {
+    console.log("ENTERED FULLSCREEN");
+    fullscreenButtonbox.style.visibility = "visible";
+    setParent(fullscreen, fullscreenButtonbox);
+  } else {
+    console.log("EXITED FULLSCREEN");
+    fullscreenButtonbox.style.visibility = "hidden";
+    objects.forEach(element => {
+      setParent(element, buttonbox);
+    });
+  }
+});
 
 // Switch lägerskole view
 document.getElementById("lagerskola").addEventListener('click', e => {
