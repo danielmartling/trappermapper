@@ -1,6 +1,18 @@
+:root {
+  --accent-color: #5f8789;
+  --text-color: #666666;
+  --manifold-color: #e1e1e1;
+  --std-font: "Open Sans";
+}
+
 body {
 	margin: 0;
 	padding: 0;
+  font-family: var(--std-font);
+}
+
+p {
+  color: var(--text-color);
 }
 
 html,
@@ -9,6 +21,15 @@ body,
 	height: 100%;
 	width: 100vw;
 	z-index: 0;
+}
+
+.sidebar-tabs > li.active, .sidebar-tabs > ul > li.active {
+  color: #fff;
+  background-color: var(--accent-color); 
+}
+
+.sidebar-header {
+  background-color: var(--accent-color);
 }
 
 .leaflet-control-layers {
