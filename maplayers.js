@@ -44,6 +44,7 @@ var groups = {
     fotoorientering: new L.LayerGroup(),
     miniorientering: new L.LayerGroup(),
     ls: new L.LayerGroup(),
+    shortcuts: new L.LayerGroup(),
 };
 
 //Grupperar kartlager
@@ -100,6 +101,7 @@ var overlaysTree = {
                 { label: "Berättelsen", layer: groups.beachtrail },
                 { label: "Rosa spåret", layer: groups.pinktrail },
                 { label: "Gula spåret", layer: groups.yellowtrail },
+                { label: "Genvägar", layer: groups.shortcuts },
             ]
         },
         {
