@@ -13,7 +13,7 @@ var northEast = L.latLng(60.4, 19.0);
 var bounds = L.latLngBounds(southWest, northEast);
 lfmap.setMaxBounds(bounds);
 lfmap.on('drag', function () {
-    lfmap.panInsideBounds(bounds, { animate: lfmap.clearLayers() });
+    lfmap.panInsideBounds(bounds, { animate: true });
 });
 
 // Lägg till lager och kontroller till kartan.
