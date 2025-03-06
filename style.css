@@ -23,20 +23,6 @@ body,
 	z-index: 0;
 }
 
-#button-box-fullscreen {
-  margin: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 40px;
-  height: 40px;
-  visibility: hidden;
-  z-index: 2000;
-}
-
-#button-box-fullscreen:hover {
-  background-color: #f4f4f4;
-}
-
 .sidebar-tabs > li.active, .sidebar-tabs > ul > li.active {
   color: #fff;
   background-color: var(--accent-color); 
