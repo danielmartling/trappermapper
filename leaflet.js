@@ -30,11 +30,18 @@ var lc = L.control
         }
     }).addTo(lfmap);
 
-var fullscreen = L.control.fullscreen().addTo(lfmap);
+// Skapa fullskärmskontrollen med egen text
+var fullscreen = L.control.fullscreen({
+  title: {
+    "false": "Fullskärmsläge",
+    "true": "Återgå till normalläge"
+  }
+}).addTo(lfmap);
 
 // Lägg till zoom-kontroll
 var zoom = L.control.zoom().addTo(lfmap)
 
+// Skapa skalan
 var scale = L.control.scale({
     position: "bottomright",
     metric: true,
@@ -51,22 +58,6 @@ objects.forEach(element => {
     setParent(element, buttonbox);
 });
 setParent(layerControl, filterbox);
-
-var fullscreenButtonbox = document.getElementById("button-box-fullscreen");
-
-lfmap.on("fullscreenchange", function () {
-  if (lfmap.isFullscreen()) {
-    console.log("ENTERED FULLSCREEN");
-    fullscreenButtonbox.style.visibility = "visible";
-    setParent(fullscreen, fullscreenButtonbox);
-  } else {
-    console.log("EXITED FULLSCREEN");
-    fullscreenButtonbox.style.visibility = "hidden";
-    objects.forEach(element => {
-      setParent(element, buttonbox);
-    });
-  }
-});
 
 // Switch lägerskole view
 document.getElementById("lagerskola").addEventListener('click', e => {

@@ -16,9 +16,6 @@
     background-position: 0px 0px;
     }
 
-  .leaflet-fullscreen-on:hover .leaflet-control-fullscreen:hover a:hover {
-    background-color: #f4f4f4;
-  }
 /* Do not combine these two rules; IE will break. */
 .leaflet-container:-webkit-full-screen {
   width:100%!important;
