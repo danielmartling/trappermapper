@@ -6,16 +6,18 @@
     <link rel="icon" type="image/x-icon" href="img/hollyrosa-square.png">
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://font.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
     <link rel="stylesheet" href="src/L.Control.Locate.min.css" />
     <script src="src/L.Control.Locate.min.js" charset="utf-8"></script>
+
     <script src="src/L.Control.Layers.Tree.js"></script>
     <link rel="stylesheet" href="src/L.Control.Layers.Tree.css" />
+    
     <link rel="stylesheet" href="src/leaflet-sidebar.css" />
 
     <link rel="stylesheet" href="style.css" />
@@ -34,7 +36,8 @@
                 <li><a href="#menu" role="tab"><i class="fa fa-solid fa-bars"></i></a></li>
                 <li><a href="#qr" role="tab"><i class="fa fa-solid fa-sharp fa-qrcode"></i></a></li>
                 <li><a href="#filter" id="filter" role="tab"><img src="icons/filter.svg" width="40px"></a></li>
-                <li><a id="lagerskola"><img src="img/logotyp-ls.png" alt="Äventyret Vässarös logga" width="40px"></a></li>
+                <li><a id="lagerskola"><img src="img/logotyp-ls.png" alt="Äventyret Vässarös logga" width="40px"></a>
+                </li>
             </ul>
             <ul role="tablist">
                 <div id="button-box"></div>
@@ -48,11 +51,13 @@
                     TRAPPERMAPPER
                     <span class="sidebar-close"><i class="fa fa-caret-left"></i></span>
                 </h1>
-                <p>Det här är en karta framtagen av programfunktionärerna på Vässarö. Använd den inte som ett navigationsverktyg på vattnet.</p>
+                <p>Det här är en karta framtagen av programfunktionärerna på Vässarö. Använd den inte som ett
+                    navigationsverktyg på vattnet.</p>
                 <p>Under filtret till vänster kan du välja vad du vill se på kartan. Du kan också klicka på Äventyret
                     Vässarö-loggan till vänster för att endast se lägerskolans aktiviteter.</p>
-                <p>Mer info om aktiviteterna, och om de som inte finns på kartan, finns i vår 
-                    <a href="https://vassaro.se/wp-content/uploads/Programlunta-Ver-23.1.0.pdf">Programlunta</a>.</a></p>
+                <p>Mer info om aktiviteterna, och om de som inte finns på kartan, finns i vår
+                    <a href="https://vassaro.se/wp-content/uploads/Programlunta-Ver-23.1.0.pdf">Programlunta</a>.</a>
+                </p>
                 <p>Du kan hjälpa till med kartans utveckling genom att prata med oss på Lillgårn, mejla oss på
                     program(at)vassaro.se eller bidra på <a href="https://github.com/danielmartling/trappermapper/"><i
                             class="fa fa-github"></i> Github</a>.</p><br>
@@ -99,4 +104,5 @@
     <script src="src/leaflet-sidebar.js" charset="utf-8"></script>
     <script src="leaflet.js"></script>
 </body>
+
 </html>

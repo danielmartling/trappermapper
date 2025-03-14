@@ -129,7 +129,6 @@ var overlaysTree = {
 
             ]
             // "Lokaler": groups.bookablerooms,
-            
         }
     ]
 }
@@ -182,8 +181,8 @@ sources.forEach(source => {
                 style: function (feature) {
                     return {
                         color: feature.properties.color,
-                        weight: 7,
-                        opacity: 1,
+                        weight: 10,
+                        opacity: 0.7,
                     };
                 }
             });
