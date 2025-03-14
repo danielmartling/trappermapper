@@ -30,16 +30,25 @@ var lc = L.control
         }
     }).addTo(lfmap);
 
+// Skapa fullskärmskontrollen med egen text
+var fullscreen = L.control.fullscreen({
+  title: {
+    "false": "Fullskärmsläge",
+    "true": "Återgå till normalläge"
+  }
+}).addTo(lfmap);
+
 // Lägg till zoom-kontroll
 var zoom = L.control.zoom().addTo(lfmap)
 
+// Skapa skalan
 var scale = L.control.scale({
     position: "bottomright",
     metric: true,
 }).addTo(lfmap)
 
 // Flytta knappar till sidomenyn eller filtermenyn.
-var objects = [lc, zoom]
+var objects = [fullscreen, lc, zoom]
 var buttonbox = document.getElementById('button-box')
 var filterbox = document.getElementById('filter-box')
 function setParent(child, newParent) {
@@ -48,7 +57,7 @@ function setParent(child, newParent) {
 objects.forEach(element => {
     setParent(element, buttonbox);
 });
-setParent(layerControl, filterbox)
+setParent(layerControl, filterbox);
 
 // Switch lägerskole view
 document.getElementById("lagerskola").addEventListener('click', e => {
