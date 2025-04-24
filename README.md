@@ -1,13 +1,4 @@
 # trappermapper
 
-## Acknowledgements
-
-This interactive map is developed by the Program staff at Vässarö scout centre. Graphical material comes from John Rehn, Vässarö scout centre and Scouterna.
-
-
-## How to use
-Either:
-- Go to https://danielmartling.github.io/trappermapper/.
-- Scan the following QR code: 
-  
-  ![QR code that lead to the map.](/img/qr/qr-hollyrosa2.png "QR code that lead to the map.")
+Archived and moved to https://github.com/vassaro/trappermapper.
+ 
